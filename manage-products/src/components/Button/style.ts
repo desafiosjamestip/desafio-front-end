@@ -9,7 +9,4 @@ export const StyledButton = styled(Button)`
   &&:hover {
     background-color: #0d6a5e;
   }
-  /* &&:disabled {
-    background-color: #b4b4b4;
-  } */
 `;

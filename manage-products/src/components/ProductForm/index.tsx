@@ -2,7 +2,7 @@ import { FormContainer, StyledTextField } from "./style";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { EditingProps, Product } from "../../types/product";
+import { Product } from "../../types/product";
 import { useProducts } from "../../providers/ProductsProvider";
 import { toast } from "react-toastify";
 import { DialogActions } from "@mui/material";
@@ -10,7 +10,9 @@ import { useNavigate } from "react-router";
 import { useState } from "react";
 import NumberFormat from "react-number-format";
 import { StyledButton } from "../Button/style";
-
+interface EditingProps {
+  editing: string;
+}
 const ProductForm = ({ editing }: EditingProps) => {
   const [price, setPrice] = useState<string>("");
   const [error, setError] = useState<boolean>(false);
