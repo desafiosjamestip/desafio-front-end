@@ -17,8 +17,7 @@ const SearchBar = ({
 
   const filtringProducts = (input: string) => {
     const chosenProducts = productsList.filter((product) => {
-      return Object.values(product)
-        .join(" ")
+      return product.name
         .normalize("NFD")
         .toLowerCase()
         .includes(input.normalize("NFD").toLowerCase());

@@ -14,7 +14,13 @@ import { StyledButton } from "../Button/style";
 const ProductForm = ({ editing }: EditingProps) => {
   const [price, setPrice] = useState<string>("");
   const [error, setError] = useState<boolean>(false);
-  const { editProduct, setModalEdit, productsList, addProduct } = useProducts();
+  const {
+    editProduct,
+    setModalEdit,
+    productsList,
+    addProduct,
+    editingProduct,
+  } = useProducts();
   const [disable, setDisable] = useState<boolean>(false);
 
   const navigate = useNavigate();
@@ -31,10 +37,15 @@ const ProductForm = ({ editing }: EditingProps) => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const handleEditProduct = (data: Product) => {
-    const isEqual = productsList.find(
+    const editingProductList = productsList.filter(
+      (product) => product.productCode !== editingProduct!.productCode
+    );
+
+    const isEqual = editingProductList.find(
       (produto) => produto.productCode === data.productCode
     );
 
+    // Condição para verificar se já existe um produto de mesmo código.
     if (isEqual !== undefined) {
       toast.error("Produto de mesmo código já cadastrado!");
     } else if (error === false) {
@@ -54,6 +65,7 @@ const ProductForm = ({ editing }: EditingProps) => {
     const isEqual = productsList.find(
       (produto) => produto.productCode === data.productCode
     );
+    // Condição para verificar se já existe um produto de mesmo código.
     if (isEqual !== undefined) {
       toast.error("Produto de mesmo código já cadastrado!");
     } else if (error === false) {
