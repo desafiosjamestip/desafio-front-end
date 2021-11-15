@@ -1,0 +1,16 @@
+:root {
+  --gray-background: #101010;
+  --gray-text: #020202;
+  --green: #00d0b3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, sans-serif;
+  color: white;
+}
+
+body {
+  background-color: var(--gray-background);
+}
