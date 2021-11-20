@@ -9,11 +9,20 @@ export const Wrapper = styled.div`
 export const ProductsHeader = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
   margin-bottom: 32px;
 
-  img {
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     margin-right: 8px;
-    cursor: pointer;
+
+    img {
+      cursor: pointer;
+    }
   }
 
   h1 {

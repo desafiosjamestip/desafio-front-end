@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import { ProductsHeader, Wrapper } from './styles'
 
 import arrow from '../../assets/styles/images/arrow-left.svg'
@@ -7,7 +9,9 @@ export default function Products() {
   return (
     <Wrapper>
       <ProductsHeader>
-        <img src={arrow} alt="Voltar" />
+        <Link to="/">
+          <img src={arrow} alt="Voltar" />
+        </Link>
         <h1>Produtos cadastrados</h1>
       </ProductsHeader>
 

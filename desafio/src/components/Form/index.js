@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import { InputGroup, Wrapper } from './styles'
 
@@ -63,7 +64,9 @@ export default function Form({ title, page }) {
       </InputGroup>
 
       <Button active>{page === 'home' ? 'Cadastar produto' : 'Editar produto'}</Button>
-      <Button active={false}>{page === 'home' ? 'Ir para a lista de produtos' : 'Cancelar'}</Button>
+      <Link to="/produtos">
+        <Button active={false}>{page === 'home' ? 'Ir para a lista de produtos' : 'Cancelar'}</Button>
+      </Link>
     </Wrapper>
   )
 }
