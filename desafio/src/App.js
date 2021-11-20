@@ -1,6 +1,11 @@
+import GlobalStyles from './assets/styles/global'
+
 function App() {
   return (
-    <h1>James tip</h1>
+    <>
+      <GlobalStyles />
+      <h1>James tip</h1>
+    </>
   )
 }
 
