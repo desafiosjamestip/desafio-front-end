@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import PropTypes from 'prop-types'
 
 import {
@@ -6,10 +8,13 @@ import {
 
 import edit from '../../assets/styles/images/edit.svg'
 import cross from '../../assets/styles/images/cross.svg'
+import { useProduct } from '../../contexts/ProductContext'
 
 export default function ProductCard({
   product, code, category, provider, value,
 }) {
+  const { handleRemoveProduct } = useProduct()
+
   return (
     <Wrapper>
       <CardGroup>
@@ -49,7 +54,7 @@ export default function ProductCard({
         </ProductButton>
 
         <ProductButton type="button">
-          <img src={cross} alt="Excluir" />
+          <img src={cross} alt="Excluir" onClick={() => handleRemoveProduct(code)} />
         </ProductButton>
       </ActionGroup>
     </Wrapper>

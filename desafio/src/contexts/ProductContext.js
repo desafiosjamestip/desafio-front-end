@@ -17,10 +17,15 @@ export const ProductProvider = ({ children }) => {
     dispatch({ type: 'ADD_PRODUCT', payload: product })
   }
 
+  function handleRemoveProduct(code) {
+    dispatch({ type: 'REMOVE_PRODUCT', payload: code })
+  }
+
   return (
     <ProductContext.Provider value={{
       state,
       handleAddProduct,
+      handleRemoveProduct,
     }}
     >
       {children}
