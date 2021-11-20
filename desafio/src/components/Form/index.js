@@ -12,9 +12,13 @@ import { Input } from '../Input'
 import { Select } from '../Select'
 import { Button } from '../Button'
 
+import { useProduct } from '../../contexts/ProductContext'
+
 export default function Form({ title, page }) {
+  const { handleAddProduct } = useProduct()
+
   function onSubmit(data) {
-    console.log(data)
+    handleAddProduct(data)
   }
 
   const { register, handleSubmit, formState: { errors } } = useForm({

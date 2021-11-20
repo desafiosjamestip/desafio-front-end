@@ -8,17 +8,20 @@ import GlobalStyles from '../../assets/styles/global'
 import { Wrapper } from './styles'
 
 import Header from '../Header'
+import { ProductProvider } from '../../contexts/ProductContext'
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <ThemeProvider theme={defaultTheme}>
-        <GlobalStyles />
-        <Header />
-        <Wrapper>
-          <Routes />
-        </Wrapper>
-      </ThemeProvider>
-    </BrowserRouter>
+    <ProductProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={defaultTheme}>
+          <GlobalStyles />
+          <Header />
+          <Wrapper>
+            <Routes />
+          </Wrapper>
+        </ThemeProvider>
+      </BrowserRouter>
+    </ProductProvider>
   )
 }
