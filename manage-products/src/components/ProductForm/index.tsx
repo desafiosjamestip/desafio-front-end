@@ -14,7 +14,8 @@ interface EditingProps {
   editing: string;
 }
 const ProductForm = ({ editing }: EditingProps) => {
-  const [price, setPrice] = useState<string>("");
+  const [price, setPrice] = useState<string>(" ");
+  console.log(price);
   const [error, setError] = useState<boolean>(false);
   const {
     editProduct,
@@ -51,7 +52,11 @@ const ProductForm = ({ editing }: EditingProps) => {
     if (isEqual !== undefined) {
       toast.error("Produto de mesmo código já cadastrado!");
     } else if (error === false) {
-      data["price"] = price;
+      if (price === " ") {
+        data["price"] = editingProduct!.price;
+      } else {
+        data["price"] = price;
+      }
       setDisable(true);
       editProduct(data);
 
@@ -81,7 +86,16 @@ const ProductForm = ({ editing }: EditingProps) => {
       });
     }
   };
-
+  const priceStringToNumber = (a: string): string => {
+    let numberA = "";
+    if (a.includes(",")) {
+      let replacingA = a.replace(/[^0-9]/g, "");
+      numberA = `${replacingA.slice(0, -2)}.${replacingA.slice(-2)}`;
+    } else {
+      numberA = a.replace(/[^0-9]/g, "");
+    }
+    return numberA;
+  };
   return (
     <FormContainer
       onSubmit={
@@ -102,6 +116,7 @@ const ProductForm = ({ editing }: EditingProps) => {
         inputProps={{ style: { fontFamily: "'Dosis',sans-serif" } }}
         InputLabelProps={{ style: { fontFamily: "'Dosis',sans-serif" } }}
         variant="outlined"
+        defaultValue={editing === "edit" ? editingProduct!.name : ""}
         label={editing === "edit" ? "Novo nome" : "Nome"}
         {...register("name")}
         error={!!errors.name}
@@ -113,6 +128,7 @@ const ProductForm = ({ editing }: EditingProps) => {
         inputProps={{ style: { fontFamily: "'Dosis',sans-serif" } }}
         InputLabelProps={{ style: { fontFamily: "'Dosis',sans-serif" } }}
         variant="outlined"
+        defaultValue={editing === "edit" ? editingProduct!.category : ""}
         label={editing === "edit" ? "Nova categoria" : "Categoria"}
         {...register("category")}
         error={!!errors.category}
@@ -123,6 +139,7 @@ const ProductForm = ({ editing }: EditingProps) => {
         inputProps={{ style: { fontFamily: "'Dosis',sans-serif" } }}
         InputLabelProps={{ style: { fontFamily: "'Dosis',sans-serif" } }}
         variant="outlined"
+        defaultValue={editing === "edit" ? editingProduct!.productCode : ""}
         label={
           editing === "edit" ? "Novo código do produto" : "Código do produto"
         }
@@ -135,6 +152,7 @@ const ProductForm = ({ editing }: EditingProps) => {
         fullWidth
         inputProps={{ style: { fontFamily: "'Dosis',sans-serif" } }}
         InputLabelProps={{ style: { fontFamily: "'Dosis',sans-serif" } }}
+        defaultValue={editing === "edit" ? editingProduct!.productProvider : ""}
         label={editing === "edit" ? "Novo fabricante" : "Fabricante"}
         {...register("productProvider")}
         error={!!errors.productProvider}
@@ -144,13 +162,22 @@ const ProductForm = ({ editing }: EditingProps) => {
         fullWidth
         inputProps={{ style: { fontFamily: "'Dosis',sans-serif" } }}
         InputLabelProps={{ style: { fontFamily: "'Dosis',sans-serif" } }}
+        // defaultValue={
+        //   editing === "edit" ? priceStringToNumber(editingProduct!.price) : ""
+        // }
+        value={
+          editing === "edit"
+            ? price === " "
+              ? priceStringToNumber(editingProduct!.price)
+              : price
+            : price
+        }
         label={editing === "edit" ? "Novo preço" : "Preço"}
         thousandsGroupStyle="thousand"
         prefix="R$"
         decimalSeparator=","
         displayType="input"
         customInput={StyledTextField}
-        value={price}
         error={error}
         helperText={error && "Campo obrigatório"}
         type="text"
