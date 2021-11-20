@@ -63,7 +63,7 @@ export default function Form({ title, page }) {
       </InputGroup>
 
       <Button active>{page === 'home' ? 'Cadastar produto' : 'Editar produto'}</Button>
-      <Button active={false}>{page === 'home' ? 'Ir para a lista de produtos' : 'Cancelar produto'}</Button>
+      <Button active={false}>{page === 'home' ? 'Ir para a lista de produtos' : 'Cancelar'}</Button>
     </Wrapper>
   )
 }

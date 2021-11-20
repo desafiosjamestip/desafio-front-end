@@ -1,5 +1,10 @@
+import Form from '../../components/Form'
+
 export default function EditProduct() {
   return (
-    <h1>EditProduct</h1>
+    <Form
+      title="Editar produto"
+      page="edit"
+    />
   )
 }
