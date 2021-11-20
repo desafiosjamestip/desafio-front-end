@@ -5,8 +5,11 @@ import { ProductsHeader, Wrapper } from './styles'
 import arrow from '../../assets/styles/images/arrow-left.svg'
 import ProductCard from '../../components/ProductCard'
 import Alert from '../../components/Alert'
+import { useProduct } from '../../contexts/ProductContext'
 
 export default function Products() {
+  const { state } = useProduct()
+
   return (
     <Wrapper>
       <ProductsHeader>
@@ -16,37 +19,16 @@ export default function Products() {
         <h1>Produtos cadastrados</h1>
       </ProductsHeader>
 
-      <ProductCard
-        product="Notebook"
-        code="12364"
-        category="Eletrônicos"
-        provider="Dell"
-        value="1256.40"
-      />
-
-      <ProductCard
-        product="Notebook"
-        code="12364"
-        category="Eletrônicos"
-        provider="Dell"
-        value="1256.40"
-      />
-
-      <ProductCard
-        product="Notebook"
-        code="12364"
-        category="Eletrônicos"
-        provider="Dell"
-        value="1256.40"
-      />
-
-      <ProductCard
-        product="Notebook"
-        code="12364"
-        category="Eletrônicos"
-        provider="Dell"
-        value="1256.40"
-      />
+      {state.products.map((product) => (
+        <ProductCard
+          key={product.code}
+          product={product.name}
+          code={product.code}
+          category={product.category}
+          provider={product.provider}
+          value={product.value}
+        />
+      ))}
 
       <Alert display={false} success />
     </Wrapper>

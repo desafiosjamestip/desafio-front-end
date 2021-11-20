@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -16,9 +16,11 @@ import { useProduct } from '../../contexts/ProductContext'
 
 export default function Form({ title, page }) {
   const { handleAddProduct } = useProduct()
+  const history = useHistory()
 
   function onSubmit(data) {
     handleAddProduct(data)
+    history.push('/produtos')
   }
 
   const { register, handleSubmit, formState: { errors } } = useForm({
@@ -64,7 +66,9 @@ export default function Form({ title, page }) {
           name="category"
           id="category"
         >
-          <option value="0">Eletrônicos</option>
+          <option value="Eletrônicos">Eletrônicos</option>
+          <option value="Descartáveis">Descartáveis</option>
+          <option value="Mecânicos">Mecânicos</option>
         </Select>
         <span className="message">{errors.category?.message}</span>
       </InputGroup>
