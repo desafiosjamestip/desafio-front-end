@@ -1,12 +1,13 @@
 import { ThemeProvider } from 'styled-components'
 import { BrowserRouter } from 'react-router-dom'
-import defaultTheme from './assets/styles/themes/default'
+import Routes from '../../Routes'
 
-import GlobalStyles from './assets/styles/global'
-import Routes from './Routes'
-import Header from './components/Header'
+import defaultTheme from '../../assets/styles/themes/default'
+import GlobalStyles from '../../assets/styles/global'
 
-function App() {
+import Header from '../Header'
+
+export default function App() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={defaultTheme}>
@@ -17,5 +18,3 @@ function App() {
     </BrowserRouter>
   )
 }
-
-export default App
