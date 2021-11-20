@@ -9,6 +9,8 @@ export default createGlobalStyle`
 
   body {
     font-family: 'Poppins', sans-serif;
+    color: ${({ theme }) => theme.colors.default.black};
+    background: ${({ theme }) => theme.colors.default.white};
   }
 
   button, input {
