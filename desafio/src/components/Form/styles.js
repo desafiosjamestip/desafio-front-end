@@ -17,4 +17,9 @@ export const InputGroup = styled.div`
   label {
     margin-bottom: 8px;
   }
+
+  .message {
+    color: ${({ theme }) => theme.colors.accent.red};
+    font-size: 14px;
+  }
 `

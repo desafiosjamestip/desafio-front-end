@@ -32,4 +32,8 @@ export const Button = styled.button`
   &:last-child {
     margin: 0;
   }
+
+  &:disabled {
+    opacity: .3;
+  }
 `

@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import error from '../assets/styles/images/error.svg'
+
 export const Input = styled.input`
   width: 100%;
   height: 50px;
@@ -20,5 +22,10 @@ export const Input = styled.input`
 
   &:focus {
     border-color: ${({ theme }) => theme.colors.accent.blue};
+  }
+
+  &.error {
+    border-color: ${({ theme }) => theme.colors.accent.red};
+    background: url(${error}) no-repeat 98% center;
   }
 `
