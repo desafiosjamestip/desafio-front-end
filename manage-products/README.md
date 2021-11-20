@@ -13,4 +13,8 @@ This is a web app that enable many clients to control and update their products.
 
 React, Typescript, MaterialUI, Styled-components, React-router, Yup. 
 
+## Details
+
+In this web app Context API was used to provider some functions and states to avoid prop drilling. The repositories have been organized into components to facilitate future maintenance. For the style, the material ui lib was chosen together with the styled components as they are already consolidated libraries in the market, having a good design and good responsiveness.
+
 
