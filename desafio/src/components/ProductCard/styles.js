@@ -23,6 +23,7 @@ export const CardGroup = styled.div`
   max-width: 100px;
 
   h3 {
+    text-transform: capitalize;
     font-size: 14px;
     font-weight: normal;
     color: ${({ theme }) => theme.colors.gray[200]};

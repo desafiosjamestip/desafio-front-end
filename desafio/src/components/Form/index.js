@@ -66,9 +66,9 @@ export default function Form({ title, page }) {
           name="category"
           id="category"
         >
-          <option value="Eletrônicos">Eletrônicos</option>
-          <option value="Descartáveis">Descartáveis</option>
-          <option value="Mecânicos">Mecânicos</option>
+          <option value="eletronicos">Eletrônicos</option>
+          <option value="descartaveis">Descartáveis</option>
+          <option value="mecanicos">Mecânicos</option>
         </Select>
         <span className="message">{errors.category?.message}</span>
       </InputGroup>
