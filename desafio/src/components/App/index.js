@@ -5,6 +5,8 @@ import Routes from '../../Routes'
 import defaultTheme from '../../assets/styles/themes/default'
 import GlobalStyles from '../../assets/styles/global'
 
+import { Wrapper } from './styles'
+
 import Header from '../Header'
 
 export default function App() {
@@ -13,7 +15,9 @@ export default function App() {
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyles />
         <Header />
-        <Routes />
+        <Wrapper>
+          <Routes />
+        </Wrapper>
       </ThemeProvider>
     </BrowserRouter>
   )
