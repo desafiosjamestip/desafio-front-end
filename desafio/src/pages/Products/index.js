@@ -4,6 +4,7 @@ import { ProductsHeader, Wrapper } from './styles'
 
 import arrow from '../../assets/styles/images/arrow-left.svg'
 import ProductCard from '../../components/ProductCard'
+import Alert from '../../components/Alert'
 
 export default function Products() {
   return (
@@ -46,6 +47,8 @@ export default function Products() {
         provider="Dell"
         value="1256.40"
       />
+
+      <Alert display={false} success />
     </Wrapper>
   )
 }

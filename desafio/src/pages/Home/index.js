@@ -9,7 +9,7 @@ export default function Home() {
         page="home"
       />
 
-      <Alert display success />
+      <Alert display={false} success />
     </>
   )
 }
