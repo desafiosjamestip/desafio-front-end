@@ -13,7 +13,7 @@ import { useProduct } from '../../contexts/ProductContext'
 export default function ProductCard({
   product, code, category, provider, value,
 }) {
-  const { handleRemoveProduct } = useProduct()
+  const { handleRemoveProduct, handleDisplayAlert } = useProduct()
 
   return (
     <Wrapper>
@@ -54,7 +54,14 @@ export default function ProductCard({
         </ProductButton>
 
         <ProductButton type="button">
-          <img src={cross} alt="Excluir" onClick={() => handleRemoveProduct(code)} />
+          <img
+            src={cross}
+            alt="Excluir"
+            onClick={() => {
+              handleRemoveProduct(code)
+              handleDisplayAlert({ success: false, display: true })
+            }}
+          />
         </ProductButton>
       </ActionGroup>
     </Wrapper>

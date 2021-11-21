@@ -15,11 +15,12 @@ import { Button } from '../Button'
 import { useProduct } from '../../contexts/ProductContext'
 
 export default function Form({ title, page }) {
-  const { handleAddProduct } = useProduct()
+  const { handleAddProduct, handleDisplayAlert } = useProduct()
   const history = useHistory()
 
   function onSubmit(data) {
     handleAddProduct(data)
+    handleDisplayAlert({ success: true, display: true })
     history.push('/produtos')
   }
 

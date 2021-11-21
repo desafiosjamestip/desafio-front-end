@@ -30,7 +30,7 @@ export default function Products() {
         />
       ))}
 
-      <Alert display={false} success />
+      <Alert display={state.alert.display} success={state.alert.success} />
     </Wrapper>
   )
 }
