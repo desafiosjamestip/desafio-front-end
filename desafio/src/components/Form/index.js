@@ -1,10 +1,14 @@
 /* eslint-disable react/jsx-props-no-spreading */
+import { useEffect } from 'react'
+
 import PropTypes from 'prop-types'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory, useParams } from 'react-router-dom'
 
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { schema } from '../../schemas/schema'
+
+import { useProduct } from '../../contexts/ProductContext'
 
 import { InputGroup, Wrapper } from './styles'
 
@@ -12,21 +16,46 @@ import { Input } from '../Input'
 import { Select } from '../Select'
 import { Button } from '../Button'
 
-import { useProduct } from '../../contexts/ProductContext'
-
 export default function Form({ title, page }) {
   const { handleAddProduct, handleDisplayAlert } = useProduct()
   const history = useHistory()
+  const params = useParams()
+  const { state } = useProduct()
 
-  function onSubmit(data) {
-    handleAddProduct(data)
-    handleDisplayAlert({ success: true, display: true })
-    history.push('/produtos')
-  }
+  const { id } = params
 
-  const { register, handleSubmit, formState: { errors } } = useForm({
+  const editedProduct = state.products.find((product) => product.code === id)
+
+  const {
+    register, handleSubmit, setValue, formState: { errors },
+  } = useForm({
     resolver: yupResolver(schema),
   })
+
+  function onSubmit(data) {
+    if (page === 'home') {
+      handleAddProduct(data)
+      handleDisplayAlert({ success: true, display: true })
+      history.push('/produtos')
+    } else {
+      editedProduct.name = data.name
+      editedProduct.code = data.code
+      editedProduct.category = data.category
+      editedProduct.provider = data.provider
+      editedProduct.value = data.value
+      handleDisplayAlert({ success: true, display: true })
+      history.push('/produtos')
+    }
+  }
+
+  useEffect(() => {
+    if (page !== 'home') {
+      setValue('name', editedProduct.name)
+      setValue('code', editedProduct.code)
+      setValue('provider', editedProduct.provider)
+      setValue('value', editedProduct.value)
+    }
+  }, [page])
 
   return (
     <Wrapper onSubmit={handleSubmit(onSubmit)}>

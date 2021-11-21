@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import {
   ActionGroup, CardGroup, ProductButton, Wrapper,
@@ -49,9 +50,11 @@ export default function ProductCard({
       </CardGroup>
 
       <ActionGroup>
-        <ProductButton edit type="button">
-          <img src={edit} alt="Editar" />
-        </ProductButton>
+        <Link to={`/editar/${code}`}>
+          <ProductButton edit type="button">
+            <img src={edit} alt="Editar" />
+          </ProductButton>
+        </Link>
 
         <ProductButton type="button">
           <img
