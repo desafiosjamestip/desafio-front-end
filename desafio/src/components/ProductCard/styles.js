@@ -20,7 +20,7 @@ export const CardGroup = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  max-width: 100px;
+  max-width: 100%;
 
   h3 {
     text-transform: capitalize;
@@ -34,6 +34,11 @@ export const CardGroup = styled.div`
   span {
     font-size: 14px;
     font-weight: 600;
+    width: 100%;
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 `
 
@@ -41,6 +46,10 @@ export const ActionGroup = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  a {
+    margin-right: 8px;
+  }
 `
 
 export const ProductButton = styled.button`
