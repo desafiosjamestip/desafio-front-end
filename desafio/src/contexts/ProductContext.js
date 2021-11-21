@@ -9,6 +9,7 @@ export const ProductProvider = ({ children }) => {
   const initialState = {
     products: [],
     alert: {
+      message: '',
       success: false,
       display: false,
     },

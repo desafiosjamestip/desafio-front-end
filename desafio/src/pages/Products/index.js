@@ -36,7 +36,11 @@ export default function Products() {
         </Link>
       </ProductsFooter>
 
-      <Alert display={state.alert.display} success={state.alert.success} />
+      <Alert
+        message={state.alert.message}
+        display={state.alert.display}
+        success={state.alert.success}
+      />
     </Wrapper>
   )
 }

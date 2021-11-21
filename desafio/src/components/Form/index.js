@@ -35,7 +35,11 @@ export default function Form({ title, page }) {
   function onSubmit(data) {
     if (page === 'home') {
       handleAddProduct(data)
-      handleDisplayAlert({ success: true, display: true })
+      handleDisplayAlert({
+        message: 'O produto foi adicionado com sucesso!',
+        success: true,
+        display: true,
+      })
       history.push('/produtos')
     } else {
       editedProduct.name = data.name
@@ -43,7 +47,11 @@ export default function Form({ title, page }) {
       editedProduct.category = data.category
       editedProduct.provider = data.provider
       editedProduct.value = data.value
-      handleDisplayAlert({ success: true, display: true })
+      handleDisplayAlert({
+        message: 'O produto foi editado com sucesso!',
+        success: true,
+        display: true,
+      })
       history.push('/produtos')
     }
   }

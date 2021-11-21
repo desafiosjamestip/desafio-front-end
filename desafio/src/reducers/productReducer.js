@@ -13,7 +13,14 @@ const productReducer = (state, action) => {
         products: newItems,
       }
     case 'DISPLAY_ALERT':
-      return { ...state, alert: action.payload }
+      return {
+        ...state,
+        alert: {
+          message: action.payload.message,
+          success: action.payload.success,
+          display: action.payload.display,
+        },
+      }
     default:
       return state
   }

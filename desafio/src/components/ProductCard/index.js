@@ -62,7 +62,11 @@ export default function ProductCard({
             alt="Excluir"
             onClick={() => {
               handleRemoveProduct(code)
-              handleDisplayAlert({ success: false, display: true })
+              handleDisplayAlert({
+                message: 'O produto foi removido com sucesso!',
+                success: false,
+                display: true,
+              })
             }}
           />
         </ProductButton>
