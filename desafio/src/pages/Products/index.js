@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { ProductsHeader, Wrapper } from './styles'
+import { ProductsFooter, ProductsHeader, Wrapper } from './styles'
 
 import arrow from '../../assets/styles/images/arrow-left.svg'
 import ProductCard from '../../components/ProductCard'
@@ -29,6 +29,12 @@ export default function Products() {
           value={product.value}
         />
       ))}
+
+      <ProductsFooter>
+        <Link to="/">
+          Cadastrar novo item
+        </Link>
+      </ProductsFooter>
 
       <Alert display={state.alert.display} success={state.alert.success} />
     </Wrapper>

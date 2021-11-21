@@ -5,6 +5,12 @@ export const Wrapper = styled.form`
     font-weight: normal;
     margin-bottom: 32px;
   }
+
+  /* MOBILE */
+
+  @media screen and (max-width: 600px) {
+    font-size: 24px;
+  }
 `
 
 export const InputGroup = styled.div`

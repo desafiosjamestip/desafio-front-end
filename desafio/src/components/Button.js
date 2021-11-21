@@ -36,4 +36,10 @@ export const Button = styled.button`
   &:disabled {
     opacity: .3;
   }
+
+  /* MOBILE */
+
+  @media screen and (max-width: 500px) {
+    font-size: 18px;
+  }
 `

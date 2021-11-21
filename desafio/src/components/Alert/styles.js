@@ -35,4 +35,11 @@ export const Wrapper = styled.div`
       color: ${({ success }) => (success ? 'rgba(97, 206, 112, 1)' : 'rgba(242, 103, 103, 1)')};
     }
   }
+
+  /* MOBILE */
+
+  @media screen and (max-width: 440px) {
+    width: 300px;
+    font-size: 10px;
+  }
 `

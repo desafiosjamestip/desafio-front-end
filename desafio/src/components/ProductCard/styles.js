@@ -9,10 +9,16 @@ export const Wrapper = styled.div`
   border-radius: 4px;
 
   width: 100%;
-  height: 100px;
+  height: fit-content;
 
   padding: 24px;
   margin-bottom: 24px;
+
+  @media screen and (max-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 16px;
+  }
 `
 
 export const CardGroup = styled.div`
@@ -49,6 +55,16 @@ export const ActionGroup = styled.div`
 
   a {
     margin-right: 8px;
+  }
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    a {
+      margin: 0;
+      margin-bottom: 16px;
+    }
   }
 `
 
