@@ -13,4 +13,12 @@ export const Wrapper = styled.div`
       color: ${({ theme }) => theme.colors.accent.blue};
     }
   }
+
+  /* MOBILE */
+
+  @media screen and (max-width: 420px) {
+    span {
+      font-size: 14px;
+    }
+  }
 `
