@@ -42,7 +42,7 @@ Para garantir uma padronização de código, foi utilizado o [ESLint](https://es
 Clone o projeto e acesse a pasta do mesmo.
 
 ```bash
-$ git clone git@github.com:desafiosjamestip/desafio-front-end.git
+$ git clone git@github.com:luizsmatos/desafio-front-end.git
 
 # Entre na pasta do projeto, e acessa a branch de desenvolvimento.
 $ cd desafio-front-end
