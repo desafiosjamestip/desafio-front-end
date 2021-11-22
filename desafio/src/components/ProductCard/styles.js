@@ -14,6 +14,8 @@ export const Wrapper = styled.div`
   padding: 24px;
   margin-bottom: 24px;
 
+  /* MOBILE */
+
   @media screen and (max-width: 600px) {
     display: grid;
     grid-template-columns: repeat(3, 100px);
@@ -56,6 +58,8 @@ export const ActionGroup = styled.div`
   a {
     margin-right: 8px;
   }
+
+  /* MOBILE */
 
   @media screen and (max-width: 600px) {
     flex-direction: column;
