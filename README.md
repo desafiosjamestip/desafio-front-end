@@ -1,75 +1,70 @@
 # Desafio Front-End
 
-## O que é?
-Este desafio faz parte do processo seletivo para o cargo de Desenvolvedor Front-End no James Tip. Este tem por objetivo medir seu nível de conhecimento com tecnologias de desenvolvimento front-end, e suas capacidades de propor novas ideias e arquiteturas para nossos serviços, sempre com o foco de manter o ambiente simples, seguro, funcional e objetivo.
+## Objetivo
 
-## Introdução
+Esse projeto faz parte do processo seletivo para o cargo de desenvolvedor Front-End no James Tip. O principal objetivo é medir o nivel de conhecimento com tecnologias de desenvolvimento front-end, a capacidade de propor novas ideias e arquiteturas para os serviços da James Tip, sempre com foco de manter o ambiente simples, seguro, funcional, e objetivo.
+
+## Apresentação do problema
+
 Um de nossos projetos internos necessita de uma “cara nova” para que os clientes possam acessar e gerenciar informações necessárias para as operações do dia-a-dia das suas empresas. Para isto, você, no papel de Desenvolvedor Front-End, foi acionado para elaborar um novo Portal para os Clientes do James Tip. Seu objetivo é criar um simples app que deve conter (no mínimo) duas páginas, uma que exibe um formulário para cadastro com os campos abaixo, e outra que liste os dados cadastrados:
-* Código do Produto
-* Categoria do Produto (ex.: Eletrônico)
-* Nome do Produto
-* Nome do Fornecedor
-* Valor do Produto
+
+- Código do Produto
+- Categoria do Produto (ex.: Eletrônico)
+- Nome do Produto
+- Nome do Fornecedor
+- Valor do Produto
 
 Para isto, foram estipuladas algumas necessidades, as quais devem ser atendidas:
-* Projetar interfaces de usuário para alcançar objetivos de diversos usuários finais;
-* Determinar o layout e a apresentação do aplicativo/página;
-* Proporcionar uma experiência de usuário agradável, combinada com alto desempenho, segurança e capacidade de resposta;
-* Garantir a viabilidade técnica de projetos de UI/UX;
-* Otimizar aplicativos para máxima velocidade e escalabilidade;
-* Realizar a engenharia da experiência de design de interação de elementos na interface do usuário;
-* Garantir uma navegação intuitiva e com acessibilidade;
+
+- Projetar interfaces de usuário para alcançar objetivos de diversos usuários finais;
+- Determinar o layout e a apresentação do aplicativo/página;
+- Proporcionar uma experiência de usuário agradável, combinada com alto desempenho, segurança e capacidade de resposta;
+- Garantir a viabilidade técnica de projetos de UI/UX;
+- Otimizar aplicativos para máxima velocidade e escalabilidade;
+- Realizar a engenharia da experiência de design de interação de elementos na interface do usuário;
+- Garantir uma navegação intuitiva e com acessibilidade;
 
 A principal ideia aqui é que você faça por você mesmo (DIY);
 
+## Leyout planejado
 
-## Requisitos técnicos
-Para realização deste desafio, deverão ser observados os seguintes requisitos:
-* A aplicação deverá ser Single Page Application (SPA);
-* O Layout deverá ser TableLess;
-* Implementação de compatibilidade entre navegadores de aplicativos da web;
-* Deve ser possível editar, listar e excluir os dados cadastrados pelo formulário;
-* Utilizar React.js para o desenvolvimento da aplicação;
-* Utilizar TypeScript;
-* Utilizar Context API para o compartilhamento das informações entre as páginas;
-* Fazer a persistência dos dados no localStorage ou IndexedDB;
-* Utilizar styled-components para estilização dos componentes;
-* Utilizar react-router-dom para a navegação entre as páginas;
+Apos dois dias entendendo o desafio e planejando o layout. cheguei nesses resultado.
 
-Você é livre para estruturar o projeto da maneira que achar mais organizada.
+A ideia era aproveitar e criar um layout para dispositivos mobail, mas tive que deixar a ideia de lado para iniciar com os codigos
 
-Você é livre para implementar o código em qualquer padrão que achar mais adequado.
+![prototipo-page-um](https://user-images.githubusercontent.com/72115747/142791056-09dd80f5-df18-410e-b2df-a9597673788b.png)
+![prototipo-page-dois](https://user-images.githubusercontent.com/72115747/142791058-1219b319-8804-4333-a890-fe4b5f001b40.png)
 
-Você pode adicionar funcionalidades ou utilizar outros componentes como desejar, mas não fuja da simplicidade.
 
-## Entregáveis
-Ao final do desafio, você deverá realizar um PULL REQUEST neste repositório, o qual deverá conter o seguinte conteúdo:
-* Todo e qualquer arquivo necessário para que possamos reproduzir a aplicação criada em um servidor web simples;
+## Tecnologias e dificuldades 
 
-Arquivo README.md, contendo:
-* Breve descrição das funcionalidades da aplicação entregue;
-* Ferramentas utilizadas, e o por que estas foram escolhidas para a realização do desafio;
-* Decisões adotadas durante o planejamento e execução do desafio, justificando-as;
+Como eu não tinha muito conhecimento com react-router-dom. perdi um bom tempo tentando fazer a aplicação funcionar. ate que encontrei o erro. eu estava escrevendo o codigo da maneira antiga, mas tinha importado a versão nova. por uma palavra tudo dava errado. No fim consegui aconsertar e usar o react-router-dom
 
-**IMPORTANTE:** Mesmo que você não consiga concluir o desafio por completo, envie o que você conseguiu fazer! Iremos avaliar todo e qualquer desenvolvimento que você nos apresentar! O mais importante deste desafio é, que ao final dele, você adquira novos conhecimentos ou aprimore os que você já possui. ;)
+como o React router tomou boa parte do meu tempo, acabei deixando os stilos um pouco de lado e pegando folhas de estilo na internet.
 
-Após, envie e-mail para *marcio.tavares@jamestip.com*, com cópia para *torres@jamestip.com*, com o assunto "Desafio Front-End", sinalizando a entrega do desafio para avaliação.
+Creio que minha maior dificuldade foi o tempo. mas acredito que consegui aproveitar bastante. 
 
-## O que será avaliado?
-Usabilidade
+## Ferramenta 
 
-Criatividade
+- Para fazer o layout foi usasdo a nova ferramenta favorita dos dsigner e desenvolvedores web, o figma
 
-Boa apresentação (Layout Clean e Profissional)
+- Para edicão de codigo: o já conhecido VS code
 
-Boas práticas da arquitetura da informação
+- Para controle de versão Git bash e cmd
 
-Código limpo e organização
+- Sistema operacional: o bom windows 10 
 
-Documentação de código (*Tip:* Podem ser “comentários” no código)
+## Funcionalidades 
 
-Capacidade de tomada de decisões técnicas
- 
-# *Desafio Bônus*
-*Implementar testes utilizando jest/testing-library ou outra biblioteca para testes unitários*
+O objetivo era entregar o pedido e mais um pouco. mas o que eu consegui fazer foi: 
+
+- Adicionar algumas telas: 
+- - corrigir 
+- - cadastrar 
+- - cancelar 
+- - novo produto
+
+infelizmete não consegui dar muitas funciionalidades para elas
+
+
 
