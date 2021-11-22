@@ -10,7 +10,7 @@ Controle de Produtos é uma aplicação, onde você consegue adicionar, remover 
 - Adicionar um novo produto ao estoque;
 - Remover um produto do estoque;
 - Editar um produto existente;
-- Tornar um porduto indisponível;
+- Tornar um produto indisponível;
 - Validação se já existe algum produto com o mesmo código no estoque;	
 - Exibição de mensagens de erro;
 - Entre outros.
