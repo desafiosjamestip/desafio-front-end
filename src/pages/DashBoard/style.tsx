@@ -79,6 +79,7 @@ export const LinkAdd = styled(Link)`
 
 export const Wrapper = styled.div`
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+    margin-top: 40px;
 `
 

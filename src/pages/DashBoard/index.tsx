@@ -1,11 +1,20 @@
-import { HeaderStyle, ImageStyle, MainStyle, Wrapper, Search, InputStyle, ButtonSearch, LinkAdd, DivAdd} from './style'
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
+import { HeaderStyle, ImageStyle, MainStyle, Wrapper, Search, InputStyle, ButtonSearch, LinkAdd, DivAdd} from './style';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import SearchIcon from '@mui/icons-material/Search';
+import {useProducts} from "../../Providers/Products/context"
+import Card from '../../Components/Card'
 
+interface ProductsItems {
+    id: string;
+    categorie: string;
+    product_name: string;
+    supplier: string;
+    price: string;
+}
 
 function DashBoard(){
+    const { listProducts } = useProducts();
+
     return (
       <>
           <HeaderStyle>
@@ -21,96 +30,7 @@ function DashBoard(){
                        <LinkAdd to="/register-products"> Adicionar Produto <AddCircleIcon/> </LinkAdd>
                    </DivAdd>
                    <Wrapper>
-                        <div>
-                            <p>cod. Id</p>
-                            <p>Catagoria</p>
-                            <p>Descrição</p>
-                            <p>Fornecedor</p>
-                            <p>Preço</p>
-                            <button> <DeleteIcon/> </button>
-                            <button> <EditIcon/></button>
-                        </div>
-                        <div>
-                            <p>Id</p>
-                            <p>Catagoria</p>
-                            <p>Descrição</p>
-                            <p>Fornecedor</p>
-                            <p>Preço</p>
-                            <button>Remover Produto</button>
-                            <button>Editar Produto</button>
-                        </div>
-                        <div>
-                            <p>Id</p>
-                            <p>Catagoria</p>
-                            <p>Descrição</p>
-                            <p>Fornecedor</p>
-                            <p>Preço</p>
-                            <button>Remover Produto</button>
-                            <button>Editar Produto</button>
-                        </div>
-                        <div>
-                            <p>Id</p>
-                            <p>Catagoria</p>
-                            <p>Descrição</p>
-                            <p>Fornecedor</p>
-                            <p>Preço</p>
-                            <button>Remover Produto</button>
-                            <button>Editar Produto</button>
-                        </div>
-                        <div>
-                            <p>Id</p>
-                            <p>Catagoria</p>
-                            <p>Descrição</p>
-                            <p>Fornecedor</p>
-                            <p>Preço</p>
-                            <button>Remover Produto</button>
-                            <button>Editar Produto</button>
-                        </div>
-                        <div>
-                            <p>Id</p>
-                            <p>Catagoria</p>
-                            <p>Descrição</p>
-                            <p>Fornecedor</p>
-                            <p>Preço</p>
-                            <button>Remover Produto</button>
-                            <button>Editar Produto</button>
-                        </div>
-                        <div>
-                            <p>Id</p>
-                            <p>Catagoria</p>
-                            <p>Descrição</p>
-                            <p>Fornecedor</p>
-                            <p>Preço</p>
-                            <button>Remover Produto</button>
-                            <button>Editar Produto</button>
-                        </div>
-                        <div>
-                            <p>Id</p>
-                            <p>Catagoria</p>
-                            <p>Descrição</p>
-                            <p>Fornecedor</p>
-                            <p>Preço</p>
-                            <button>Remover Produto</button>
-                            <button>Editar Produto</button>
-                        </div>
-                        <div>
-                            <p>Id</p>
-                            <p>Catagoria</p>
-                            <p>Descrição</p>
-                            <p>Fornecedor</p>
-                            <p>Preço</p>
-                            <button>Remover Produto</button>
-                            <button>Editar Produto</button>
-                        </div>
-                        <div>
-                            <p>Id</p>
-                            <p>Catagoria</p>
-                            <p>Descrição</p>
-                            <p>Fornecedor</p>
-                            <p>Preço</p>
-                            <button>Remover Produto</button>
-                            <button>Editar Produto</button>
-                        </div>
+                       {listProducts && listProducts.map((product: ProductsItems) => <Card key={product.id} product={product}></Card>)}
                    </Wrapper>
                </section>
           </MainStyle>
