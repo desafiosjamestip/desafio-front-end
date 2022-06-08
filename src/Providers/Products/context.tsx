@@ -19,6 +19,7 @@ interface ProductsProviderData{
     setNewProduct: React.Dispatch<React.SetStateAction<ProductsItems>>
     createNewProduct: (newProducts: ProductsItems) => void;
     removeProduct: (id: string) => void;
+    editProduct: (product: ProductsItems, id: string) => void;
 }
 
 const ProductsContext = createContext<ProductsProviderData>({} as ProductsProviderData);
@@ -37,13 +38,14 @@ export const ProductsProvider = ({children}: ProductsProviderProps) => {
         setListProducts(newListProducts)
     }
 
-    const editProduct = (id: string) => {
-        const product = listProducts.find(prod => prod.id === id );
-        
+    const editProduct = (product: ProductsItems, id: string) => {
+        const newListProducts = listProducts.filter(prod => prod.id !== id)
+                
+        setListProducts([...newListProducts, product])
     }
     
     return (
-        <ProductsContext.Provider value={{listProducts, newProduct, setNewProduct, createNewProduct, removeProduct}}>
+        <ProductsContext.Provider value={{listProducts, newProduct, setNewProduct, createNewProduct, removeProduct, editProduct}}>
             {children}
         </ProductsContext.Provider>
     )
