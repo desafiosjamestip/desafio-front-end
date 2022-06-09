@@ -2,7 +2,7 @@ import { useState } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { Modal } from '@mui/material';
-import { CardStyle, DivCategorie, Id, Categorie, DivButton} from './style';
+import { CardStyle, DivCategorie, Id, Categorie, DivButton, Button} from './style';
 import {useProducts} from '../../Providers/Products/context';
 import ModalEdit from '../ModalEdit';
 
@@ -35,8 +35,8 @@ function Card({product}: Product){
             <p>{product_name}</p>
             <p>Preço: {Number(price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
             <DivButton>
-                <button onClick={() => removeProduct(id)}> <DeleteIcon/> </button>
-                <button onClick={() => setOpen(true)}> <EditIcon/> </button>   
+                <Button onClick={() => removeProduct(id)}> <DeleteIcon/> </Button>
+                <Button edit onClick={() => setOpen(true)}> <EditIcon/> </Button>   
             </DivButton>
             <Modal open={open} onClose={() => setOpen(false)}>
                 <ModalEdit product={product}/>

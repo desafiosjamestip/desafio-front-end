@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+interface Props{
+    edit?: boolean;
+}
+
+
 export const CardStyle = styled.div`
     background-color: #fff;
     border-radius: 16px;
@@ -31,4 +36,10 @@ export const DivButton = styled.div`
     display: flex;
     gap: 30px;
     justify-content: center;
+`
+
+export const Button = styled.button<Props>`
+    color: ${props => props.edit ? 'green' : 'red'};
+    border: none;
+    background-color: transparent;
 `

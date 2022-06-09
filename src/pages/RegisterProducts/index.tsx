@@ -3,6 +3,7 @@ import {useForm} from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useProducts } from '../../Providers/Products/context';
 import { FormStyle, ReturnLink, InputStyle, ButtonStyle, ArrowBackStyle } from "./style";
+import {toast} from 'react-toastify';
 
 interface ProductsItems {
     id: string;
@@ -29,6 +30,16 @@ function RegisterProducts(){
 
     const createProduct = (data: ProductsItems) => {
         createNewProduct(data)
+        toast.success("Produto cadastrado com sucesso!", {
+            style: {
+              backgroundColor: "#343B41",
+              color: "white",
+              fontSize: "14px",
+              fontWeight: "bold",
+            },
+          });
+        const form: any = document.querySelector('form');
+        form.reset();
     }
     
     return (
