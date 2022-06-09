@@ -1,20 +1,11 @@
-import LogoWhite from "../../assets/img/logo-white.svg";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Input from "../../components/Input";
-import {
-  Container,
-  ContainerForm,
-  ContainerInput,
-  Form,
-  Header,
-} from "./style";
+import { Container, ContainerForm, ContainerInput, Form } from "./style";
 import { useHistory } from "react-router-dom";
 import { useProduct } from "../../context/Products";
-// import { toast } from "react-toastify";
-// import { mask, unMask } from "remask";
-// import { useState } from "react";
+import Header from "../../components/Header";
 
 const Register = () => {
   const { addProduct } = useProduct();
@@ -52,26 +43,13 @@ const Register = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onHandleSubmit = (data: any) => {
-    // const database = JSON.parse(localStorage.getItem("productList") || "[]");
-    // const checkDatabase = database.find((item: any) => item.code === data.code);
-    // if (checkDatabase) {
-    //   toast.error("Produto já cadastrado");
-    // } else {
-    //   toast.success("Produto cadastrado!");
-    // }
     addProduct(data);
   };
 
   return (
     <Container>
-      <Header>
-        <img
-          src={LogoWhite}
-          alt="Uma logotipo da empresa Jamestip na cor branca com a escrita tip em verde"
-        />
-      </Header>
+      <Header />
 
-      <h1>Cadastro de produtos</h1>
       <ContainerForm>
         <Form onSubmit={handleSubmit(onHandleSubmit)}>
           <ContainerInput>
@@ -129,10 +107,7 @@ const Register = () => {
               name="value"
               register={register}
               label="Valor do produto"
-              // value={value}
-              // onChange={moneyMask}
             />
-            {/* <div>Valor: {value}</div> */}
             {errors && <span className="error">{errors.value?.message}</span>}
           </ContainerInput>
 

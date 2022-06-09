@@ -1,5 +1,6 @@
 import {
   ModalBody,
+  ModalFooter,
   ModalHeader,
   ModalInfoItem,
   ModalScreen,
@@ -39,6 +40,10 @@ const ModalInfo = ({ showModal, setShowModal, info }: IModalInterface) => {
                 <span>R$ {info?.value}</span>
               </ModalInfoItem>
             </ModalBody>
+            <ModalFooter>
+              <button className="update">Atualizar</button>
+              <button className="delete">Apagar</button>
+            </ModalFooter>
           </ModalWrapper>
         </ModalScreen>
       )}

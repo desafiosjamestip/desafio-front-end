@@ -11,7 +11,9 @@ export default createGlobalStyle`
 
     
     body {
-        background-color: var(--dark-blue);
+        /* background: rgb(0,66,101);
+        background: radial-gradient(circle, rgba(0,66,101,1) 0%, rgba(0,38,58,1) 100%); */
+        background-color: var(--background);
         font-family: 'Poppins', sans-serif;
     }
 
@@ -33,6 +35,7 @@ export default createGlobalStyle`
 
     :root {
         /* main color */
+        --background: #161616;
         --warning: #df1545;
         --dark-blue: #00263a;
         --green: #00cfb4;
@@ -61,4 +64,40 @@ export default createGlobalStyle`
         --gray-5: #121214;
 
     }
+
+
+    ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    }
+    ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+    }
+    ::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+    }
+    ::-webkit-scrollbar-thumb:active {
+    background: #949494;
+    }
+    ::-webkit-scrollbar-track {
+    background: #161616;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+    }
+    ::-webkit-scrollbar-track:hover {
+    background: #666666;
+    }
+    ::-webkit-scrollbar-track:active {
+    background: #333333;
+    }
+    ::-webkit-scrollbar-corner {
+    background: transparent;
+    }
+
 `;

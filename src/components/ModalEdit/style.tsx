@@ -19,7 +19,7 @@ export const ModalScreen = styled.div`
 export const ModalWrapper = styled.div`
   width: 100%;
   max-width: 500px;
-  height: 500px;
+  height: 530px;
   background-color: var(--white);
   color: var(--black);
   position: relative;
@@ -38,10 +38,9 @@ export const ModalHeader = styled.header`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-size: 19px;
-  color: var(--white);
 
   svg {
+    color: white;
     width: 25px;
     height: 25px;
     background-color: var(--warning);
@@ -57,6 +56,13 @@ export const ModalBody = styled.form`
 
   input:disabled {
     background-color: #dfdfdf;
+    color: #c5c5c5;
+  }
+
+  label {
+    color: var(--green);
+    font-weight: 600;
+    font-size: 22px;
   }
 
   input {
@@ -66,15 +72,31 @@ export const ModalBody = styled.form`
     font-size: 15px;
     font-weight: 500;
     background-color: #efefef;
+
+    ::placeholder {
+      color: var(--black);
+      font-weight: 600;
+    }
   }
 
-  button {
-    width: 300px;
-    height: 55px;
-    margin: 20px auto;
-    border-radius: 8px;
-    background-color: var(--green-3);
-    color: var(--white);
-    font-size: 20px;
+  .update {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+
+    button {
+      background-color: var(--green);
+      width: 100%;
+      height: 50px;
+      border-radius: 24px;
+      font-size: 25px;
+      font-weight: 600;
+      transition: 0.2s;
+
+      :hover {
+        background-color: var(--green-3);
+      }
+    }
   }
 `;

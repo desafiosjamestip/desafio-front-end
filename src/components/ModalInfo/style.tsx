@@ -19,14 +19,14 @@ export const ModalScreen = styled.div`
 export const ModalWrapper = styled.div`
   width: 100%;
   max-width: 500px;
-  height: 450px;
+  height: 500px;
   background-color: var(--white);
   color: var(--black);
   position: relative;
   bottom: 0;
   z-index: 10;
   border-radius: 10px 10px 0 0;
-  padding: 5px 10px;
+  padding: 5px 15px;
 
   @media (min-width: 500px) {
     border-radius: 10px;
@@ -35,7 +35,7 @@ export const ModalWrapper = styled.div`
 
 export const ModalHeader = styled.header`
   width: 100%;
-  height: 30px;
+  height: 20px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -45,8 +45,15 @@ export const ModalHeader = styled.header`
   svg {
     width: 22px;
     height: 22px;
-    background-color: var(--warning);
+    margin-top: 15px;
+    background-color: red;
     border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    :hover {
+      background-color: firebrick;
+    }
   }
 `;
 
@@ -63,10 +70,11 @@ export const ModalInfoItem = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  margin: 10px 0;
+  margin: 0 0 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
   p {
-    color: var(--green-dark);
+    color: var(--green);
     font-weight: 600;
     font-size: 25px;
   }
@@ -74,5 +82,41 @@ export const ModalInfoItem = styled.div`
   span {
     font-weight: 600;
     font-size: 19px;
+  }
+`;
+
+export const ModalFooter = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+
+  .update {
+    background-color: var(--green);
+    width: 45%;
+    height: 50px;
+    border-radius: 24px;
+    font-size: 25px;
+    font-weight: 600;
+    transition: 0.2s;
+
+    :hover {
+      background-color: var(--green-3);
+    }
+  }
+
+  .delete {
+    background-color: var(--background);
+    color: var(--green);
+    width: 45%;
+    height: 50px;
+    border-radius: 24px;
+    font-size: 25px;
+    font-weight: 600;
+    transition: 0.2s;
+
+    :hover {
+      background-color: var(--black);
+    }
   }
 `;

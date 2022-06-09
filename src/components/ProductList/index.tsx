@@ -2,11 +2,18 @@ import { useProduct } from "../../context/Products";
 import { IProductList } from "../../interfaces/providersInterface";
 import { Container, ContainerCard, ContainerItem } from "./style";
 import { useState } from "react";
-import { FaTrash, FaPencilAlt, FaSearchPlus } from "react-icons/fa";
+import {
+  FaTrash,
+  FaPencilAlt,
+  FaSearchPlus,
+  FaChevronLeft,
+} from "react-icons/fa";
 import ModalDelete from "../ModalDelete";
 import ModalEdit from "../ModalEdit";
 import ModalInfo from "../ModalInfo";
 import { useHistory } from "react-router-dom";
+import Header from "../Header";
+import NotFound from "../../assets/img/not-found.svg";
 
 const ProductList = () => {
   const [showModalUpdate, setShowModalUpdate] = useState(false);
@@ -31,35 +38,56 @@ const ProductList = () => {
 
   return (
     <>
+      <Header />
+
       <Container>
-        <header>
-          <button onClick={() => history.push("/")}>Cadastrar</button>
-        </header>
-        <ContainerItem>
-          {products.map((item: IProductList) => {
-            return (
-              <ContainerCard>
-                <div className="item">
-                  <span>{item.code}</span>
-                  <span>{item.productName}</span>
-                </div>
-                <div className="options">
-                  <FaSearchPlus
-                    className="info"
-                    onClick={() => openModalInfo(item)}
-                  />
-                  <FaTrash
-                    className="trash"
-                    onClick={() => openModalDelete(item)}
-                  />
-                  <FaPencilAlt
-                    className="update"
-                    onClick={() => openModalUpdate(item)}
-                  />
-                </div>
-              </ContainerCard>
-            );
-          })}
+        <div className="container-backBtn">
+          <FaChevronLeft
+            onClick={() => history.push("/register")}
+            className="backBtn"
+          />
+        </div>
+        <ContainerItem
+          style={
+            products.length > 10 ? { overflow: "auto" } : { overflow: "hidden" }
+          }
+        >
+          {products.length > 0 ? (
+            products.map((item: IProductList) => {
+              return (
+                <ContainerCard>
+                  <div className="item">
+                    <span>{item.code}</span>
+                    <span className="productName">{item.productName}</span>
+                  </div>
+                  <div className="options">
+                    <div className="box-item">
+                      <FaSearchPlus
+                        className="info"
+                        onClick={() => openModalInfo(item)}
+                      />
+                    </div>
+                    <FaTrash
+                      className="trash"
+                      onClick={() => openModalDelete(item)}
+                    />
+                    <FaPencilAlt
+                      className="update"
+                      onClick={() => openModalUpdate(item)}
+                    />
+                  </div>
+                </ContainerCard>
+              );
+            })
+          ) : (
+            <div className="not-found">
+              <img src={NotFound} alt="" />
+              <p>Nenhum produto cadastrado!</p>
+              <button onClick={() => history.push("/register")}>
+                Cadastrar produto
+              </button>
+            </div>
+          )}
         </ContainerItem>
       </Container>
       <ModalDelete

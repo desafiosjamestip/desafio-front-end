@@ -2,11 +2,8 @@ import { ModalBody, ModalHeader, ModalScreen, ModalWrapper } from "./style";
 import { FaTimes } from "react-icons/fa";
 import { useProduct } from "../../context/Products";
 import Input from "../Input";
-import * as yup from "yup";
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
 import { IModalInterface } from "../../interfaces/modalInterfaces";
-import { IProductList } from "../../interfaces/providersInterface";
 
 const ModalEdit = ({ showModal, setShowModal, edit }: IModalInterface) => {
   const { updateProduct } = useProduct();
@@ -79,7 +76,11 @@ const ModalEdit = ({ showModal, setShowModal, edit }: IModalInterface) => {
                 label="Valor"
                 // {...register("value")}
               />
-              <button type="submit">Atualizar</button>
+              <div className="update">
+                <button type="submit" onClick={() => setShowModal(false)}>
+                  Atualizar
+                </button>
+              </div>
             </ModalBody>
           </ModalWrapper>
         </ModalScreen>
