@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+<h1 align="center">EM CONSTRUÇÃO 🧱🚧</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-executando-o-projeto">Executando o projeto</a>&nbsp;&nbsp;&nbsp;
+</p>
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+<p align="center">
+  <a href="#" target="_blank">Clique aqui</a> para acessar a versão web (indisponível 🧱🚧)
+</p>
 
-### `yarn start`
+## 🖥️ Projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Se trata de um projeto proposto pela James tip, no qual fui orientado a construir uma nova plataforma para os clientes cadastrarem produtos em um banco de dados e também uma página para visualização, edição e deleção dos produtos cadastrados.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📲 Tecnologias
 
-### `yarn test`
+Esse projeto foi desenvolvido com as seguintes tecnologias/bibliotecas:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<table border="0">
+ <tr>
+<td> Typescript</td>
+<td> React.JS</td>
+<td> Styled Components</td>
+<td> contextAPI</td>
+ </tr>
+ <tr>
+<td> React Toastify</td>
+<td> React Router Dom</td>
+<td> Framer-motion</td>
 
-### `yarn build`
+ </tr>
+</table>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🌟 Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-   [ ] Adicionar, remover e excluir produtos;
+-   [ ] Responsividade;
+-   [ ] Atualização em tempo real da lista de produtos;
+-   [ ] Dados dos produtos persistindo em localStorage;
+-   [ ] Entre outras -> ainda incompleto 🧱🚧
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 👨🏻‍💻 Executando o projeto
 
-### `yarn eject`
+- 1º - clone o repositório para seu computador;
+- 2º - no local clonado, abra o terminal e execute o **yarn** ou o **npm install** para instalar as dependências do projeto;
+- 3º - abra o projeto com o comando **code . **.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Para acessar a versão web:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```cl
+yarn start ou npm run dev
+```
