@@ -1,76 +1,33 @@
-# Desafio Front-End
+## Como funciona a aplicação:
+- A aplicação inicia na HomePage, onde você tem a opção de ir para a página de Login ou retornar para a Página Inicial da Jamestip.
 
-## O que é?
-Este desafio faz parte do processo seletivo para o cargo de Desenvolvedor Front-End no James Tip. Este tem por objetivo medir seu nível de conhecimento com tecnologias de desenvolvimento front-end, e suas capacidades de propor novas ideias e arquiteturas para nossos serviços, sempre com o foco de manter o ambiente simples, seguro, funcional e objetivo.
+- Na página de login simulei um login de usuário sem o uso de api, utilizando somente o yup.
+    ### Usuários:
+    - Email: teste@gmail.com
+    - Senha: 123456
+    
 
-## Introdução
-Um de nossos projetos internos necessita de uma “cara nova” para que os clientes possam acessar e gerenciar informações necessárias para as operações do dia-a-dia das suas empresas. Para isto, você, no papel de Desenvolvedor Front-End, foi acionado para elaborar um novo Portal para os Clientes do James Tip. Seu objetivo é criar um simples app que deve conter (no mínimo) duas páginas, uma que exibe um formulário para cadastro com os campos abaixo, e outra que liste os dados cadastrados:
-* Código do Produto
-* Categoria do Produto (ex.: Eletrônico)
-* Nome do Produto
-* Nome do Fornecedor
-* Valor do Produto
+- Após eftuar o Login o usuário é redirecionado para a página de Dashboard onde ele encontra seus produtos cadastrados e tem o botão que redireciona para a página de cadastro de produtos.
 
-Para isto, foram estipuladas algumas necessidades, as quais devem ser atendidas:
-* Projetar interfaces de usuário para alcançar objetivos de diversos usuários finais;
-* Determinar o layout e a apresentação do aplicativo/página;
-* Proporcionar uma experiência de usuário agradável, combinada com alto desempenho, segurança e capacidade de resposta;
-* Garantir a viabilidade técnica de projetos de UI/UX;
-* Otimizar aplicativos para máxima velocidade e escalabilidade;
-* Realizar a engenharia da experiência de design de interação de elementos na interface do usuário;
-* Garantir uma navegação intuitiva e com acessibilidade;
+- Na página de cadastrar produtos você pode inserir todas as informações para realizar o cadastro, uma notificação é mostrada caso o cadastro tenha sido realizado e esse produto é passado para o local storage.
 
-A principal ideia aqui é que você faça por você mesmo (DIY);
+- Com produtos cadastrados, você consegue visualizá-los no DashBoard e deletar ou editá-los pelos dois botões que estão em cada Card de produto.
 
+- Além disso simulei um token para o login, sempre que você tenta acessar a página de login e esse token existe, você já é redirecionado para o DashBoard;
 
-## Requisitos técnicos
-Para realização deste desafio, deverão ser observados os seguintes requisitos:
-* A aplicação deverá ser Single Page Application (SPA);
-* O Layout deverá ser TableLess;
-* Implementação de compatibilidade entre navegadores de aplicativos da web;
-* Deve ser possível editar, listar e excluir os dados cadastrados pelo formulário;
-* Utilizar React.js para o desenvolvimento da aplicação;
-* Utilizar TypeScript;
-* Utilizar Context API para o compartilhamento das informações entre as páginas;
-* Fazer a persistência dos dados no localStorage ou IndexedDB;
-* Utilizar styled-components para estilização dos componentes;
-* Utilizar react-router-dom para a navegação entre as páginas;
-* (Opcional) Implementar testes utilizando jest/testing-library ou outra biblioteca para testes unitários;
+## Tecnologias Utilizadas:
+  
+- React.js.
+- react-router-dom@6 para fazer as rotas da minha aplicação.
+- styled-components para estilização de todas as páginas e componentes da aplicação.
+- hookform, yup e yup resolver para fazer a validação de campos dos formulários de login e cadastro de produtos
+- toastify para notificar o usuário se o login foi realizado ou se o produto foi cadastrado corretamente.
+- Material-Ui para facilitar a utilização de ícones e do modal de edição de produto    
 
-Você é livre para estruturar o projeto da maneira que achar mais organizada.
+## Decisões adotadas:
 
-Você é livre para implementar o código em qualquer padrão que achar mais adequado.
-
-Você pode adicionar funcionalidades ou utilizar outros componentes como desejar, mas não fuja da simplicidade.
-
-## Entregáveis
-Ao final do desafio, você deverá realizar um PULL REQUEST neste repositório, o qual deverá conter o seguinte conteúdo:
-* Todo e qualquer arquivo necessário para que possamos reproduzir a aplicação criada em um servidor web simples;
-
-Arquivo README.md, contendo:
-* Breve descrição das funcionalidades da aplicação entregue;
-* Ferramentas utilizadas, e o por que estas foram escolhidas para a realização do desafio;
-* Decisões adotadas durante o planejamento e execução do desafio, justificando-as;
-
-**IMPORTANTE:** Mesmo que você não consiga concluir o desafio por completo, envie o que você conseguiu fazer! Iremos avaliar todo e qualquer desenvolvimento que você nos apresentar! O mais importante deste desafio é, que ao final dele, você adquira novos conhecimentos ou aprimore os que você já possui. ;)
-
-Após, envie e-mail para *marcio.tavares@jamestip.com*, com cópia para *torres@jamestip.com*, com o assunto "Desafio Front-End", sinalizando a entrega do desafio para avaliação.
-
-## O que será avaliado?
-Usabilidade
-
-Criatividade
-
-Boa apresentação (Layout Clean e Profissional)
-
-Boas práticas da arquitetura da informação
-
-Código limpo e organização
-
-Documentação de código (*Tip:* Podem ser “comentários” no código)
-
-Capacidade de tomada de decisões técnicas
- 
-# *Desafio Bônus*
-*Implementar o mesmo portal em arquitetura micro-frontend utilizando single-spa*
-
+- No início decidi criar uma página de login, pensando que faz mais sentido para o usuário final. 
+- Depois disso fiz a criação de todas as pastas e arquivos que achei que seriam necessárias para a aplicação.
+- Com isso feito implementei o Provider com Context Api que iria precisar para armazenar os produtos.
+- Após isso começei a fazer as páginas Home, Login, DashBoard e RegisterProducts. Fiz a estilização e as funcionalidades juntas.
+-Por fim fiz alguns teste como Usuário e corrigi alguns bugs.
