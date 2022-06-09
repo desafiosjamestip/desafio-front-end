@@ -1,10 +1,4 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
-
-const ProductContext = createContext({} as any);
-
-type ProductProvider = {
-  children: ReactNode;
-};
+import React, { createContext, ReactNode, useEffect, useState } from "react";
 
 interface ProductInterface {
   id: string;
@@ -13,6 +7,22 @@ interface ProductInterface {
   category: string;
   value: string;
 }
+
+interface ProductInterfaceContext {
+  products: ProductInterface[];
+  setProducts: React.Dispatch<React.SetStateAction<ProductInterface[]>>;
+  selectedProduct: ProductInterface;
+  setSelectedProduct: React.Dispatch<React.SetStateAction<ProductInterface>>;
+  addItem: (data: ProductInterface) => void;
+  updateItem: (data: ProductInterface) => void;
+  removeItem: (data: ProductInterface) => void;
+}
+
+type ProductProvider = {
+  children: ReactNode;
+};
+
+const ProductContext = createContext({} as ProductInterfaceContext);
 
 const ProductProvider = (props: ProductProvider) => {
   const [products, setProducts] = useState<ProductInterface[]>(
@@ -68,7 +78,7 @@ const ProductProvider = (props: ProductProvider) => {
 
   return (
     <ProductContext.Provider
-      value={{
+        value={{
         products,
         setProducts,
         selectedProduct,

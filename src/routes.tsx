@@ -11,7 +11,7 @@ function Routes() {
         <Switch>
           <Route path="/" element={<Home />} />
           <Route path="/prod/create" element={<Form />} />
-          <Route path="/prod/edit/:id" element={<Form />} />
+          <Route path="/prod/edit" element={<Form />} />
           <Route path="*" element={<NotFound />} />
         </Switch>
       </BrowserRouter>
