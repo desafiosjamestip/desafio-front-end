@@ -9,7 +9,7 @@ const Base = createGlobalStyle`
     }
 
 	button {
-	cursor: pointer;
+		cursor: pointer;
 	 }
 `;
 
