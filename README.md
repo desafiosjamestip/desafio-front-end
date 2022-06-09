@@ -41,6 +41,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias/bibliotecas:
 -   [ ] Responsividade;
 -   [ ] Atualização em tempo real da lista de produtos;
 -   [ ] Dados dos produtos persistindo em localStorage;
+-   [ ] Renderização condicional das listas, para caso não houver nenhum item, será mostrado uma mensagem personalizada;
 -   [ ] Entre outras -> ainda incompleto 🧱🚧
 
 ## 👨🏻‍💻 Executando o projeto
