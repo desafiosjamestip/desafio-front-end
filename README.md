@@ -14,7 +14,7 @@
 
 ## 🖥️ Projeto
 
-Se trata de um projeto proposto pela James tip, no qual fui orientado a construir uma nova plataforma para os clientes cadastrarem produtos em um banco de dados e também uma página para visualização, edição e deleção dos produtos cadastrados.
+Se trata de um --projeto/teste técnico-- proposto pela James tip, no qual fui orientado a construir uma nova plataforma para os clientes cadastrarem produtos em um banco de dados e também uma página para visualização, edição e deleção dos produtos cadastrados.
 
 ## 📲 Tecnologias
 
@@ -38,7 +38,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias/bibliotecas:
 ## 🌟 Features
 
 -   [ ] Adicionar, remover e excluir produtos;
--   [ ] Responsividade;
+-   [ ] Responsividade - projeto realizado utilizando o conceito de mobile-first;
 -   [ ] Atualização em tempo real da lista de produtos;
 -   [ ] Dados dos produtos persistindo em localStorage;
 -   [ ] Renderização condicional das listas, para caso não houver nenhum item, será mostrado uma mensagem personalizada;
