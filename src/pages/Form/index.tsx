@@ -1,7 +1,15 @@
-import React from 'react';
+import React from 'react'
+import FormStructure from '@/features/Form/components/FormStructure'
+import { FormPageContainer } from './styled'
 
 const FormPage: React.FC = () => {
-  return <h1> Form Page</h1>;
-};
+    return (
+        <>
+            <FormPageContainer>
+                <FormStructure />
+            </FormPageContainer>
+        </>
+    )
+}
 
-export default FormPage;
+export default FormPage

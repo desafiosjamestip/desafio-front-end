@@ -7,11 +7,15 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    body,
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+
     input,
     button,
     textarea {
-        font: 16px
+        font: 16px;
     }
 `
 
