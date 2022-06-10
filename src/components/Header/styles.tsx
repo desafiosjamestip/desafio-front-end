@@ -37,6 +37,21 @@ const Container = styled.div<ContainerProps>`
     height: 2.4rem;
     background: transparent;
   }
+  
+
+  @media(max-width: 650px) {
+    & div{
+      display:none;
+    }
+  }
+
+  
+  @media(max-width: 450px) {   
+    flex-direction: column;
+    justify-content: center;
+    gap:1.4rem
+  }
+
 `;
 const MainContainer = styled.div`
   display: flex;
@@ -63,6 +78,11 @@ const Main = styled.div<MainProps>`
   overflow-x: auto;
   background-color: #F7F7F7;
   border-radius: 0.8rem;
+
+  @media(max-width: 450px) {   
+    
+  margin-top: -6rem;
+  }
 `;
 
 const Image = styled.img`
@@ -74,6 +94,7 @@ const Paragraph = styled.p`
   text-align: center;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
+  margin:2rem;
 `;
 
 export default { Header, Container, MainContainer, Main, Image, Paragraph };
