@@ -1,4 +1,5 @@
-import { useState, useId, FormEvent, useEffect } from "react";
+import { nanoid } from "nanoid";
+import { FormEvent, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import Header from "../../components/Header";
@@ -8,7 +9,7 @@ import { moneyMask } from "../../utils/masks";
 import Styled from "./styles";
 
 export default function Form() {
-  const id = useId();
+  const id = nanoid(6);
   const { addItem, selectedProduct, updateItem } = useProducts();
 
   const navigate = useNavigate();
