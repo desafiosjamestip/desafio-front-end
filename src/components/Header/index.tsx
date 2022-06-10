@@ -1,7 +1,10 @@
 import LogoWhite from "../../assets/img/logo-white.svg";
 import { Container } from "./style";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
+  const location = useLocation();
+
   return (
     <Container>
       <img
@@ -9,7 +12,11 @@ const Header = () => {
         alt="Uma logotipo da empresa Jamestip na cor branca com a escrita tip em verde"
       />
       <div className="title">
-        <h1>Cadastro de produtos</h1>
+        {location.pathname === "/register" ? (
+          <h1>Cadastro de produtos</h1>
+        ) : (
+          <h1>Listagem de produtos</h1>
+        )}
       </div>
     </Container>
   );

@@ -11,8 +11,6 @@ export default createGlobalStyle`
 
     
     body {
-        /* background: rgb(0,66,101);
-        background: radial-gradient(circle, rgba(0,66,101,1) 0%, rgba(0,38,58,1) 100%); */
         background-color: var(--background);
         font-family: 'Poppins', sans-serif;
     }
@@ -34,6 +32,7 @@ export default createGlobalStyle`
     }
 
     :root {
+        
         /* main color */
         --background: #161616;
         --warning: #df1545;
@@ -45,23 +44,23 @@ export default createGlobalStyle`
         --green-light: #e4fffb;
         --green-light-2: #d7f7f4;
         --green-light-3: #A1DBD6;
-        --gray-dark: #737373;
-        --gray-dark-2: #8B8B8C;
-        --gray-light: #C8C8C8;
-        --gray-light-2: #e3e3e3;
-        --gray-light-3: #C7C7C7;
-        --gray-light-4: #b4b4b4;
         --blue-light: #f3f4fb;
         --red-2: #ea5757;
         --green-2: #36b35b;
         --black: #3C3C3B;
-
+        
         /* grey scale */
         --gray-1: #f8f9fa;
         --gray-2: #868e96;
         --gray-3: #343b41;
         --gray-4: #212529;
         --gray-5: #121214;
+        --gray-dark: #737373;
+        --gray-dark-2: #8B8B8C;
+        --gray-light: #C8C8C8;
+        --gray-light-2: #e3e3e3;
+        --gray-light-3: #C7C7C7;
+        --gray-light-4: #b4b4b4;
 
     }
 

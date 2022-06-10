@@ -19,8 +19,6 @@ export const Container = styled.header`
 
   .title {
     width: 100%;
-    /* flex-grow: 1; */
-    /* margin-left: 20px; */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
@@ -28,8 +26,6 @@ export const Container = styled.header`
     font-size: 20px;
     text-align: center;
     color: var(--green);
-    /* border-width: 100%; */
-    /* line-height: 60px; */
     @media (min-width: 516px) {
       text-align: end;
     }

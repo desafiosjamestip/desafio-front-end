@@ -1,3 +1,10 @@
+import ModalDelete from "../ModalDelete";
+import ModalEdit from "../ModalEdit";
+
+import { useState } from "react";
+
+import { IModalInterface } from "../../interfaces/modalInterfaces";
+
 import {
   ModalBody,
   ModalFooter,
@@ -7,9 +14,26 @@ import {
   ModalWrapper,
 } from "./style";
 import { FaTimes } from "react-icons/fa";
-import { IModalInterface } from "../../interfaces/modalInterfaces";
 
-const ModalInfo = ({ showModal, setShowModal, info }: IModalInterface) => {
+const ModalInfo = ({
+  showModal,
+  setShowModal,
+  info,
+  setIsDeleted,
+}: IModalInterface) => {
+  const [showModalUpdate, setShowModalUpdate] = useState(false);
+  const [showModalDelete, setShowModalDelete] = useState(false);
+  const [valueToEdit, setValueToEdit] = useState<any>();
+
+  const openModalDelete = (value: any) => {
+    setShowModalDelete((prev) => !prev);
+    setValueToEdit(value);
+  };
+  const openModalUpdate = (value: any) => {
+    setShowModalUpdate((prev) => !prev);
+    setValueToEdit(value);
+  };
+
   return (
     <>
       {showModal && (
@@ -41,12 +65,27 @@ const ModalInfo = ({ showModal, setShowModal, info }: IModalInterface) => {
               </ModalInfoItem>
             </ModalBody>
             <ModalFooter>
-              <button className="update">Atualizar</button>
-              <button className="delete">Apagar</button>
+              <button className="update" onClick={() => openModalUpdate(info)}>
+                Atualizar
+              </button>
+              <button className="delete" onClick={() => openModalDelete(info)}>
+                Apagar
+              </button>
             </ModalFooter>
           </ModalWrapper>
         </ModalScreen>
       )}
+      <ModalDelete
+        showModal={showModalDelete}
+        setShowModal={setShowModalDelete}
+        del={valueToEdit}
+        setIsDeleted={setIsDeleted}
+      />
+      <ModalEdit
+        showModal={showModalUpdate}
+        setShowModal={setShowModalUpdate}
+        edit={valueToEdit}
+      />
     </>
   );
 };

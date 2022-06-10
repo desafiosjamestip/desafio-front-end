@@ -1,5 +1,19 @@
 import styled from "styled-components";
 
+export const Variants = {
+  // hidden: {
+  //   opacity: 0,
+  // },
+  // visible: {
+  //   opacity: 1,
+  //   transition: { delay: 1.5, duration: 1.5 },
+  // },
+  exit: {
+    x: "-100vh",
+    transition: { ease: "easeInOut" },
+  },
+};
+
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -26,8 +40,6 @@ export const Header = styled.header`
     font-size: 20px;
     text-align: center;
     color: var(--green);
-    /* border-width: 100%; */
-    /* line-height: 60px; */
     @media (min-width: 516px) {
       text-align: end;
     }

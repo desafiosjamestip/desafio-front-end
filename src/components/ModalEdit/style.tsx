@@ -40,11 +40,16 @@ export const ModalHeader = styled.header`
   align-items: center;
 
   svg {
-    color: white;
-    width: 25px;
-    height: 25px;
-    background-color: var(--warning);
+    width: 22px;
+    height: 22px;
+    background-color: red;
     border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+    :hover {
+      background-color: firebrick;
+    }
   }
 `;
 
@@ -53,6 +58,7 @@ export const ModalBody = styled.form`
   height: 500px;
   display: flex;
   flex-direction: column;
+  margin-top: 5px;
 
   input:disabled {
     background-color: #dfdfdf;

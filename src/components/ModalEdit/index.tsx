@@ -1,9 +1,13 @@
+import Input from "../Input";
+
+import { useForm } from "react-hook-form";
+
+import { IModalInterface } from "../../interfaces/modalInterfaces";
+
 import { ModalBody, ModalHeader, ModalScreen, ModalWrapper } from "./style";
 import { FaTimes } from "react-icons/fa";
+
 import { useProduct } from "../../context/Products";
-import Input from "../Input";
-import { useForm } from "react-hook-form";
-import { IModalInterface } from "../../interfaces/modalInterfaces";
 
 const ModalEdit = ({ showModal, setShowModal, edit }: IModalInterface) => {
   const { updateProduct } = useProduct();
@@ -17,6 +21,8 @@ const ModalEdit = ({ showModal, setShowModal, edit }: IModalInterface) => {
     providerName,
     value,
   }: any) => {
+    console.log("olá");
+    setShowModal(false);
     updateProduct({ code, category, productName, providerName, value });
   };
 
@@ -25,61 +31,48 @@ const ModalEdit = ({ showModal, setShowModal, edit }: IModalInterface) => {
       {showModal && (
         <ModalScreen>
           <ModalWrapper>
-            <ModalHeader>
-              <FaTimes onClick={() => setShowModal(false)} />
+            <ModalHeader onClick={() => setShowModal(false)}>
+              <FaTimes />
             </ModalHeader>
             <ModalBody onSubmit={handleSubmit(handleUpdateProduct)}>
-              {/* <label>Código do produto</label> */}
               <Input
                 type="text"
-                // placeholder={edit.code}
                 name="code"
                 register={register}
                 label="Código do produto"
                 value={edit.code}
-                // {...register("code")}
                 readonly
               />
-              {/* <label>Categoria</label> */}
               <Input
                 type="text"
                 placeholder={edit.category}
                 name="category"
                 register={register}
                 label="Categoria"
-                // {...register("category")}
               />
-              {/* <label>Nome do produto</label> */}
               <Input
                 type="text"
                 placeholder={edit.productName}
                 name="productName"
                 register={register}
                 label="Nome do produto"
-                // {...register("productName")}
               />
-              {/* <label>Fornecedor</label> */}
               <Input
                 type="text"
                 placeholder={edit.providerName}
                 name="providerName"
                 register={register}
                 label="Fornecedor"
-                // {...register("providerName")}
               />
-              {/* <label>Valor</label> */}
               <Input
                 type="text"
                 placeholder={edit.value}
                 name="value"
                 register={register}
                 label="Valor"
-                // {...register("value")}
               />
               <div className="update">
-                <button type="submit" onClick={() => setShowModal(false)}>
-                  Atualizar
-                </button>
+                <button type="submit">Atualizar</button>
               </div>
             </ModalBody>
           </ModalWrapper>

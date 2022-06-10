@@ -1,51 +1,57 @@
-import { useProduct } from "../../context/Products";
-import { IProductList } from "../../interfaces/providersInterface";
-import { Container, ContainerCard, ContainerItem } from "./style";
-import { useState } from "react";
-import {
-  FaTrash,
-  FaPencilAlt,
-  FaSearchPlus,
-  FaChevronLeft,
-} from "react-icons/fa";
-import ModalDelete from "../ModalDelete";
-import ModalEdit from "../ModalEdit";
-import ModalInfo from "../ModalInfo";
-import { useHistory } from "react-router-dom";
 import Header from "../Header";
+import ModalInfo from "../ModalInfo";
+
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
+
+import { IProductList } from "../../interfaces/providersInterface";
+
+import {
+  Container,
+  ContainerCard,
+  ContainerHeader,
+  ContainerItem,
+  Variants,
+} from "./style";
 import NotFound from "../../assets/img/not-found.svg";
+import { FaSearchPlus, FaChevronLeft } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+import { useProduct } from "../../context/Products";
 
 const ProductList = () => {
-  const [showModalUpdate, setShowModalUpdate] = useState(false);
-  const [showModalDelete, setShowModalDelete] = useState(false);
-  const [showModalInfo, setShowModalInfo] = useState(false);
-  const [value, setValue] = useState<any>();
   const { products } = useProduct();
   const history = useHistory();
+
+  const [showModalInfo, setShowModalInfo] = useState(false);
+  const [value, setValue] = useState<any>();
+  const [isDeleted, setIsDeleted] = useState("");
+
+  if (isDeleted === "delete") {
+    setShowModalInfo(false);
+    setIsDeleted("");
+  }
 
   const openModalInfo = (value: IProductList) => {
     setShowModalInfo((prev) => !prev);
     setValue(value);
   };
-  const openModalDelete = (value: IProductList) => {
-    setShowModalDelete((prev) => !prev);
-    setValue(value);
-  };
-  const openModalUpdate = (value: IProductList) => {
-    setShowModalUpdate((prev) => !prev);
-    setValue(value);
-  };
 
   return (
+    // <motion.div
+    //   variants={Variants}
+    //   initial="hidden"
+    //   animate="visible"
+    //   exit="exit"
+    // >
     <>
-      <Header />
-
+      {/* <Header /> */}
       <Container>
-        <div className="container-backBtn">
-          <FaChevronLeft
-            onClick={() => history.push("/register")}
-            className="backBtn"
-          />
+        <div
+          className="container-backBtn"
+          onClick={() => history.push("/register")}
+        >
+          <FaChevronLeft className="backBtn" />
         </div>
         <ContainerItem
           style={
@@ -53,27 +59,22 @@ const ProductList = () => {
           }
         >
           {products.length > 0 ? (
-            products.map((item: IProductList) => {
+            <ContainerHeader>
+              <div>Código</div>
+              <div>Nome do produto</div>
+              <div>Detalhes</div>
+            </ContainerHeader>
+          ) : null}
+          {products.length > 0 ? (
+            products.map((item: IProductList, index: any) => {
               return (
-                <ContainerCard>
-                  <div className="item">
-                    <span>{item.code}</span>
-                    <span className="productName">{item.productName}</span>
-                  </div>
-                  <div className="options">
-                    <div className="box-item">
-                      <FaSearchPlus
-                        className="info"
-                        onClick={() => openModalInfo(item)}
-                      />
-                    </div>
-                    <FaTrash
-                      className="trash"
-                      onClick={() => openModalDelete(item)}
-                    />
-                    <FaPencilAlt
-                      className="update"
-                      onClick={() => openModalUpdate(item)}
+                <ContainerCard key={index}>
+                  <span>{item.code}</span>
+                  <span className="productName">{item.productName}</span>
+                  <div className="box-item">
+                    <FaSearchPlus
+                      className="info"
+                      onClick={() => openModalInfo(item)}
                     />
                   </div>
                 </ContainerCard>
@@ -90,22 +91,14 @@ const ProductList = () => {
           )}
         </ContainerItem>
       </Container>
-      <ModalDelete
-        showModal={showModalDelete}
-        setShowModal={setShowModalDelete}
-        del={value}
-      />
-      <ModalEdit
-        showModal={showModalUpdate}
-        setShowModal={setShowModalUpdate}
-        edit={value}
-      />
       <ModalInfo
         showModal={showModalInfo}
         setShowModal={setShowModalInfo}
         info={value}
+        setIsDeleted={setIsDeleted}
       />
     </>
+    // </motion.div>
   );
 };
 

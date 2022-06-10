@@ -31,6 +31,7 @@ export const ProductProvider = ({ children }: IChildrenProps) => {
   };
 
   const updateProduct = (product: IProductList) => {
+    console.log(product);
     const itemToUpdate = products.find(
       (item: IProductList) => item.code === product.code
     );

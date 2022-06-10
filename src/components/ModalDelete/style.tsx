@@ -33,10 +33,16 @@ export const ModalHeader = styled.header`
   color: var(--white);
 
   svg {
-    width: 25px;
-    height: 25px;
-    background-color: #df1545;
+    width: 22px;
+    height: 22px;
+    background-color: red;
     border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+    :hover {
+      background-color: firebrick;
+    }
   }
 `;
 

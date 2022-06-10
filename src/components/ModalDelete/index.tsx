@@ -1,3 +1,6 @@
+import { IModalInterface } from "../../interfaces/modalInterfaces";
+import { IProductToDelete } from "../../interfaces/providersInterface";
+
 import {
   ModalBody,
   ModalFooter,
@@ -6,17 +9,21 @@ import {
   ModalWrapper,
 } from "./style";
 import { FaTimes } from "react-icons/fa";
+
 import { useProduct } from "../../context/Products";
 
-import { IModalInterface } from "../../interfaces/modalInterfaces";
-import { IProductToDelete } from "../../interfaces/providersInterface";
-
-const ModalDelete = ({ showModal, setShowModal, del }: IModalInterface) => {
+const ModalDelete = ({
+  showModal,
+  setShowModal,
+  del,
+  setIsDeleted,
+}: IModalInterface) => {
   const { removeProduct } = useProduct();
 
   const handleDeleteProduct = (code: IProductToDelete) => {
     removeProduct(code);
     setShowModal(false);
+    setIsDeleted?.("delete");
   };
 
   return (

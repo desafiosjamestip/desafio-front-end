@@ -1,11 +1,21 @@
-import * as yup from "yup";
+import Header from "../../components/Header";
+import Input from "../../components/Input";
+
+import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Input from "../../components/Input";
-import { Container, ContainerForm, ContainerInput, Form } from "./style";
-import { useHistory } from "react-router-dom";
+import * as yup from "yup";
+import { motion } from "framer-motion";
+
+import {
+  Container,
+  ContainerForm,
+  ContainerInput,
+  Form,
+  Variants,
+} from "./style";
+
 import { useProduct } from "../../context/Products";
-import Header from "../../components/Header";
 
 const Register = () => {
   const { addProduct } = useProduct();
@@ -40,16 +50,24 @@ const Register = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({ resolver: yupResolver(schema) });
 
   const onHandleSubmit = (data: any) => {
     addProduct(data);
+    reset();
   };
 
   return (
+    // <motion.div
+    //   variants={Variants}
+    //   initial="hidden"
+    //   animate="visible"
+    //   exit="exit"
+    //   style={{ overflow: "hidden" }}
+    // >
     <Container>
-      <Header />
-
+      {/* <Header /> */}
       <ContainerForm>
         <Form onSubmit={handleSubmit(onHandleSubmit)}>
           <ContainerInput>
@@ -113,6 +131,7 @@ const Register = () => {
 
           <button type="submit">Cadastrar</button>
           <button
+            type="button"
             className="products"
             onClick={() => history.push("/products")}
           >
@@ -121,6 +140,7 @@ const Register = () => {
         </Form>
       </ContainerForm>
     </Container>
+    // </motion.div>
   );
 };
 
