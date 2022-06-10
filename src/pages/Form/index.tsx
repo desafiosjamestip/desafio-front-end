@@ -4,6 +4,7 @@ import Button from "../../components/Button";
 import Header from "../../components/Header";
 import Input from "../../components/Input";
 import { useProducts } from "../../hooks/useProducts";
+import { moneyMask } from "../../utils/masks";
 import Styled from "./styles";
 
 export default function Form() {
@@ -17,14 +18,6 @@ export default function Form() {
   const [provider, setProvider] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [value, setValue] = useState<string>("");
-  
-  const moneyMask = (text:string) => {
-    let value = text;
-    value = value.replace(/\D/g, "");
-    value = value.replace(/(\d)(\d{2})$/, "$1,$2");
-    value = value.replace(/(?=(\d{3})+(\D))\B/g, ".");
-    return value;
-  };
 
   const handleSave = (event: FormEvent) => {
     event.preventDefault();

@@ -1,6 +1,6 @@
 import React, { createContext, ReactNode, useEffect, useState } from "react";
 
-interface ProductInterface {
+export type ProductInterface = {
   id: string;
   name: string;
   provider: string;
@@ -31,16 +31,20 @@ const ProductProvider = (props: ProductProvider) => {
   const [selectedProduct, setSelectedProduct] = useState<ProductInterface>(
     {} as ProductInterface
   );
+
+  function saveData(data: ProductInterface[], message:string){
+    localStorage.setItem("data", JSON.stringify(data));
+    setProducts(data);
+
+    alert(message);
+  }
   
   function removeItem(data: ProductInterface) {
     const newProductsArray = products.filter(
       (product) => data.id !== product.id
     );
 
-    localStorage.setItem("data", JSON.stringify(newProductsArray));
-    setProducts(newProductsArray);
-
-    alert("Produto removido com sucesso!");
+    saveData(newProductsArray, "Produto removido com sucesso!")
   }
 
   function updateItem(data: ProductInterface) {
@@ -49,17 +53,12 @@ const ProductProvider = (props: ProductProvider) => {
     );
     newProductsArray.push(data);
 
-    localStorage.setItem("data", JSON.stringify(newProductsArray));
-    setProducts(newProductsArray);
-
-    alert("Produto atualizado com sucesso!");
+    saveData(newProductsArray, "Produto atualizado com sucesso!")
   }
 
   function addItem(data: ProductInterface) {
     const newProductsArray = [...products, data];
-    localStorage.setItem("data", JSON.stringify(newProductsArray));
-    setProducts(newProductsArray);
-    alert("Produto adicionado com sucesso!");
+    saveData(newProductsArray, "Produto adicionado com sucesso!")
   }
 
   function loadTable() {

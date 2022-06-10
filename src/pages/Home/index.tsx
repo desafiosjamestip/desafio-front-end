@@ -4,16 +4,9 @@ import { useNavigate } from "react-router-dom";
 import empty from "../../assets/empty.svg";
 import Button from "../../components/Button";
 import Header from "../../components/Header";
+import { ProductInterface } from "../../context/ProductContext";
 import { useProducts } from "../../hooks/useProducts";
 import Styled from "./styles";
-
-interface ProductInterface {
-  id: string;
-  name: string;
-  provider: string;
-  category: string;
-  value: string;
-}
 
 export default function Home() {
   const { products, setSelectedProduct, removeItem } = useProducts();
