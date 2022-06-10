@@ -1,7 +1,9 @@
 import React from "react";
 
+import Home from "./pages/Home/home.js";
+
 function App() {
-  return <h1>follow the white rabbit.</h1>;
+	return <Home />;
 }
 
-export default App
+export default App;
