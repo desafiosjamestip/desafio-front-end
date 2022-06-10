@@ -16,7 +16,6 @@ export const Variants = {
 
 export const Container = styled.div`
   width: 100%;
-  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -161,7 +160,25 @@ export const ContainerCard = styled.div`
   }
 
   .productName {
+    max-width: 12ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-weight: 700;
+
+    @media (min-width: 425px) {
+      max-width: 18ch;
+    }
+
+    @media (min-width: 600px) {
+      max-width: 25ch;
+      overflow: hidden;
+    }
+
+    @media (min-width: 1000px) {
+      max-width: 35ch;
+      overflow: hidden;
+    }
   }
 
   svg {
@@ -178,6 +195,14 @@ export const ContainerCard = styled.div`
     height: 30px;
     background-color: var(--green);
     border-radius: 5px;
+    -webkit-box-shadow: -1px 1px 5px 0px #161616;
+    box-shadow: -1px 1px 5px 0px #161616;
+    /* -webkit-box-shadow: -2px 5px 5px 0px #161616;
+    box-shadow: -2px 5px 5px 0px #161616; */
+
+    :hover {
+      background-color: var(--green-3);
+    }
   }
 
   .info {

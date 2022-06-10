@@ -61,7 +61,12 @@ const ModalInfo = ({
               </ModalInfoItem>
               <ModalInfoItem>
                 <p>Valor</p>
-                <span>R$ {info?.value}</span>
+                <span>
+                  {parseFloat(info?.value!).toLocaleString("pt-br", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}
+                </span>
               </ModalInfoItem>
             </ModalBody>
             <ModalFooter>

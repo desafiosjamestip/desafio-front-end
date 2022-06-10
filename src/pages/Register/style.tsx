@@ -1,19 +1,5 @@
 import styled from "styled-components";
 
-export const Variants = {
-  // hidden: {
-  //   opacity: 0,
-  // },
-  // visible: {
-  //   opacity: 1,
-  //   transition: { delay: 1.5, duration: 1.5 },
-  // },
-  exit: {
-    x: "-100vh",
-    transition: { ease: "easeInOut" },
-  },
-};
-
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -125,5 +111,6 @@ export const ContainerInput = styled.div`
   .error {
     color: var(--warning);
     font-size: 12px;
+    filter: contrast(2);
   }
 `;

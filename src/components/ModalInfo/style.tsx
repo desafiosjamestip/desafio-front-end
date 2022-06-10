@@ -50,6 +50,7 @@ export const ModalHeader = styled.header`
     border-radius: 5px;
     cursor: pointer;
     transition: 0.2s;
+    z-index: 10;
 
     :hover {
       background-color: firebrick;

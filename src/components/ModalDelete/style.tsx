@@ -40,6 +40,7 @@ export const ModalHeader = styled.header`
     cursor: pointer;
     transition: 0.2s;
     color: white;
+    z-index: 10;
     :hover {
       background-color: firebrick;
     }
@@ -68,8 +69,12 @@ export const ModalFooter = styled.footer`
   button {
     width: 300px;
     border-radius: 8px;
-    background-color: #df1545;
+    background-color: red;
     color: var(--white);
     font-size: 20px;
+
+    :hover {
+      background-color: firebrick;
+    }
   }
 `;
