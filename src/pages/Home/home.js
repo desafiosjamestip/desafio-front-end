@@ -17,6 +17,7 @@ export default function home() {
 						<h1>Cadastro do Produto</h1>
 					</Title>
 					<Button>Voltar</Button>
+					<Button>Confirmar</Button>
 				</BoxForm>
 			</MainForm>
 			<AsideBase>img</AsideBase>
