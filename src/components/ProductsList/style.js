@@ -9,6 +9,7 @@ export const CustomUl = styled.ul`
     padding-top: 30px;
     border-radius: 10px;
     border: solid 1px var(--global-color);
+    margin-bottom: 30px;
 `
 
 export const Description = styled.div`
@@ -52,4 +53,12 @@ export const Description = styled.div`
         }
     }
 
+`
+export const CustomLi = styled.li`
+    color: var(--gray-0);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding-bottom: 30px;
 `

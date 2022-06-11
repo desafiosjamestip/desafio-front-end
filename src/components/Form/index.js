@@ -2,37 +2,28 @@ import { useForm } from "react-hook-form"
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
 import Input from "../../components/Input"
-import { toast } from "react-toastify"
 import { CustomForm } from "./style"
 import Button from "../../components/Button"
 import { useProducts } from "../../providers/ProductsProvider"
 
-const Form = ({textButton , type}) =>{
-    const schema = yup.object().shape({
+const Form = ({textButton, product, onSubmit}) =>{   
+    //schema para validação de cadastro de produtos
+const schema = yup.object().shape({
         productName: yup.string().required("Campo obrigatório").trim(),
         productCode: yup.string().required("Campo obrigatório").trim(),
         productCategory: yup.string().required("Campo obrigatório").trim(),
-        productValue: yup.string().required("Campo obrigatório").trim(),
+        productValue: yup.number().required("Campo obrigatório"),
         providerName: yup.string().required("Campo obrigatório").trim()
     })
 
     const {registerProduct} = useProducts()
 
-    const  {register, handleSubmit, reset, formState: { errors }} = useForm({
+    const  {register, handleSubmit, reset, formState: { errors }} = useForm({  //react-hook-form 
         resolver: yupResolver(schema)
     })
 
-    const onSubmit = (data,e) =>{
-        e.target.reset()
-        if(type === "registrar") {
-            registerProduct(data)
-            toast.success('Produto Cadastrado')
-        }else{
-            toast.success('Produto Editado')
-        }
-    }
-
     return(
+        /* Formulario para cadastro de produtos */
         <CustomForm onSubmit={handleSubmit(onSubmit)}>
             <Input 
                 register={register} 
@@ -40,6 +31,7 @@ const Form = ({textButton , type}) =>{
                 label="Nome do Produto" 
                 errors={errors.productName?.message} 
                 type="text"
+                defaultValue={product? product.productName : ""}
             />
             <Input 
                 register={register} 
@@ -47,6 +39,7 @@ const Form = ({textButton , type}) =>{
                 label="Código do Produto" 
                 errors={errors.productCode?.message} 
                 type="text"
+                defaultValue={product? product.productCode : ""}
             />
             <Input 
                 register={register} 
@@ -54,13 +47,15 @@ const Form = ({textButton , type}) =>{
                 label="Categoria do Produto" 
                 errors={errors.productCategory?.message} 
                 type="text"
+                defaultValue={product? product.productCategory : ""}
             />
             <Input 
                 register={register} 
                 name="productValue" 
                 label="Valor do Produto" 
                 errors={errors.productValue?.message} 
-                type="text"
+                type="number"
+                defaultValue={product? product.productValue : ""}
             />
             <Input 
                 register={register} 
@@ -68,6 +63,7 @@ const Form = ({textButton , type}) =>{
                 label="Fornecedor" 
                 errors={errors.providerName?.message} 
                 type="text"
+                defaultValue={product? product.providerName : ""}
             />
 
             <Button type="submit">{textButton}</Button>

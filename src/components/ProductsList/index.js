@@ -1,6 +1,6 @@
 import { useProducts } from "../../providers/ProductsProvider"
 import Product from "../Product"
-import { CustomUl, Description } from "./style"
+import { CustomLi, CustomUl, Description } from "./style"
 
 const ProductsList = () =>{
     const { products } = useProducts()
@@ -15,9 +15,13 @@ const ProductsList = () =>{
             <p>Fornecedor</p>
         </Description>
         <CustomUl>
-            {products.map((product, index) => 
-                <Product key={index} product={product}/>
-            )}
+            {products.length === 0 ? 
+                <CustomLi>Nenhuma produto Cadastrado</CustomLi>
+            :
+                products.map((product, index) => 
+                    <Product key={index} product={product}/>
+                )
+            }
         </CustomUl>
         </>
     )
