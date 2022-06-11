@@ -12,10 +12,10 @@ export function Navbar() {
 
     switch (newValue) {
       case 0:
-        singleSpa.navigateToUrl("home");
+        singleSpa.navigateToUrl("/home");
         break;
       case 1:
-        singleSpa.navigateToUrl("products");
+        singleSpa.navigateToUrl("/products");
       default:
         break;
     }
