@@ -4,3 +4,4 @@ export function publicApiFunction() {}
 export { Header } from "./components/Header";
 
 export { AppStylized } from "./App";
+export { default as theme } from "./styles/themes/default";

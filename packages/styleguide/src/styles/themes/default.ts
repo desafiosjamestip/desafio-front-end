@@ -9,6 +9,8 @@ export default {
     },
     gray: {
       900: "#222222",
+      300: "#6c6c6c",
+      250: "#909090",
       200: "#bcbcbc",
       100: "#e5e5e5",
     },
@@ -16,6 +18,9 @@ export default {
       light: "#f97171",
       main: "#fc5050",
       dark: "#f63131",
+    },
+    shape: {
+      100: "#fbfbfb",
     },
   },
 };
