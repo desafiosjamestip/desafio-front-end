@@ -9,7 +9,7 @@
 <br>
 
 <p align="center">
-  <a href="#" target="_blank">Clique aqui</a> para acessar a versão web (indisponível 🧱🚧)
+  <a href="https://james-tip-two.vercel.app/" target="_blank">Clique aqui</a> para acessar a versão web
 </p>
 
 ## 🖥️ Projeto
@@ -37,12 +37,11 @@ Esse projeto foi desenvolvido com as seguintes tecnologias/bibliotecas:
 
 ## 🌟 Features
 
--   [ ] Adicionar, remover e excluir produtos;
--   [ ] Responsividade - projeto realizado utilizando o conceito de mobile-first;
--   [ ] Atualização em tempo real da lista de produtos;
--   [ ] Dados dos produtos persistindo em localStorage;
--   [ ] Renderização condicional das listas, para caso não houver nenhum item, será mostrado uma mensagem personalizada;
--   [ ] Entre outras -> ainda incompleto 🧱🚧
+-   [X] Adicionar, remover e excluir produtos;
+-   [X] Responsividade - projeto realizado utilizando o conceito de mobile-first;
+-   [X] Atualização em tempo real da lista de produtos;
+-   [X] Dados dos produtos persistindo em localStorage;
+-   [X] Renderização condicional das listas, para caso não houver nenhum item, será mostrado uma mensagem personalizada;
 
 ## 👨🏻‍💻 Executando o projeto
 
