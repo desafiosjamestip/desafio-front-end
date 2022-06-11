@@ -29,6 +29,14 @@ export const FormBase = styled.div`
 			width: 45%;
 			height: 1.5em;
 			margin-left: 1.5em;
+			background-color: #fff;
+			border: 1px solid #625a66;
+			border-radius: 1em 0 0 0;
+
+			&:focus {
+				outline: none;
+				border: 2px solid #00cfb3;
+			}
 		}
 	}
 `;

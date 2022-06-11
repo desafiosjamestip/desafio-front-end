@@ -5,7 +5,7 @@ import { Button } from "../../components/Button/Button.js";
 import ProductRegistrationForm from "../../components/Form/ProductRegistrationForm.js";
 import { IconFomr } from "../../components/icon/iconForm.js";
 import { Title } from "../../components/Title/Title.js";
-import { AsideBase } from "../../styles/aside.js";
+import AsideBase from "../../styles/aside.js";
 import { MainForm, Base } from "../../styles/main.js";
 
 export default function home() {
@@ -20,11 +20,13 @@ export default function home() {
 					<ProductRegistrationForm />
 					<div>
 						<Button>Voltar</Button>
-						<Button>Confirmar</Button>
+						<Button>Cadastrar</Button>
 					</div>
 				</BoxForm>
 			</MainForm>
-			<AsideBase>img</AsideBase>
+			<AsideBase>
+				<img src="../assets/imagem.png" alt="" />
+			</AsideBase>
 		</Base>
 	);
 }
