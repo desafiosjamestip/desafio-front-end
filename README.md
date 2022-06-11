@@ -9,7 +9,7 @@
 <br>
 
 <p align="center">
-  <a href="https://james-tip-two.vercel.app/" target="_blank">Clique aqui</a> para acessar a versão web
+  <a href="https://james-tip-pink.vercel.app/" target="_blank">Clique aqui</a> para acessar a versão web
 </p>
 
 <p align="center">
