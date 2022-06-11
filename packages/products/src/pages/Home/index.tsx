@@ -4,6 +4,8 @@ import { ProductCard } from "../../components/ProductCard";
 
 import { Container, ProductSection } from "./styles";
 
+import { Button } from "../../components/Button";
+
 const firstProduct = {
   categorie: "Eletrônico",
   name: "Playstation 5",
@@ -16,6 +18,9 @@ const firstProduct = {
 export function Home() {
   return (
     <Container>
+      <div className="button-wrapper">
+        <Button to="/products/new">Novo produto</Button>
+      </div>
       <ProductSection>
         <ProductCard data={firstProduct} />
         <ProductCard data={firstProduct} />
