@@ -136,9 +136,6 @@ export const ContainerCard = styled.div`
     @media (min-width: 650px) {
       font-size: 19px;
     }
-    @media (min-width: 1000px) {
-      font-size: 23px;
-    }
   }
 
   .productName {
