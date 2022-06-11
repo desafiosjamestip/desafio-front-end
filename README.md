@@ -53,7 +53,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias/bibliotecas:
 
 - 1º - clone o repositório para seu computador;
 - 2º - no local clonado, abra o terminal e execute o **yarn** ou o **npm install** para instalar as dependências do projeto;
-- 3º - abra o projeto com o comando **code . **.
+- 3º - abra o projeto com o comando ``` code . ```
 
 Para acessar a versão web:
 
