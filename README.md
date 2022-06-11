@@ -12,6 +12,12 @@
   <a href="https://james-tip-two.vercel.app/" target="_blank">Clique aqui</a> para acessar a versão web
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/website?down_message=offline&logo=vercel&style=for-the-badge&up_message=online&url=https%3A%2F%2Fjames-tip-two.vercel.app/%2F&labelColor=f5f5f5&logoColor=black" alt="Server Status">
+  <img src="https://img.shields.io/github/last-commit/leomelegari/desafio-front-end?style=for-the-badge&color=27ae60&labelColor=f5f5f5" alt="Languages">
+  <img src="https://img.shields.io/github/languages/count/leomelegari/desafio-front-end?style=for-the-badge&color=27ae60&labelColor=f5f5f5" alt="Languages">
+</p>
+
 ## 🖥️ Projeto
 
 Se trata de um --projeto/teste técnico-- proposto pela James tip, no qual fui orientado a construir uma nova plataforma para os clientes cadastrarem produtos em um banco de dados e também uma página para visualização, edição e deleção dos produtos cadastrados.
