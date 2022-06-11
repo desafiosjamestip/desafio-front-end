@@ -135,9 +135,7 @@ export const ContainerCard = styled.div`
   transition: 0.2s;
   padding: 0 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-
-  cursor: pointer;
+  cursor: default;
 
   :hover {
     background-color: var(--green);
@@ -197,8 +195,8 @@ export const ContainerCard = styled.div`
     border-radius: 5px;
     -webkit-box-shadow: -1px 1px 5px 0px #161616;
     box-shadow: -1px 1px 5px 0px #161616;
-    /* -webkit-box-shadow: -2px 5px 5px 0px #161616;
-    box-shadow: -2px 5px 5px 0px #161616; */
+    cursor: pointer;
+    transition: 0.3s;
 
     :hover {
       background-color: var(--green-3);

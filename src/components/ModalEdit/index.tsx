@@ -31,8 +31,8 @@ const ModalEdit = ({ showModal, setShowModal, edit }: IModalInterface) => {
       {showModal && (
         <ModalScreen>
           <ModalWrapper>
-            <ModalHeader onClick={() => setShowModal(false)}>
-              <FaTimes />
+            <ModalHeader>
+              <FaTimes onClick={() => setShowModal(false)} />
             </ModalHeader>
             <ModalBody onSubmit={handleSubmit(handleUpdateProduct)}>
               <Input

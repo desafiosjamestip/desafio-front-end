@@ -3,7 +3,6 @@ import { toast } from "react-toastify";
 import {
   IProductList,
   IChildrenProps,
-  IProductToDelete,
 } from "../../interfaces/providersInterface";
 
 const initialContent = JSON.parse(localStorage.getItem("products") || "[]");
@@ -14,7 +13,7 @@ export const ProductProvider = ({ children }: IChildrenProps) => {
 
   const addProduct = (product: IProductList) => {
     const checkDatabase = products.find(
-      (item: any) => item.code === product.code
+      (item: IProductList) => item.code === product.code
     );
     if (checkDatabase) {
       toast.error("Produto já cadastrado");
@@ -24,8 +23,8 @@ export const ProductProvider = ({ children }: IChildrenProps) => {
     }
   };
 
-  const removeProduct = (code: IProductToDelete) => {
-    const newList = products.filter((item: any) => item.code !== code);
+  const removeProduct = (code: any) => {
+    const newList = products.filter((item: IProductList) => item.code !== code);
     toast.success("Produto removido!");
     setProducts(newList);
   };
@@ -37,23 +36,23 @@ export const ProductProvider = ({ children }: IChildrenProps) => {
     );
 
     const newCode = product.code
-      ? (itemToUpdate.code = product.code)
-      : itemToUpdate.code;
+      ? (itemToUpdate!.code = product.code)
+      : itemToUpdate!.code;
     const newCategory = product.category
-      ? (itemToUpdate.category = product.category)
-      : itemToUpdate.category;
+      ? (itemToUpdate!.category = product.category)
+      : itemToUpdate!.category;
     const newProductName = product.productName
-      ? (itemToUpdate.productName = product.productName)
-      : itemToUpdate.productName;
+      ? (itemToUpdate!.productName = product.productName)
+      : itemToUpdate!.productName;
     const newProviderName = product.providerName
-      ? (itemToUpdate.providerName = product.providerName)
-      : itemToUpdate.providerName;
+      ? (itemToUpdate!.providerName = product.providerName)
+      : itemToUpdate!.providerName;
     const newValue = product.value
-      ? (itemToUpdate.value = product.value)
-      : itemToUpdate.value;
+      ? (itemToUpdate!.value = product.value)
+      : itemToUpdate!.value;
 
     const updatedList = products.filter(
-      (item: any) => item.code !== product.code
+      (item: IProductList) => item.code !== product.code
     );
 
     setProducts([
