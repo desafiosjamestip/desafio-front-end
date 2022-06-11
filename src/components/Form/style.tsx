@@ -26,14 +26,14 @@ export const FormItself = styled.form`
     width: 100%;
     margin-top: 20px;
     border-radius: 24px;
-    background-color: var(--green);
+    background-color: var(--green-1);
     color: var(--background);
     font-size: 25px;
     font-weight: 600;
     transition: 0.2s;
 
     :hover {
-      background-color: var(--green-3);
+      background-color: var(--green-2);
     }
   }
 

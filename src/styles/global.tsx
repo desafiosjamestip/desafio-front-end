@@ -30,40 +30,31 @@ export default createGlobalStyle`
         text-decoration: none;
         color: inherit;
     }
+    //white, green, dark, green-3, black
 
     :root {
         
         /* main color */
         --background: #161616;
-        --warning: #df1545;
-        --dark-blue: #00263a;
-        --green: #00cfb4;
-        --white: #ffffff;
-        --green-dark: #328780;
-        --green-3: #00b59d;
-        --green-light: #e4fffb;
-        --green-light-2: #d7f7f4;
-        --green-light-3: #A1DBD6;
-        --blue-light: #f3f4fb;
-        --red-2: #ea5757;
-        --green-2: #36b35b;
+        --dark: #000000;
         --black: #3C3C3B;
-        
+
+        --red: #ff0000;
+        --darker-red: #b22222;
+        --warning: #df1545;
+
+        --green-1: #00cfb4;
+        --green-2: #00b59d;
+
+        --white: #ffffff;
+
         /* grey scale */
-        --gray-1: #f8f9fa;
-        --gray-2: #868e96;
-        --gray-3: #343b41;
-        --gray-4: #212529;
-        --gray-5: #121214;
-        --gray-dark: #737373;
-        --gray-dark-2: #8B8B8C;
-        --gray-light: #C8C8C8;
-        --gray-light-2: #e3e3e3;
-        --gray-light-3: #C7C7C7;
-        --gray-light-4: #b4b4b4;
+        --gray-1: #efefef;
+        --gray-2: #dfdfdf;
+        --gray-3: #c5c5c5;
+
 
     }
-
 
     ::-webkit-scrollbar {
     width: 6px;

@@ -35,14 +35,14 @@ export const ModalHeader = styled.header`
   svg {
     width: 22px;
     height: 22px;
-    background-color: red;
+    background-color: var(--red);
     border-radius: 5px;
     cursor: pointer;
     transition: 0.2s;
-    color: white;
+    color: var(--white);
     z-index: 10;
     :hover {
-      background-color: firebrick;
+      background-color: var(--darker-red);
     }
   }
 `;
@@ -69,12 +69,12 @@ export const ModalFooter = styled.footer`
   button {
     width: 300px;
     border-radius: 8px;
-    background-color: red;
+    background-color: var(--red);
     color: var(--white);
     font-size: 20px;
 
     :hover {
-      background-color: firebrick;
+      background-color: var(--darker-red);
     }
   }
 `;

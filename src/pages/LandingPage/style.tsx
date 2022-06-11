@@ -17,7 +17,7 @@ export const Container = styled.div`
       width: 60%;
       max-width: 260px;
       opacity: 0.5;
-      filter: drop-shadow(0 0 10px var(--green));
+      filter: drop-shadow(0 0 10px var(--green-1));
     }
   }
 
@@ -30,7 +30,7 @@ export const Container = styled.div`
     font-size: 20px;
     text-align: center;
     span {
-      color: var(--green);
+      color: var(--green-1);
       font-weight: 700;
     }
 
@@ -38,7 +38,7 @@ export const Container = styled.div`
       font-size: 25px;
       text-align: center;
       span {
-        color: var(--green);
+        color: var(--green-1);
         font-weight: 700;
       }
     }
@@ -59,7 +59,7 @@ export const Container = styled.div`
         height: 55px;
         background-color: transparent;
         color: var(--white);
-        border: 3px solid var(--green);
+        border: 2px solid var(--green-1);
         border-radius: 24px;
         font-size: 25px;
         font-weight: 600;
@@ -67,9 +67,9 @@ export const Container = styled.div`
         transition: 0.2s;
 
         :hover {
-          color: black;
-          background-color: var(--green);
-          filter: drop-shadow(0 0 20px var(--green)) contrast(1.2)
+          color: var(--dark);
+          background-color: var(--green-1);
+          filter: drop-shadow(0 0 10px var(--green-1)) contrast(1.2)
             brightness(1.2);
         }
       }

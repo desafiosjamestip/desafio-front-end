@@ -1,19 +1,5 @@
 import styled from "styled-components";
 
-export const Variants = {
-  // hidden: {
-  //   opacity: 0,
-  // },
-  // visible: {
-  //   opacity: 1,
-  //   transition: { delay: 1.5, duration: 1.5 },
-  // },
-  exit: {
-    x: "-100vh",
-    transition: { ease: "easeInOut" },
-  },
-};
-
 export const Container = styled.div`
   width: 100%;
   display: flex;
@@ -31,18 +17,17 @@ export const Container = styled.div`
     top: 10px;
     width: 45px;
     height: 25px;
-    background-color: var(--green);
+    background-color: var(--green-1);
     border-radius: 5px;
     cursor: pointer;
     transition: 0.2s;
 
     :hover {
-      background-color: var(--green-3);
+      background-color: var(--green-2);
     }
     @media (min-width: 515px) {
       position: static;
       margin-top: 10px;
-      margin-left: 5px;
       margin-bottom: 10px;
     }
     .backBtn {
@@ -57,10 +42,7 @@ export const Container = styled.div`
 export const ContainerItem = styled.div`
   width: 100%;
   height: 640px;
-  /* overflow: auto; */
-  /* background-color: var(--white); */
   border-radius: 8px;
-  padding: 5px 5px;
 
   .not-found {
     width: 100%;
@@ -87,14 +69,14 @@ export const ContainerItem = styled.div`
       max-width: 300px;
       margin-top: 20px;
       border-radius: 24px;
-      background-color: var(--green);
+      background-color: var(--green-1);
       color: var(--background);
       font-size: 20px;
       font-weight: 600;
       transition: 0.2s;
 
       :hover {
-        background-color: var(--green-3);
+        background-color: var(--green-2);
       }
     }
   }
@@ -110,10 +92,9 @@ export const ContainerHeader = styled.div`
   border-radius: 5px;
   margin: 5px 0;
   transition: 0.2s;
-  padding: 0 14px;
 
   div {
-    color: var(--green);
+    color: var(--green-1);
     font-weight: 600;
     font-size: 13px;
 
@@ -133,19 +114,22 @@ export const ContainerCard = styled.div`
   border-radius: 5px;
   margin: 5px 0;
   transition: 0.2s;
-  padding: 0 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   cursor: default;
 
   :hover {
-    background-color: var(--green);
+    background-color: var(--green-1);
+  }
+
+  span:nth-child(1) {
+    text-align: start;
+    width: 25%;
   }
 
   span {
-    width: fit-content;
+    width: 50%;
     word-wrap: break-word;
     color: var(--white);
-    padding: 0 5px;
     font-size: 14px;
     text-align: center;
 
@@ -185,21 +169,31 @@ export const ContainerCard = styled.div`
     margin: 0 5px;
   }
 
+  .teste {
+    display: flex;
+    justify-content: flex-end;
+    width: 25%;
+  }
+
   .box-item {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80px;
+    width: 60px;
     height: 30px;
-    background-color: var(--green);
+    background-color: var(--green-1);
     border-radius: 5px;
     -webkit-box-shadow: -1px 1px 5px 0px #161616;
     box-shadow: -1px 1px 5px 0px #161616;
     cursor: pointer;
     transition: 0.3s;
 
+    @media (min-width: 768px) {
+      width: 80px;
+    }
+
     :hover {
-      background-color: var(--green-3);
+      background-color: var(--green-2);
     }
   }
 
@@ -215,7 +209,6 @@ export const ContainerCard = styled.div`
   }
   .options {
     width: 40%;
-    /* max-width: 100px; */
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;

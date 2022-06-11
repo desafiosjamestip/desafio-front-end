@@ -1,5 +1,5 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import Input from "../Input";
 import { ContainerInput, FormItself } from "./style";
@@ -20,7 +20,10 @@ const Form = () => {
     category: yup.string().required("Categoria do produto obrigatória"),
     productName: yup.string().required("Nome do produto obrigatório"),
     providerName: yup.string().required("Nome do fornecedor obrigatório"),
-    value: yup.string().required("Valor do produto obrigatório"),
+    value: yup
+      .string()
+      .required("Valor do produto obrigatório")
+      .matches(/^[\d,]+$/, "Usar apenas vírgula para os centavos. ex: 2500,00"),
   });
 
   const {

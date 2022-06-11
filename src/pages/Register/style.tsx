@@ -25,7 +25,7 @@ export const Header = styled.header`
   h1 {
     font-size: 20px;
     text-align: center;
-    color: var(--green);
+    color: var(--green-1);
     @media (min-width: 516px) {
       text-align: end;
     }

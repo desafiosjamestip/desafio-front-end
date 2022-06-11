@@ -75,7 +75,7 @@ export const ModalInfoItem = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
   p {
-    color: var(--green);
+    color: var(--green-1);
     font-weight: 600;
     font-size: 25px;
   }
@@ -93,7 +93,7 @@ export const ModalFooter = styled.div`
   margin-top: 5px;
 
   .update {
-    background-color: var(--green);
+    background-color: var(--green-1);
     width: 45%;
     height: 50px;
     border-radius: 24px;
@@ -102,13 +102,13 @@ export const ModalFooter = styled.div`
     transition: 0.2s;
 
     :hover {
-      background-color: var(--green-3);
+      background-color: var(--green-2);
     }
   }
 
   .delete {
     background-color: var(--background);
-    color: var(--green);
+    color: var(--green-1);
     width: 45%;
     height: 50px;
     border-radius: 24px;

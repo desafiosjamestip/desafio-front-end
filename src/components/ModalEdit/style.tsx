@@ -42,14 +42,14 @@ export const ModalHeader = styled.header`
   svg {
     width: 22px;
     height: 22px;
-    background-color: red;
+    background-color: var(--red);
     border-radius: 5px;
     cursor: pointer;
     transition: 0.2s;
     color: white;
     z-index: 10;
     :hover {
-      background-color: firebrick;
+      background-color: var(--darker-red);
     }
   }
 `;
@@ -62,12 +62,12 @@ export const ModalBody = styled.form`
   margin-top: 5px;
 
   input:disabled {
-    background-color: #dfdfdf;
-    color: #c5c5c5;
+    background-color: var(--gray-2);
+    color: var(--gray-3);
   }
 
   label {
-    color: var(--green);
+    color: var(--green-1);
     font-weight: 600;
     font-size: 22px;
   }
@@ -78,7 +78,7 @@ export const ModalBody = styled.form`
     border-radius: 8px;
     font-size: 15px;
     font-weight: 500;
-    background-color: #efefef;
+    background-color: var(--gray-1);
 
     ::placeholder {
       color: var(--black);
@@ -93,7 +93,7 @@ export const ModalBody = styled.form`
     padding: 20px 0;
 
     button {
-      background-color: var(--green);
+      background-color: var(--green-1);
       width: 100%;
       height: 50px;
       border-radius: 24px;
@@ -102,7 +102,7 @@ export const ModalBody = styled.form`
       transition: 0.2s;
 
       :hover {
-        background-color: var(--green-3);
+        background-color: var(--green-2);
       }
     }
   }
