@@ -37,6 +37,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias/bibliotecas:
 <td> React Toastify</td>
 <td> React Router Dom</td>
 <td> Framer-motion</td>
+<td> <a href="https://www.figma.com/file/OuTJNjqwfgXZUyeUQfiYaB/James-Tip?node-id=0%3A1">Figma</a></td>
 
  </tr>
 </table>
