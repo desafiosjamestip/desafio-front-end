@@ -1,5 +1,16 @@
 import React from "react";
 
-export function Header() {
-  return <div>Header</div>;
+import logo from "../../assets/logo-james.svg";
+
+import { Container } from "./styles";
+
+export function Header({ children }) {
+  return (
+    <Container>
+      <div>
+        <img src={logo} alt="logo jamestip" />
+      </div>
+      {children}
+    </Container>
+  );
 }

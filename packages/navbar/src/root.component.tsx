@@ -1,6 +1,5 @@
-//@ts-ignore
-import { Header } from "@james/styleguide";
+import { Navbar } from "./Navbar";
 
-export default function Root(props) {
-  return <Header />;
+export default function Root() {
+  return <Navbar />;
 }
