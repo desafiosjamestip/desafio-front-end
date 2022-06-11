@@ -17,16 +17,11 @@ export default function home() {
 						<IconFomr />
 						<h1>Cadastro do Produto</h1>
 					</Title>
-<<<<<<< HEAD
 					<ProductRegistrationForm />
 					<div>
 						<Button>Voltar</Button>
 						<Button>Confirmar</Button>
 					</div>
-=======
-					<Button>Voltar</Button>
-					<Button>Confirmar</Button>
->>>>>>> 7023fe31410fb5a8d334dcf2750db5a778bb3220
 				</BoxForm>
 			</MainForm>
 			<AsideBase>img</AsideBase>

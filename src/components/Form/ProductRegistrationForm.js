@@ -1,6 +1,8 @@
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
 
+import { FormBase } from "../../styles/formBase.js";
+
 export default class ProductRegistrationForm extends React.Component {
 	constructor(props) {
 		super(props);
@@ -21,17 +23,30 @@ export default class ProductRegistrationForm extends React.Component {
 
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit}>
-				<label htmlFor="Name:">
-					Name:
-					<input
-						type="text"
-						value={this.state.value}
-						onChange={this.handleChange}
-					/>
-				</label>
-				{/* <input type="submit" value="Submit" /> */}
-			</form>
+			<FormBase>
+				<form>
+					<p>
+						Código do produto:
+						<input type="text" />
+					</p>
+					<p>
+						Categoria do produto:
+						<input type="text" />
+					</p>
+					<p>
+						Nome do produto:
+						<input type="text" />
+					</p>
+					<p>
+						Nome do Fornecedor:
+						<input type="text" />
+					</p>
+					<p>
+						Valor do produto
+						<input type="text" />
+					</p>
+				</form>
+			</FormBase>
 		);
 	}
 }
