@@ -30,10 +30,8 @@ export default createGlobalStyle`
         text-decoration: none;
         color: inherit;
     }
-    //white, green, dark, green-3, black
 
     :root {
-        
         /* main color */
         --background: #161616;
         --dark: #000000;
@@ -52,8 +50,6 @@ export default createGlobalStyle`
         --gray-1: #efefef;
         --gray-2: #dfdfdf;
         --gray-3: #c5c5c5;
-
-
     }
 
     ::-webkit-scrollbar {

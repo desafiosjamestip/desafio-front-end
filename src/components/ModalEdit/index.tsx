@@ -21,7 +21,6 @@ const ModalEdit = ({ showModal, setShowModal, edit }: IModalInterface) => {
     providerName,
     value,
   }: any) => {
-    console.log("olá");
     setShowModal(false);
     updateProduct({ code, category, productName, providerName, value });
   };

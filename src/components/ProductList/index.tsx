@@ -25,11 +25,14 @@ const ProductList = () => {
   const [value, setValue] = useState<any>();
   const [isDeleted, setIsDeleted] = useState("");
 
+  // condição que, quando verdadeira, fecha todos os modais abertos
+  // nesse caso, esta condição, ela é aplicável apenas para o botão de deletar do "modalDelete"
   if (isDeleted === "delete") {
     setShowModalInfo(false);
     setIsDeleted("");
   }
 
+  // função que abre um modal com as informações do produto selecionado
   const openModalInfo = (value: IProductList) => {
     setShowModalInfo((prev) => !prev);
     setValue(value);
@@ -45,6 +48,9 @@ const ProductList = () => {
         >
           <FaChevronLeft className="backBtn" />
         </div>
+
+        {/* Aqui realizei uma renderização condicional para, se caso a lista
+        ultrapassar uma quantidade determinada de itens, gerar um scroll */}
         <ContainerItem
           style={
             products.length > 10 ? { overflow: "auto" } : { overflow: "hidden" }

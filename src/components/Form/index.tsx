@@ -1,16 +1,19 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import Input from "../Input";
 import { ContainerInput, FormItself } from "./style";
 import * as yup from "yup";
 import { useProduct } from "../../context/Products";
-import { IProductList } from "../../interfaces/providersInterface";
 
 const Form = () => {
   const { addProduct } = useProduct();
   const history = useHistory();
 
+  // Um esquema padrão utilizando yup.
+
+  // Única coisa mais diferente nessa validação é um regex
+  // para aceitar apenas números e virgula no campo "value"
   const schema = yup.object().shape({
     code: yup
       .string()
@@ -33,6 +36,8 @@ const Form = () => {
     reset,
   } = useForm({ resolver: yupResolver(schema) });
 
+  // função que recebe os dados digitados no input e envia para
+  // a função "addProduct" localizada no context do projeto
   const onHandleSubmit = (data: any) => {
     addProduct(data);
     reset();
