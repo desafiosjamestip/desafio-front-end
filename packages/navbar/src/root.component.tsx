@@ -1,3 +1,6 @@
+//@ts-ignore
+import { Header } from "@james/styleguide";
+
 export default function Root(props) {
-  return <section>{props.name} is mounted!</section>;
+  return <Header />;
 }
