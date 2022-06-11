@@ -2,3 +2,5 @@
 export function publicApiFunction() {}
 
 export { Header } from "./components/Header";
+
+export { AppStylized } from "./App";
