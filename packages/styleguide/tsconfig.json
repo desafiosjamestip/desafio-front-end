@@ -2,6 +2,7 @@
   "extends": "ts-config-single-spa",
   "files": ["src/james-styleguide.ts"],
   "compilerOptions": {
+    "jsx": "react",
     "declarationDir": "dist"
   },
   "include": ["src/**/*"],
