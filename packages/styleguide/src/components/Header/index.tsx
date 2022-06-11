@@ -2,15 +2,17 @@ import React from "react";
 
 import logo from "../../assets/logo-james.svg";
 
-import { Container } from "./styles";
+import { Container, HeaderWrapper } from "./styles";
 
 export function Header({ children }) {
   return (
     <Container>
-      <div>
-        <img src={logo} alt="logo jamestip" />
-      </div>
-      {children}
+      <HeaderWrapper>
+        <div>
+          <img src={logo} alt="logo jamestip" />
+        </div>
+        {children}
+      </HeaderWrapper>
     </Container>
   );
 }

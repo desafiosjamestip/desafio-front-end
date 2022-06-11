@@ -2,9 +2,15 @@ import styled from "styled-components";
 
 export const Container = styled.header`
   width: 100%;
-  padding: 24px;
   display: flex;
   background: #1e1e1e;
+`;
+
+export const HeaderWrapper = styled.div`
+  width: 990px;
+  display: flex;
+  margin: 0 auto;
+  padding: 24px;
 
   nav {
     margin-left: 48px;
