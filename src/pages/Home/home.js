@@ -1,5 +1,6 @@
 import React from "react";
 
+import imagemAside from "../../assets/imagem.png";
 import BoxForm from "../../components/BoxForm/BoxForm.js";
 import { Button } from "../../components/Button/Button.js";
 import ProductRegistrationForm from "../../components/Form/ProductRegistrationForm.js";
@@ -25,7 +26,10 @@ export default function home() {
 				</BoxForm>
 			</MainForm>
 			<AsideBase>
-				<img src="../assets/imagem.png" alt="" />
+				<img
+					src={imagemAside}
+					alt="Homem abrindo uma encomenda e uma frase: Fature mais com menos estoque com o James Tip."
+				/>
 			</AsideBase>
 		</Base>
 	);
