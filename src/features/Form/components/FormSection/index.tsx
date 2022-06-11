@@ -1,5 +1,6 @@
 import { Header, InputStructure, SelectorStructure } from '@/components'
 import DefaultButton from '@/components/Button'
+import NavLink from '@/components/NavLink'
 import React, { useState } from 'react'
 import { FormDataContainer, FormSectionContainer } from './styled'
 
@@ -62,6 +63,7 @@ const FormSection: React.FC = () => {
                         onClick={submitProduct}
                     />
                 </FormDataContainer>
+                <NavLink to="products" linkName="Ver Produtos Cadastrados" />
             </FormSectionContainer>
         </>
     )
