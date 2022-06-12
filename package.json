@@ -1,5 +1,5 @@
 {
-  "name": "desafio-front-end-jamestip",
+  "name": "react-front-end-register-products",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -41,5 +41,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/desafiosjamestip/desafio-front-end.git",
+  "author": "Andre <heraandre@gmail.com>",
+  "license": "MIT",
+  "description": "react-front-end-register-products"
 }
