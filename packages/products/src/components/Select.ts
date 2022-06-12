@@ -4,7 +4,7 @@ export default styled.select`
   width: 100%;
   border: none;
   background: #fff;
-  border: 2px solid #fff;
+  border: 2px solid ${({ theme }) => theme.colors.gray[100]};
   box-shadow: 8px 4px 10px rgba(0, 0, 0, 0.04);
   height: 52px;
   border-radius: 4px;
