@@ -1,7 +1,12 @@
-import Routes from "./routes";
+import Routes from './routes'
+import { ProductProvider } from '@/contexts/product'
 
 function App() {
-    return <Routes />;
+    return (
+        <ProductProvider>
+            <Routes />
+        </ProductProvider>
+    )
 }
 
-export default App;
+export default App

@@ -27,7 +27,7 @@ export const ProductsListContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: initial;
     overflow: scroll;
     overflow-x: hidden;
 `

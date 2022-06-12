@@ -29,3 +29,16 @@ export const ProductSupplier = styled.p`
 export const ProductPrice = styled.p`
     font-size: 1rem;
 `
+
+export const DeleteButton = styled.button`
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    height: 1px;
+    float: right;
+`
+
+export const TrashIcon = styled.img`
+    height: 24px;
+    width: 24px;
+`
