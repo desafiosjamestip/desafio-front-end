@@ -19,8 +19,14 @@ export const Form = styled.form`
 
 export const ButtonContainer = styled.div`
   margin-top: 24px;
+  display: flex;
 
   button {
     width: 240px;
+
+    & + button {
+      background: ${({ theme }) => theme.colors.danger.main};
+      margin-left: 12px;
+    }
   }
 `;

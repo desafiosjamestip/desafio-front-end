@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 import { Product } from "../../@types/Product";
 import { useProduct } from "../../contexts/Product";
@@ -7,7 +7,9 @@ import { ProductForm } from "../../components/ProductForm";
 
 export function EditProduct() {
   const { state } = useLocation<Product>();
-  const { editProduct } = useProduct();
+  const { editProduct, removeProduct } = useProduct();
+
+  const { push } = useHistory();
 
   function handleSubmit(formData: Product) {
     const product: Product = {
@@ -20,7 +22,23 @@ export function EditProduct() {
 
     editProduct(formData.code, product);
   }
+
+  function handleRemoveProduct(id: string) {
+    const userConfirmation = confirm("Deseja remover o produto?");
+
+    if (userConfirmation) {
+      removeProduct(id);
+    }
+
+    push("/products");
+  }
+
   return (
-    <ProductForm onSubmit={handleSubmit} title="Editar produto" data={state} />
+    <ProductForm
+      onSubmit={handleSubmit}
+      onRemove={handleRemoveProduct}
+      title="Editar produto"
+      data={state}
+    />
   );
 }

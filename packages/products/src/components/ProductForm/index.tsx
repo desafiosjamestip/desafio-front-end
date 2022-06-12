@@ -10,15 +10,20 @@ import Select from "../Select";
 import useErrors from "../../hooks/useErrors";
 
 import { Form, ButtonContainer } from "./styles";
-import { useHistory } from "react-router-dom";
 
 interface ProductFormProps {
   onSubmit: (formData: Product) => void;
+  onRemove?: (id: string) => void;
   title: string;
   data?: Product;
 }
 
-export function ProductForm({ onSubmit, title, data }: ProductFormProps) {
+export function ProductForm({
+  onSubmit,
+  onRemove,
+  title,
+  data,
+}: ProductFormProps) {
   const [name, setName] = useState(data?.name ?? "");
   const [code, setCode] = useState(data?.code ?? "");
   const [category, setCategory] = useState(data?.category ?? "");
@@ -27,8 +32,6 @@ export function ProductForm({ onSubmit, title, data }: ProductFormProps) {
 
   const { errors, setError, removeError, getErrorMessageByFieldName } =
     useErrors();
-
-  const { push } = useHistory();
 
   const isFormValid =
     name && code && provider && category && price && errors.length === 0;
@@ -85,7 +88,6 @@ export function ProductForm({ onSubmit, title, data }: ProductFormProps) {
 
   function handleSubmit() {
     onSubmit({ name, code, category, provider, price });
-    push("/products");
   }
 
   return (
@@ -142,6 +144,12 @@ export function ProductForm({ onSubmit, title, data }: ProductFormProps) {
         <Button type="button" onClick={handleSubmit} disabled={!isFormValid}>
           {title}
         </Button>
+
+        {!!data && onRemove && (
+          <Button type="button" onClick={() => onRemove(data.code)}>
+            Remover
+          </Button>
+        )}
       </ButtonContainer>
     </Form>
   );

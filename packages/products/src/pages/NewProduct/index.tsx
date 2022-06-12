@@ -1,10 +1,14 @@
-import { ProductForm } from "../../components/ProductForm";
+import { useHistory } from "react-router-dom";
 
 import { Product } from "../../@types/Product";
 import { useProduct } from "../../contexts/Product";
 
+import { ProductForm } from "../../components/ProductForm";
+
 export function NewProduct() {
   const { registerProduct } = useProduct();
+
+  const { push } = useHistory();
 
   function handleSubmit(formData: Product) {
     const product: Product = {
@@ -16,6 +20,7 @@ export function NewProduct() {
     };
 
     registerProduct(product);
+    push("/products");
   }
 
   return <ProductForm onSubmit={handleSubmit} title="Cadastrar produto" />;
