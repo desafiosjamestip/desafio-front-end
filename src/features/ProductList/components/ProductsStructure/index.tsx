@@ -5,17 +5,18 @@ import {
     ProductsHeaderContainer,
     ProductsListContainer,
 } from './styled'
-import { ProductCard } from '@/features/ProductList/components'
+import { ProductCard, EditionModal } from '@/features/ProductList/components'
 import NavLink from '@/components/NavLink'
 import { useProductContext } from '@/contexts/product'
 import { Product } from '@/types/IProducts'
 
 const ProductsStructure: React.FC = () => {
-    const [products, { dispatchRemoveProduct }] = useProductContext()
+    const [products, { openModal, dispatchRemoveProduct }] = useProductContext()
 
     const removeProduct = (deletedProduct: Product) => {
         dispatchRemoveProduct(deletedProduct)
     }
+
     return (
         <>
             <ProductsContainer>
@@ -29,18 +30,20 @@ const ProductsStructure: React.FC = () => {
                 <ProductsListContainer>
                     {products.map(product => (
                         <>
-                            {' '}
                             <ProductCard
+                                key={product.code}
                                 title={product.name}
                                 category={product.category}
                                 supplier={product.supplier}
                                 price={product.price}
                                 code={product.code}
                                 onClick={() => removeProduct(product!)}
+                                onOpenModal={() => openModal(product!)}
                             />
                         </>
                     ))}
                 </ProductsListContainer>
+                <EditionModal />
             </ProductsContainer>
         </>
     )

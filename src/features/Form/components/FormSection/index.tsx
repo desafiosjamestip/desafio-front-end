@@ -11,19 +11,18 @@ const FormSection: React.FC = () => {
     const [product, setProduct] = useState({
         name: '',
         code: '',
-        category: '',
+        category: 'Eletrônico',
         supplier: '',
         price: '',
     })
     const [, { dispatchProducts }] = useProductContext()
 
     const submitProduct = () => {
-        /* localStorage.setItem('products', JSON.stringify(product)) */
         dispatchProducts(product)
         setProduct({
             name: '',
             code: '',
-            category: '',
+            category: 'Eletrônico',
             supplier: '',
             price: '',
         })
@@ -55,7 +54,18 @@ const FormSection: React.FC = () => {
                             })
                         }
                     />
-                    <SelectorStructure label="Categoria do Produto" />
+                    <SelectorStructure
+                        label="Categoria do Produto"
+                        onChange={e => {
+                            const categoryValue = e.target.value
+                            setProduct(prevState => {
+                                return {
+                                    ...prevState,
+                                    category: categoryValue,
+                                }
+                            })
+                        }}
+                    />
                     <InputStructure
                         label="Nome do Fornecedor"
                         value={product.supplier}

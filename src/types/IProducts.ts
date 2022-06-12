@@ -7,6 +7,12 @@ export type Product = {
 }
 
 export type ProductDispatch = {
+    modalIsOpen: boolean
+    editedProduct: Product
+    setEditedProduct: any
+    updateProduct: any
+    openModal: (editedProduct: Product) => void
+    closeModal: () => void
     dispatchProducts: (product: Product) => void
     dispatchRemoveProduct: (deletedProduct: Product) => void
 }

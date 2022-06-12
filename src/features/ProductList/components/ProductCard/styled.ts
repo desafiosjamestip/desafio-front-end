@@ -8,7 +8,10 @@ export const ProductsCardContainer = styled.div`
     margin: 1rem 1.5rem;
     margin-left: 0;
     padding: 1rem;
+    cursor: pointer;
 `
+
+export const SelectionCardContainer = styled.div``
 
 export const ProductTitle = styled.h1`
     font-size: 1.5rem;

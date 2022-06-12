@@ -3,24 +3,25 @@ import { Selector, SelectorContainer, SelectorLabel } from './styled'
 
 type ISelectorProps = {
     label: string
+    onChange: (event: any) => void
 }
 
-const SelectorStructure: React.FC<ISelectorProps> = ({ label }) => {
+const SelectorStructure: React.FC<ISelectorProps> = ({ label, onChange }) => {
     const options = [
         {
-            value: 1,
+            value: 'Eletrônico',
             category: 'Eletrônico',
         },
         {
-            value: 2,
+            value: 'Roupas',
             category: 'Roupas',
         },
         {
-            value: 3,
+            value: 'Cosméticos',
             category: 'Cosméticos',
         },
         {
-            value: 4,
+            value: 'Livros',
             category: 'Livros',
         },
     ]
@@ -29,16 +30,12 @@ const SelectorStructure: React.FC<ISelectorProps> = ({ label }) => {
         <>
             <SelectorContainer>
                 <SelectorLabel>{label}</SelectorLabel>
-                <Selector>
+                <Selector onChange={onChange}>
                     {options.map(op => (
                         <option key={op.value} value={op.value}>
                             {op.category}
                         </option>
                     ))}
-                    {/* <option value="1">Eletrônico</option>
-                    <option value="2">Roupas</option>
-                    <option value="3">Cosméticos</option>
-                    <option value="4">Livros</option> */}
                 </Selector>
             </SelectorContainer>
         </>

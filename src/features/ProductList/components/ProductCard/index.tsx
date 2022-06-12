@@ -7,6 +7,7 @@ import {
     ProductsCardContainer,
     ProductSupplier,
     ProductTitle,
+    SelectionCardContainer,
     TrashIcon,
 } from './styled'
 import Trash from '@/assets/icons/trash-icon.png'
@@ -18,6 +19,7 @@ type ICardProps = {
     supplier: string
     price: string
     onClick: () => void
+    onOpenModal: () => void
 }
 
 const ProductCard: React.FC<ICardProps> = ({
@@ -27,6 +29,7 @@ const ProductCard: React.FC<ICardProps> = ({
     supplier,
     price,
     onClick,
+    onOpenModal,
 }) => {
     return (
         <>
@@ -34,11 +37,13 @@ const ProductCard: React.FC<ICardProps> = ({
                 <DeleteButton onClick={onClick}>
                     <TrashIcon src={Trash} />
                 </DeleteButton>
-                <ProductTitle>{title}</ProductTitle>
-                <ProductCode>{code}</ProductCode>
-                <ProductCategory>{category}</ProductCategory>
-                <ProductSupplier>{supplier}</ProductSupplier>
-                <ProductPrice>{price}</ProductPrice>
+                <SelectionCardContainer onClick={onOpenModal}>
+                    <ProductTitle>{title}</ProductTitle>
+                    <ProductCode>{code}</ProductCode>
+                    <ProductCategory>{category}</ProductCategory>
+                    <ProductSupplier>{supplier}</ProductSupplier>
+                    <ProductPrice>{price}</ProductPrice>
+                </SelectionCardContainer>
             </ProductsCardContainer>
         </>
     )
