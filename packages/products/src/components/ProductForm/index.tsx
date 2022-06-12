@@ -10,14 +10,16 @@ import { Form, ButtonContainer } from "./styles";
 
 interface ProductFormProps {
   onSubmit: (formData: Product) => void;
+  title: string;
+  data?: Product;
 }
 
-export function ProductForm({ onSubmit }: ProductFormProps) {
-  const [name, setName] = useState("");
-  const [code, setCode] = useState("");
-  const [category, setCategory] = useState("");
-  const [provider, setProvider] = useState("");
-  const [price, setPrice] = useState("");
+export function ProductForm({ onSubmit, title, data }: ProductFormProps) {
+  const [name, setName] = useState(data?.name ?? "");
+  const [code, setCode] = useState(data?.code ?? "");
+  const [category, setCategory] = useState(data?.category ?? "");
+  const [provider, setProvider] = useState(data?.provider ?? "");
+  const [price, setPrice] = useState(data?.price ?? "");
 
   function handleCodeChange(event) {
     setCode(event.target.value);
@@ -46,7 +48,7 @@ export function ProductForm({ onSubmit }: ProductFormProps) {
   return (
     <Form>
       <div className="title-container">
-        <h1>Cadastrar produto</h1>
+        <h1>{title}</h1>
       </div>
 
       <FormGroup>
@@ -82,7 +84,7 @@ export function ProductForm({ onSubmit }: ProductFormProps) {
 
       <ButtonContainer>
         <Button to="#" onClick={handleSubmit}>
-          Cadastrar produto
+          {title}
         </Button>
       </ButtonContainer>
     </Form>

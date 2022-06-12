@@ -18,5 +18,5 @@ export function NewProduct() {
     registerProduct(product);
   }
 
-  return <ProductForm onSubmit={handleSubmit} />;
+  return <ProductForm onSubmit={handleSubmit} title="Cadastrar produto" />;
 }

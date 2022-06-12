@@ -7,6 +7,10 @@ export const Container = styled.div`
   border-radius: 16px;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
 
+  a {
+    text-decoration: none;
+  }
+
   header {
     display: flex;
     flex-direction: column;
