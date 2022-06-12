@@ -2,9 +2,8 @@ import { Container } from "./styles";
 
 interface ProductProps {
   data: {
-    categorie: string;
     name: string;
-    image: string;
+    category: string;
     provider: string;
     price: string;
   };
@@ -14,11 +13,14 @@ export function ProductCard({ data }: ProductProps) {
   return (
     <Container>
       <header>
-        <small>{data.categorie}</small>
+        <small>{data.category}</small>
         <span>{data.name}</span>
       </header>
       <div className="image-wrapper">
-        <img src={data.image} alt={`Imagem do produto ${data.name}`} />
+        <img
+          src="https://www.hardware.com.br/static/wp/2021/09/10/3-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+          alt={`Imagem do produto ${data.name}`}
+        />
       </div>
       <footer>
         <div>

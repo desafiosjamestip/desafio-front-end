@@ -5,15 +5,18 @@ import { theme } from "@james/styleguide";
 import { BrowserRouter } from "react-router-dom";
 import { Container } from "./styles";
 import { ThemeProvider } from "styled-components";
+import { ProductProvider } from "../../contexts/Product";
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <Container>
-          <Routes />
-        </Container>
-      </ThemeProvider>
-    </BrowserRouter>
+    <ProductProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <Container>
+            <Routes />
+          </Container>
+        </ThemeProvider>
+      </BrowserRouter>
+    </ProductProvider>
   );
 }
