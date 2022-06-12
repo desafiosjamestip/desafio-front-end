@@ -16,4 +16,5 @@ Para rodar a aplicação, basta seguir esse passo a passo:
 * Abra o projeto dentro do seu editor de texto escolhdio, abra duas janelas do seu terminal, na primeira acesse a pasta back-end ultilizando o comando 'cd back-end', já dentro da pasta rode o comando npm start ou yarn start. Uma vez com o back-end iniciado, vá para o segundot terminal e acesse a pasta front-end ultilizando o comando 'cd front-end' e rode o comando npm start ou yarn start.
 * Após seguir esse passo a passo, basta entrar no seu navegador e acessar a url http://localhost:3000, divirta-se!
 
-Espero que gostem!
+Espero que gostem!!
+<img src='https://user-images.githubusercontent.com/50087300/173211460-2e3345d3-c192-491e-abea-3e5ac95be20e.png'></img>
