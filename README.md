@@ -26,11 +26,10 @@ npm run dev
 ```
 
 ## :soon: Implementação futura
-* O que será implementado na próxima sprint?
-* - Adicionar TypeScript
-* - Adicionar Styled-Components
-* - Adicionar Context-Api
-* - Adicionar Testes
+* Adicionar TypeScript
+* Adicionar Styled-Components
+* Adicionar Context-Api
+* Adicionar Testes
 
 ## :handshake: Desenvolvedor
 <table>
