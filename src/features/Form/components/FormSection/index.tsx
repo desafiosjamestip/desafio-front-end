@@ -6,6 +6,7 @@ import React, { useState } from 'react'
 import { FormDataContainer, FormSectionContainer } from './styled'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import ProductsIcon from '@/assets/icons/products-icon.png'
 
 const FormSection: React.FC = () => {
     const [product, setProduct] = useState({
@@ -15,20 +16,27 @@ const FormSection: React.FC = () => {
         supplier: '',
         price: '',
     })
-    const [, { dispatchProducts }] = useProductContext()
+    const [products, { dispatchProducts }] = useProductContext()
 
+    console.log(products)
     const submitProduct = () => {
-        dispatchProducts(product)
-        setProduct({
-            name: '',
-            code: '',
-            category: 'Eletrônico',
-            supplier: '',
-            price: '',
-        })
-        toast.success('Produto registrado!', {
-            position: toast.POSITION.TOP_CENTER,
-        })
+        if (products.every(element => element.code !== product.code)) {
+            dispatchProducts(product)
+            setProduct({
+                name: '',
+                code: '',
+                category: 'Eletrônico',
+                supplier: '',
+                price: '',
+            })
+            toast.success('Produto registrado!', {
+                position: toast.POSITION.TOP_CENTER,
+            })
+        } else {
+            toast.error('O código já está em uso.', {
+                position: toast.POSITION.TOP_CENTER,
+            })
+        }
     }
 
     return (
@@ -90,10 +98,20 @@ const FormSection: React.FC = () => {
                     <DefaultButton
                         content="Cadastrar"
                         onClick={submitProduct}
+                        disabled={
+                            product.name == '' ||
+                            product.supplier == '' ||
+                            product.price == '' ||
+                            product.code == ''
+                        }
                     />
                 </FormDataContainer>
                 <ToastContainer />
-                <NavLink to="products" linkName="Ver Produtos Cadastrados" />
+                <NavLink
+                    to="products"
+                    linkName="Ver Produtos Cadastrados"
+                    icon={ProductsIcon}
+                />
             </FormSectionContainer>
         </>
     )

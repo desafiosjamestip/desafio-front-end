@@ -1,3 +1,4 @@
+import colors from '@/styles/colors'
 import styled from 'styled-components'
 
 export const SelectorContainer = styled.div`
@@ -8,12 +9,18 @@ export const SelectorContainer = styled.div`
 export const Selector = styled.select`
     height: 2rem;
     width: 20rem;
-    background-color: #b3b3b5;
     border-style: none;
     border-radius: 0.5rem;
     outline: 0;
     padding-left: 1rem;
     cursor: pointer;
+
+    border: 1px solid ${colors.gray02};
+    outline: none;
+
+    &:focus {
+        border: 1px solid ${colors.primary};
+    }
 `
 
 export const SelectorLabel = styled.label`

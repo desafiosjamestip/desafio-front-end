@@ -4,12 +4,19 @@ import { Button } from './styled'
 type IButtonProps = {
     content: string
     onClick: () => void
+    disabled: boolean
 }
 
-const DefaultButton: React.FC<IButtonProps> = ({ content, onClick }) => {
+const DefaultButton: React.FC<IButtonProps> = ({
+    content,
+    onClick,
+    disabled,
+}) => {
     return (
         <>
-            <Button onClick={onClick}>{content}</Button>
+            <Button onClick={onClick} disabled={disabled}>
+                {content}
+            </Button>
         </>
     )
 }

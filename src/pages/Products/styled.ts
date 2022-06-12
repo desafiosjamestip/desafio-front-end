@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import BackgroundImage from '@/assets/images/background.png'
 
 export const ProductsPageContainer = styled.div`
-    background-color: #101010;
+    background-image: url(${BackgroundImage});
     width: 100vw;
     height: 100vh;
     align-items: center;

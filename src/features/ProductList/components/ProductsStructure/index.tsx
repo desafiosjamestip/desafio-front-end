@@ -9,6 +9,7 @@ import { ProductCard, EditionModal } from '@/features/ProductList/components'
 import NavLink from '@/components/NavLink'
 import { useProductContext } from '@/contexts/product'
 import { Product } from '@/types/IProducts'
+import FormIcon from '@/assets/icons/form-icon.png'
 
 const ProductsStructure: React.FC = () => {
     const [products, { openModal, dispatchRemoveProduct }] = useProductContext()
@@ -23,6 +24,7 @@ const ProductsStructure: React.FC = () => {
                 <ProductsHeaderContainer>
                     <Header placeholder="Lista de produtos" />
                     <NavLink
+                        icon={FormIcon}
                         to="/"
                         linkName="Voltar para Cadastro de Produtos"
                     />
@@ -32,10 +34,19 @@ const ProductsStructure: React.FC = () => {
                         <>
                             <ProductCard
                                 key={product.code}
-                                title={product.name}
+                                title={
+                                    product.name.length > 13
+                                        ? product.name.substring(0, 13) + '...'
+                                        : product.name
+                                }
                                 category={product.category}
-                                supplier={product.supplier}
-                                price={product.price}
+                                supplier={
+                                    product.supplier.length > 13
+                                        ? product.supplier.substring(0, 13) +
+                                          '...'
+                                        : product.supplier
+                                }
+                                price={'R$ ' + product.price}
                                 code={product.code}
                                 onClick={() => removeProduct(product!)}
                                 onOpenModal={() => openModal(product!)}

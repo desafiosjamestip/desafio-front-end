@@ -1,3 +1,4 @@
+import colors from '@/styles/colors'
 import styled from 'styled-components'
 
 export const ProductsCardContainer = styled.div`
@@ -11,6 +12,13 @@ export const ProductsCardContainer = styled.div`
     cursor: pointer;
 `
 
+export const ProductsCardLine = styled.div`
+    height: 0.1rem;
+    min-width: 19vw;
+    border-radius: 1rem;
+    border: 1px solid ${colors.gray02};
+`
+
 export const SelectionCardContainer = styled.div``
 
 export const ProductTitle = styled.h1`
@@ -19,18 +27,22 @@ export const ProductTitle = styled.h1`
 
 export const ProductCode = styled.p`
     font-size: 1rem;
+    margin-top: 0.7rem;
 `
 
 export const ProductCategory = styled.p`
     font-size: 1rem;
+    margin-top: 0.7rem;
 `
 
 export const ProductSupplier = styled.p`
     font-size: 1rem;
+    margin-top: 0.7rem;
 `
 
 export const ProductPrice = styled.p`
     font-size: 1rem;
+    margin-top: 0.7rem;
 `
 
 export const DeleteButton = styled.button`
@@ -42,6 +54,6 @@ export const DeleteButton = styled.button`
 `
 
 export const TrashIcon = styled.img`
-    height: 24px;
-    width: 24px;
+    height: 1.5rem;
+    width: 1.5rem;
 `

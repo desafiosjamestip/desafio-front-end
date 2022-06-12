@@ -1,10 +1,20 @@
 import React from 'react'
-import { DescriptionSectionContainer } from './styled'
+import {
+    DescriptionImage,
+    DescriptionImageContainer,
+    DescriptionSectionContainer,
+} from './styled'
+
+import DescriptionImg from '@/assets/images/description.png'
 
 const DescriptionSection: React.FC = () => {
     return (
         <>
-            <DescriptionSectionContainer></DescriptionSectionContainer>
+            <DescriptionSectionContainer>
+                <DescriptionImageContainer>
+                    <DescriptionImage src={DescriptionImg} />
+                </DescriptionImageContainer>
+            </DescriptionSectionContainer>
         </>
     )
 }

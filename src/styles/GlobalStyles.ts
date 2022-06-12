@@ -12,10 +12,11 @@ const GlobalStyles = createGlobalStyle`
         height: 100vh;
     }
 
+    body,
     input,
     button,
     textarea {
-        font: 16px;
+        font: 16px Graphik;
     }
 `
 

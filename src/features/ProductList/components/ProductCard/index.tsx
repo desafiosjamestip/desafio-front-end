@@ -5,6 +5,7 @@ import {
     ProductCode,
     ProductPrice,
     ProductsCardContainer,
+    ProductsCardLine,
     ProductSupplier,
     ProductTitle,
     SelectionCardContainer,
@@ -39,6 +40,7 @@ const ProductCard: React.FC<ICardProps> = ({
                 </DeleteButton>
                 <SelectionCardContainer onClick={onOpenModal}>
                     <ProductTitle>{title}</ProductTitle>
+                    <ProductsCardLine />
                     <ProductCode>{code}</ProductCode>
                     <ProductCategory>{category}</ProductCategory>
                     <ProductSupplier>{supplier}</ProductSupplier>
