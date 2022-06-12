@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding-top: 36px;
-
   .button-wrapper {
     margin: 0 auto;
     width: 240px;
