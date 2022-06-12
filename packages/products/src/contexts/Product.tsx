@@ -36,7 +36,7 @@ export const ProductProvider = ({ children }) => {
     return JSON.parse(storageItems);
   }, []);
 
-  const setStorage = useCallback((data) => {
+  const setStorage = useCallback((data: Product | Product[]) => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
   }, []);
 

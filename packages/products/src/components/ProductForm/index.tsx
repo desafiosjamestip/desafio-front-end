@@ -10,6 +10,7 @@ import Select from "../Select";
 import useErrors from "../../hooks/useErrors";
 
 import { Form, ButtonContainer } from "./styles";
+import { useHistory } from "react-router-dom";
 
 interface ProductFormProps {
   onSubmit: (formData: Product) => void;
@@ -26,6 +27,8 @@ export function ProductForm({ onSubmit, title, data }: ProductFormProps) {
 
   const { errors, setError, removeError, getErrorMessageByFieldName } =
     useErrors();
+
+  const { push } = useHistory();
 
   const isFormValid =
     name && code && provider && category && price && errors.length === 0;
@@ -82,6 +85,7 @@ export function ProductForm({ onSubmit, title, data }: ProductFormProps) {
 
   function handleSubmit() {
     onSubmit({ name, code, category, provider, price });
+    push("/products");
   }
 
   return (

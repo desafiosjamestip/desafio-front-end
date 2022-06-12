@@ -5,7 +5,7 @@ import { useProduct } from "../../contexts/Product";
 import { ProductCard } from "../../components/ProductCard";
 import { Button } from "../../components/Button";
 
-import { Container, ProductSection } from "./styles";
+import { Container, ProductSection, EmptyProduct } from "./styles";
 
 export function Home() {
   const { products } = useProduct();
@@ -22,11 +22,17 @@ export function Home() {
           Novo produto
         </Button>
       </div>
-      <ProductSection>
-        {products.map((product) => (
-          <ProductCard key={product.code} data={product} />
-        ))}
-      </ProductSection>
+      {products.length >= 1 ? (
+        <ProductSection>
+          {products.map((product) => (
+            <ProductCard key={product.code} data={product} />
+          ))}
+        </ProductSection>
+      ) : (
+        <EmptyProduct>
+          <h1>Nenhum produto cadastrado</h1>
+        </EmptyProduct>
+      )}
     </Container>
   );
 }
