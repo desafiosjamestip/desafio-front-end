@@ -8,8 +8,6 @@ import {
 
 import { Product } from "../@types/Product";
 
-import firstProduct from "../services/products";
-
 interface ProductContext {
   registerProduct: (data: Product) => void;
   editProduct: (id: string, data: Product) => void;
@@ -58,18 +56,37 @@ export const ProductProvider = ({ children }) => {
       const productsList = [...oldProducts, data];
       setStorage(productsList);
     }
-
-    console.log(oldProducts);
   }, []);
 
-  const editProduct = useCallback((id: string, data: Product) => {}, []);
+  const editProduct = useCallback((id: string, data: Product) => {
+    const oldProducts = getStorage();
 
-  const removeProduct = useCallback((id: string) => {}, []);
+    const updatedProducts = oldProducts.map((product) => {
+      if (product.code === id) {
+        return {
+          ...product,
+          ...data,
+        };
+      }
+
+      return product;
+    });
+
+    setStorage(updatedProducts);
+  }, []);
+
+  const removeProduct = useCallback((id: string) => {
+    const oldProducts = getStorage();
+
+    const updatedProducts = oldProducts.filter(
+      (product) => product.code !== id
+    );
+
+    setStorage(updatedProducts);
+  }, []);
 
   useEffect(() => {
     getProducts();
-    // localStorage.clear();
-    // registerProduct(firstProduct);
   }, []);
 
   return (
