@@ -1,76 +1,20 @@
 # Desafio Front-End
 
 ## O que é?
-Este desafio faz parte do processo seletivo para o cargo de Desenvolvedor Front-End no James Tip. Este tem por objetivo medir seu nível de conhecimento com tecnologias de desenvolvimento front-end, e suas capacidades de propor novas ideias e arquiteturas para nossos serviços, sempre com o foco de manter o ambiente simples, seguro, funcional e objetivo.
+Uma aplicação completa para gerenciamento de produtos, nesta aplicação é possivel criar, editar e excluir um produto e ainda criar ou uma excluir categorias de produtos.
 
 ## Introdução
-Um de nossos projetos internos necessita de uma “cara nova” para que os clientes possam acessar e gerenciar informações necessárias para as operações do dia-a-dia das suas empresas. Para isto, você, no papel de Desenvolvedor Front-End, foi acionado para elaborar um novo Portal para os Clientes do James Tip. Seu objetivo é criar um simples app que deve conter (no mínimo) duas páginas, uma que exibe um formulário para cadastro com os campos abaixo, e outra que liste os dados cadastrados:
-* Código do Produto
-* Categoria do Produto (ex.: Eletrônico)
-* Nome do Produto
-* Nome do Fornecedor
-* Valor do Produto
+Para o desenvolvimento eu ultilizei React com Typescript.
+Para o gerenciamento de estados da aplicação foi ultilizado context-api.
+Para a estilização foi ultilizada a biblioteca styled-components, a aplicação é totalmente responsiva.
+Para a persistência de dados e o consumo deles eu optei por criar um back-end de desenvolvimento com a biblioteca json-server, para o consumo dos dados eu ultilizei uma api criada com a biblioteca axios, eu optei por fazer desta forma por achar que se assemelharia mais a um ambiente de produção e que tornaria a aplicação mais realista e até mesmo escalavel.
+* ultilizando o endpoint http://localhost:3001/categories, é possivel criar novas categorias, listar categorias existentes e excluir.
+* ultilizando o endpoint http://localhost:3001/products, é possivel criar novos produtos, listas produtos existentes e excluir produtos, IMPORTANTE: cada produto necesita de uma categoria para ser criado,então é importante que antes de criar um produto, pelo menos uma categoria tenha sido criada.
 
-Para isto, foram estipuladas algumas necessidades, as quais devem ser atendidas:
-* Projetar interfaces de usuário para alcançar objetivos de diversos usuários finais;
-* Determinar o layout e a apresentação do aplicativo/página;
-* Proporcionar uma experiência de usuário agradável, combinada com alto desempenho, segurança e capacidade de resposta;
-* Garantir a viabilidade técnica de projetos de UI/UX;
-* Otimizar aplicativos para máxima velocidade e escalabilidade;
-* Realizar a engenharia da experiência de design de interação de elementos na interface do usuário;
-* Garantir uma navegação intuitiva e com acessibilidade;
+## Instalar e rodar
+Para rodar a aplicação, basta seguir esse passo a passo:
+* Abra o projeto dentro do seu editor de texto escolhdio, abra duas janelas do seu terminal, na primeira acesse a pasta back-end ultilizando o comando 'cd back-end', já dentro da pasta rode o comando npm start ou yarn start. Uma vez com o back-end iniciado, vá para o segundot terminal e acesse a pasta front-end ultilizando o comando 'cd front-end' e rode o comando npm start ou yarn start.
+* Após seguir esse passo a passo, basta entrar no seu navegador e acessar a url http://localhost:3000, divirta-se!
 
-A principal ideia aqui é que você faça por você mesmo (DIY);
-
-
-## Requisitos técnicos
-Para realização deste desafio, deverão ser observados os seguintes requisitos:
-* A aplicação deverá ser Single Page Application (SPA);
-* O Layout deverá ser TableLess;
-* Implementação de compatibilidade entre navegadores de aplicativos da web;
-* Deve ser possível editar, listar e excluir os dados cadastrados pelo formulário;
-* Utilizar React.js para o desenvolvimento da aplicação;
-* Utilizar TypeScript;
-* Utilizar Context API para o compartilhamento das informações entre as páginas;
-* Fazer a persistência dos dados no localStorage ou IndexedDB;
-* Utilizar styled-components para estilização dos componentes;
-* Utilizar react-router-dom para a navegação entre as páginas;
-* (Opcional) Implementar testes utilizando jest/testing-library ou outra biblioteca para testes unitários;
-
-Você é livre para estruturar o projeto da maneira que achar mais organizada.
-
-Você é livre para implementar o código em qualquer padrão que achar mais adequado.
-
-Você pode adicionar funcionalidades ou utilizar outros componentes como desejar, mas não fuja da simplicidade.
-
-## Entregáveis
-Ao final do desafio, você deverá realizar um PULL REQUEST neste repositório, o qual deverá conter o seguinte conteúdo:
-* Todo e qualquer arquivo necessário para que possamos reproduzir a aplicação criada em um servidor web simples;
-
-Arquivo README.md, contendo:
-* Breve descrição das funcionalidades da aplicação entregue;
-* Ferramentas utilizadas, e o por que estas foram escolhidas para a realização do desafio;
-* Decisões adotadas durante o planejamento e execução do desafio, justificando-as;
-
-**IMPORTANTE:** Mesmo que você não consiga concluir o desafio por completo, envie o que você conseguiu fazer! Iremos avaliar todo e qualquer desenvolvimento que você nos apresentar! O mais importante deste desafio é, que ao final dele, você adquira novos conhecimentos ou aprimore os que você já possui. ;)
-
-Após, envie e-mail para *marcio.tavares@jamestip.com*, com cópia para *torres@jamestip.com*, com o assunto "Desafio Front-End", sinalizando a entrega do desafio para avaliação.
-
-## O que será avaliado?
-Usabilidade
-
-Criatividade
-
-Boa apresentação (Layout Clean e Profissional)
-
-Boas práticas da arquitetura da informação
-
-Código limpo e organização
-
-Documentação de código (*Tip:* Podem ser “comentários” no código)
-
-Capacidade de tomada de decisões técnicas
- 
-# *Desafio Bônus*
-*Implementar o mesmo portal em arquitetura micro-frontend utilizando single-spa*
-
+Espero que gostem!!
+<img src='https://user-images.githubusercontent.com/50087300/173211460-2e3345d3-c192-491e-abea-3e5ac95be20e.png'></img>
