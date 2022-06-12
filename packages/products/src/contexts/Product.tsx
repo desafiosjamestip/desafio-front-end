@@ -6,6 +6,10 @@ import {
   useState,
 } from "react";
 
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 import { Product } from "../@types/Product";
 
 interface ProductContext {
@@ -47,42 +51,56 @@ export const ProductProvider = ({ children }) => {
   }, []);
 
   const registerProduct = useCallback((data: Product) => {
-    const oldProducts = getStorage();
+    try {
+      const oldProducts = getStorage();
 
-    if (!oldProducts) {
-      const newProduct = new Array(data);
-      setStorage(newProduct);
-    } else {
-      const productsList = [...oldProducts, data];
-      setStorage(productsList);
+      if (!oldProducts) {
+      } else {
+        const productsList = [...oldProducts, data];
+        setStorage(productsList);
+      }
+
+      toast.success("Produto cadastrado!");
+    } catch {
+      toast.error("Não foi possível cadastrar! Tente novamente!");
     }
   }, []);
 
   const editProduct = useCallback((id: string, data: Product) => {
-    const oldProducts = getStorage();
+    try {
+      const oldProducts = getStorage();
 
-    const updatedProducts = oldProducts.map((product) => {
-      if (product.code === id) {
-        return {
-          ...product,
-          ...data,
-        };
-      }
+      const updatedProducts = oldProducts.map((product) => {
+        if (product.code === id) {
+          return {
+            ...product,
+            ...data,
+          };
+        }
 
-      return product;
-    });
+        return product;
+      });
 
-    setStorage(updatedProducts);
+      setStorage(updatedProducts);
+      toast.success("Produto editado!");
+    } catch {
+      toast.error("Não foi possível editar! Tente novamente!");
+    }
   }, []);
 
   const removeProduct = useCallback((id: string) => {
-    const oldProducts = getStorage();
+    try {
+      const oldProducts = getStorage();
 
-    const updatedProducts = oldProducts.filter(
-      (product) => product.code !== id
-    );
+      const updatedProducts = oldProducts.filter(
+        (product) => product.code !== id
+      );
 
-    setStorage(updatedProducts);
+      setStorage(updatedProducts);
+      toast.success("Produto removido!");
+    } catch {
+      toast.error("Não foi possível remover! Tente novamente!");
+    }
   }, []);
 
   useEffect(() => {
@@ -94,6 +112,7 @@ export const ProductProvider = ({ children }) => {
       value={{ registerProduct, editProduct, removeProduct, products }}
     >
       {children}
+      <ToastContainer />
     </ProductContext.Provider>
   );
 };
