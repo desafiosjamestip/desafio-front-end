@@ -27,7 +27,8 @@ export function ProductForm({ onSubmit, title, data }: ProductFormProps) {
   const { errors, setError, removeError, getErrorMessageByFieldName } =
     useErrors();
 
-  const isFormValid = name && errors.length === 0;
+  const isFormValid =
+    name && code && provider && category && price && errors.length === 0;
 
   function handleCodeChange(event) {
     setCode(event.target.value);
@@ -134,7 +135,7 @@ export function ProductForm({ onSubmit, title, data }: ProductFormProps) {
       </FormGroup>
 
       <ButtonContainer>
-        <Button to="#" onClick={handleSubmit}>
+        <Button type="button" onClick={handleSubmit} disabled={!isFormValid}>
           {title}
         </Button>
       </ButtonContainer>

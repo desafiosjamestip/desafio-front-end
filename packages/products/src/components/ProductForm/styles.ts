@@ -20,7 +20,7 @@ export const Form = styled.form`
 export const ButtonContainer = styled.div`
   margin-top: 24px;
 
-  a {
+  button {
     width: 240px;
   }
 `;

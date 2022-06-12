@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-import { Link } from "react-router-dom";
-
-export const Button = styled(Link)`
+export const Button = styled.button`
   width: 100%;
   display: block;
   background: #00cfb4;
@@ -17,4 +15,9 @@ export const Button = styled(Link)`
   outline: none;
   text-decoration: none;
   cursor: pointer;
+
+  &[disabled] {
+    background: ${({ theme }) => theme.colors.gray[100]};
+    cursor: not-allowed;
+  }
 `;
