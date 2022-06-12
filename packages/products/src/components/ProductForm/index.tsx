@@ -1,11 +1,18 @@
 import { useState } from "react";
+import { Product } from "../../@types/Product";
+
 import { Button } from "../Button";
 import { FormGroup } from "../FormGroup";
 import Input from "../Input";
 import Select from "../Select";
+
 import { Form, ButtonContainer } from "./styles";
 
-export function ProductForm() {
+interface ProductFormProps {
+  onSubmit: (formData: Product) => void;
+}
+
+export function ProductForm({ onSubmit }: ProductFormProps) {
   const [name, setName] = useState("");
   const [code, setCode] = useState("");
   const [category, setCategory] = useState("");
@@ -32,6 +39,10 @@ export function ProductForm() {
     setPrice(event.target.value);
   }
 
+  function handleSubmit() {
+    onSubmit({ name, code, category, provider, price });
+  }
+
   return (
     <Form>
       <div className="title-container">
@@ -51,16 +62,16 @@ export function ProductForm() {
         <span>Categoria</span>
         <Select value={category} onChange={handleCategoryChange}>
           <option value="">Sem categoria</option>
-          <option value="b14s">Eletrônicos</option>
-          <option value="b54a">Eletrodomésticos</option>
+          <option value="eletrônicos">Eletrônicos</option>
+          <option value="eletrodomésticos">Eletrodomésticos</option>
         </Select>
       </FormGroup>
       <FormGroup>
         <span>Fornecedor</span>
         <Select value={provider} onChange={handleProviderChange}>
           <option value="">Sem fornecedor</option>
-          <option value="b14s">Kabum</option>
-          <option value="b54a">Americanas</option>
+          <option value="kabum">Kabum</option>
+          <option value="americanas">Americanas</option>
         </Select>
       </FormGroup>
 
@@ -70,7 +81,7 @@ export function ProductForm() {
       </FormGroup>
 
       <ButtonContainer>
-        <Button to="#" onClick={() => alert("ola")}>
+        <Button to="#" onClick={handleSubmit}>
           Cadastrar produto
         </Button>
       </ButtonContainer>

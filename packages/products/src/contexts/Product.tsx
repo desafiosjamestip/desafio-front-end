@@ -6,23 +6,13 @@ import {
   useState,
 } from "react";
 
+import { Product } from "../@types/Product";
+
 import firstProduct from "../services/products";
 
-interface Product {
-  name: string;
-  category: string;
-  code: string;
-  provider: string;
-  price: string;
-}
-
-interface ProductData {
-  data: Product;
-}
-
 interface ProductContext {
-  registerProduct: (data: ProductData) => void;
-  editProduct: (id: string, data: ProductData) => void;
+  registerProduct: (data: Product) => void;
+  editProduct: (id: string, data: Product) => void;
   removeProduct: (id: string) => void;
   products: Product[];
 }
@@ -32,13 +22,12 @@ const STORAGE_KEY = "@jamestip/products";
 export const ProductContext = createContext({} as ProductContext);
 
 export const ProductProvider = ({ children }) => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   const getStorage = useCallback((): Product[] | null => {
     const storageItems = localStorage.getItem(STORAGE_KEY);
 
     if (!storageItems) {
-      console.log(storageItems);
       return null;
     }
 
@@ -59,7 +48,7 @@ export const ProductProvider = ({ children }) => {
     setProducts((oldProducts) => [...oldProducts, ...productsList]);
   }, []);
 
-  const registerProduct = useCallback((data: ProductData) => {
+  const registerProduct = useCallback((data: Product) => {
     const oldProducts = getStorage();
 
     if (!oldProducts) {
@@ -73,7 +62,7 @@ export const ProductProvider = ({ children }) => {
     console.log(oldProducts);
   }, []);
 
-  const editProduct = useCallback((id: string, data: ProductData) => {}, []);
+  const editProduct = useCallback((id: string, data: Product) => {}, []);
 
   const removeProduct = useCallback((id: string) => {}, []);
 
