@@ -55,6 +55,8 @@ export const ProductProvider = ({ children }) => {
       const oldProducts = getStorage();
 
       if (!oldProducts) {
+        const newProduct = new Array(data);
+        setStorage(newProduct);
       } else {
         const productsList = [...oldProducts, data];
         setStorage(productsList);
