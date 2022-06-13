@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/website?down_message=offline&logo=vercel&style=for-the-badge&up_message=online&url=https%3A%2F%2Fhttps://james-tip-pink.vercel.app/%2F&labelColor=f5f5f5&logoColor=black" alt="Server Status">
+  <img src="https://img.shields.io/website?down_message=offline&logo=vercel&style=for-the-badge&up_message=online&url=https%3A%2F%2Fjames-tip-pink.vercel.app/%2F&labelColor=f5f5f5&logoColor=black" alt="Server Status">
   <img src="https://img.shields.io/github/last-commit/leomelegari/desafio-front-end?style=for-the-badge&color=27ae60&labelColor=f5f5f5" alt="Languages">
   <img src="https://img.shields.io/github/languages/count/leomelegari/desafio-front-end?style=for-the-badge&color=27ae60&labelColor=f5f5f5" alt="Languages">
 </p>
