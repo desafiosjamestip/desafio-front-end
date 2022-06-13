@@ -1,0 +1,11 @@
+/.git
+**/node_modules
+**/build
+/coverage
+**/jspm_packages
+/tests_report
+/storybook-static
+.gitignore
+jest.config.js
+yarn.lock
+/public/manifest.json

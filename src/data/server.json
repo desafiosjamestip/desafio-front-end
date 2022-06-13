@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "category": "calçado",
+      "price": 145,
+      "supplierName": "casas bahia",
+      "name": "tenis Nike",
+      "code": 333060,
+      "id": "wxZQqEc"
+    },
+    {
+      "category": "Vestuario",
+      "supplierName": "Farma",
+      "name": "Vestido ",
+      "code": 333078,
+      "price": "189",
+      "id": "WNlQtkf"
+    },
+    {
+      "category": "Vestuario",
+      "supplierName": "Polo",
+      "name": "camisa",
+      "code": 39983060,
+      "price": "169",
+      "id": "q1m1t1T"
+    },
+    {
+      "category": "calçado",
+      "supplierName": "casas bahia",
+      "name": "tenis Nike",
+      "code": 333060,
+      "price": "154",
+      "id": "w-jRkiX"
+    },
+    {
+      "category": "calçado",
+      "supplierName": "casas bahia",
+      "name": "tenis Nike",
+      "code": 333060666,
+      "price": "158588",
+      "id": "VqCkSuX"
+    },
+    {
+      "category": "calçado",
+      "supplierName": "adidas",
+      "name": "tenis ",
+      "code": 555888,
+      "price": "45877",
+      "id": "R6jTPqu"
+    }
+  ]
+}
