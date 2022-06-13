@@ -25,6 +25,7 @@ Para facilitar o gerenciamento dos projetos e instalação de dependências e ex
 ## Ferramentas
 
 - React
+- Typescript
 - Styled components
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom)
 - [Single-spa](https://single-spa.js.org/)
