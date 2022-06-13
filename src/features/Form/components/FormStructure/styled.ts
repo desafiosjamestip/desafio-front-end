@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 export const FormContainer = styled.div`
-    height: 80vh;
+    max-height: 41rem;
+    margin-top: 6rem;
+    margin-bottom: 4rem;
     width: 90vw;
     border-radius: 1rem;
     display: flex;

@@ -18,7 +18,6 @@ const FormSection: React.FC = () => {
     })
     const [products, { dispatchProducts }] = useProductContext()
 
-    console.log(products)
     const submitProduct = () => {
         if (products.every(element => element.code !== product.code)) {
             dispatchProducts(product)
@@ -43,6 +42,11 @@ const FormSection: React.FC = () => {
         <>
             <FormSectionContainer>
                 <FormDataContainer>
+                    <NavLink
+                        to="products"
+                        linkName="Ver Produtos Cadastrados"
+                        icon={ProductsIcon}
+                    />
                     <Header placeholder="Cadastre um Novo Produto" />
                     <InputStructure
                         label="Nome do Produto"
@@ -107,11 +111,6 @@ const FormSection: React.FC = () => {
                     />
                 </FormDataContainer>
                 <ToastContainer />
-                <NavLink
-                    to="products"
-                    linkName="Ver Produtos Cadastrados"
-                    icon={ProductsIcon}
-                />
             </FormSectionContainer>
         </>
     )

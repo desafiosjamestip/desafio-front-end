@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom'
 
 export const LinkContainer = styled.div`
     position: absolute;
-    right: 7rem;
-    top: 7.4rem;
+    right: 1.5rem;
+    top: 1.5rem;
+    background-color: white;
+    padding: 0.8rem;
+    border-radius: 1rem;
 `
 
 export const LinkNavigation = styled(Link)`

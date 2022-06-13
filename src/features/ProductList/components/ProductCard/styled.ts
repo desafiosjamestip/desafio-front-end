@@ -2,7 +2,7 @@ import colors from '@/styles/colors'
 import styled from 'styled-components'
 
 export const ProductsCardContainer = styled.div`
-    height: 20vh;
+    height: 11rem;
     min-width: 19vw;
     border-radius: 1rem;
     background-color: white;
@@ -10,10 +10,14 @@ export const ProductsCardContainer = styled.div`
     margin-left: 0;
     padding: 1rem;
     cursor: pointer;
+
+    @media (max-width: 750px) {
+        min-width: 15rem;
+    }
 `
 
 export const ProductsCardLine = styled.div`
-    height: 0.1rem;
+    height: 1px;
     min-width: 19vw;
     border-radius: 1rem;
     border: 1px solid ${colors.gray02};

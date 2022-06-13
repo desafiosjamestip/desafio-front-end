@@ -10,4 +10,5 @@ export const FormPageContainer = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    overflow: auto;
 `

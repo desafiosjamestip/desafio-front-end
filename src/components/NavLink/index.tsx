@@ -1,6 +1,5 @@
 import React from 'react'
 import { LinkContainer, LinkNavigation, NavLinkIcon } from './styled'
-/* import test from '@/assets/icons/products-icon.png' */
 
 type ILinkProps = {
     linkName: string
