@@ -4,7 +4,7 @@ import { createContext, ReactNode, useContext, useReducer } from 'react';
 type State = {
     currentStep: number;
     productName: string;
-    productCode: number;
+    productCode: string;
     productCategory: string;
     productValue: number;
     supplierName: string;
@@ -17,7 +17,7 @@ type FormProviderProps = { children: ReactNode };
 const initialData: State = {
     currentStep: 0,
     productName: '',
-    productCode: 0,
+    productCode: '',
     productCategory: '',
     productValue: 0,
     supplierName: ''

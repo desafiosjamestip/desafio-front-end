@@ -18,7 +18,7 @@ export const FormStep1 = () => {
 
     // Ação de mudança de página
     const handleNextStep = () => {
-        if (state.productName !== '') {
+        if (state.productName !== '' && state.productCode !== '') {
             navigate('/step2');
         } else {
             alert("Preencha os dados");
@@ -30,6 +30,13 @@ export const FormStep1 = () => {
     const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
         dispatch({
             type: FormActions.setProductName,
+            payload: e.target.value
+        });
+    }
+
+    const handleCodeChange = (e: ChangeEvent<HTMLInputElement>) => {
+        dispatch({
+            type: FormActions.setProductCode,
             payload: e.target.value
         });
     }
@@ -47,7 +54,6 @@ export const FormStep1 = () => {
                     Nome do Produto
                     <input 
                         type="text"
-                        autoFocus
                         value={state.productName}
                         onChange={handleNameChange}
                     />
@@ -56,6 +62,8 @@ export const FormStep1 = () => {
                     Código do Produto
                     <input 
                         type="number"
+                        value={state.productCode}
+                        onChange={handleCodeChange}
                     />
                 </label>
 

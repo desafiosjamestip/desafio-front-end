@@ -61,4 +61,11 @@ export const Container = styled.div`
         margin: 20px 0;
         cursor: pointer;
     }
+
+    .backbtn {
+        font-size: 16px;
+        text-decoration: none;
+        padding: 20px 40px;
+        color: #00df72;
+    }
 `;

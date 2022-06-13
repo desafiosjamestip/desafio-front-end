@@ -1,18 +1,23 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import * as C from "./styles";
 import { Theme } from '../../components/Theme';
 import { useForm, FormActions } from '../../contexts/FormContext';
 import { ChangeEvent, useEffect } from 'react';
+import CurrencyInput from 'react-currency-input-field';
 
 export const FormStep2 = () => {
     const navigate = useNavigate();
     const { state, dispatch } = useForm();
 
     useEffect(() => {
-        dispatch({
-            type: FormActions.setCurrentStep,
-            payload: 2
-        });
+        if(state.productName === '') {
+            navigate('/')
+        } else {
+            dispatch({
+                type: FormActions.setCurrentStep,
+                payload: 2
+            });
+        }
     }, []);
 
     // Ação de mudança de página
@@ -23,6 +28,20 @@ export const FormStep2 = () => {
             alert("Preencha os dados");
         }
         
+    }
+
+    const handleValueChange = (e: ChangeEvent<HTMLInputElement>) => {
+        dispatch({
+            type: FormActions.setProductValue,
+            payload: e.target.value
+        });
+    }
+
+    const handleSupplierChange = (e: ChangeEvent<HTMLInputElement>) => {
+        dispatch({
+            type: FormActions.setSupplierName,
+            payload: e.target.value
+        });
     }
 
     return (
@@ -46,19 +65,26 @@ export const FormStep2 = () => {
                 </label>
                 <label>
                     Valor do Produto
-                    <input 
+                    <CurrencyInput 
                         type="number"
+                        id="input-example"
+                        name="input-name"
+                        decimalsLimit={2}
+                        value={state.productValue}
+                        onChange={handleValueChange}
                     />
                 </label>
                 <label>
                     Nome do Fornecedor
                     <input 
                         type="text"
+                        value={state.supplierName}
+                        onChange={handleSupplierChange}
                     />
                 </label>
 
-
-                <button onClick={handleNextStep}>Próximo</button>
+                <Link to="/" className='backbtn'>Voltar</Link>
+                <button onClick={handleNextStep}>Cadastrar</button>
             </C.Container>
         </Theme>
     )
