@@ -1,76 +1,60 @@
-# Desafio Front-End
+<p align="center">
+	<img src="./public/favicon.ico" width="80">
+</p>
 
-## O que é?
-Este desafio faz parte do processo seletivo para o cargo de Desenvolvedor Front-End no James Tip. Este tem por objetivo medir seu nível de conhecimento com tecnologias de desenvolvimento front-end, e suas capacidades de propor novas ideias e arquiteturas para nossos serviços, sempre com o foco de manter o ambiente simples, seguro, funcional e objetivo.
+<h1 align="center">Desafio Front-End: Portal de Clientes</h1>
 
-## Introdução
-Um de nossos projetos internos necessita de uma “cara nova” para que os clientes possam acessar e gerenciar informações necessárias para as operações do dia-a-dia das suas empresas. Para isto, você, no papel de Desenvolvedor Front-End, foi acionado para elaborar um novo Portal para os Clientes do James Tip. Seu objetivo é criar um simples app que deve conter (no mínimo) duas páginas, uma que exibe um formulário para cadastro com os campos abaixo, e outra que liste os dados cadastrados:
-* Código do Produto
-* Categoria do Produto (ex.: Eletrônico)
-* Nome do Produto
-* Nome do Fornecedor
-* Valor do Produto
+## Status
 
-Para isto, foram estipuladas algumas necessidades, as quais devem ser atendidas:
-* Projetar interfaces de usuário para alcançar objetivos de diversos usuários finais;
-* Determinar o layout e a apresentação do aplicativo/página;
-* Proporcionar uma experiência de usuário agradável, combinada com alto desempenho, segurança e capacidade de resposta;
-* Garantir a viabilidade técnica de projetos de UI/UX;
-* Otimizar aplicativos para máxima velocidade e escalabilidade;
-* Realizar a engenharia da experiência de design de interação de elementos na interface do usuário;
-* Garantir uma navegação intuitiva e com acessibilidade;
+<h4 align="center"> 
+	Portal de Clientes - Finalizado ✅
+</h4>
 
-A principal ideia aqui é que você faça por você mesmo (DIY);
+## Descrição
 
+Trata-se de uma aplicação destinada a clientes da James Tip que desejam gerenciar seus produtos. Por meio dela é possível:
 
-## Requisitos técnicos
-Para realização deste desafio, deverão ser observados os seguintes requisitos:
-* A aplicação deverá ser Single Page Application (SPA);
-* O Layout deverá ser TableLess;
-* Implementação de compatibilidade entre navegadores de aplicativos da web;
-* Deve ser possível editar, listar e excluir os dados cadastrados pelo formulário;
-* Utilizar React.js para o desenvolvimento da aplicação;
-* Utilizar TypeScript;
-* Utilizar Context API para o compartilhamento das informações entre as páginas;
-* Fazer a persistência dos dados no localStorage ou IndexedDB;
-* Utilizar styled-components para estilização dos componentes;
-* Utilizar react-router-dom para a navegação entre as páginas;
-* (Opcional) Implementar testes utilizando jest/testing-library ou outra biblioteca para testes unitários;
+1. Registrar produtos;
+2. Ver a lista de produtos registrados;
+3. Atualizar dados sobre um produto específico;
+4. Excluir produtos da lista.
 
-Você é livre para estruturar o projeto da maneira que achar mais organizada.
+## Conteúdo
 
-Você é livre para implementar o código em qualquer padrão que achar mais adequado.
+-   [Descrição](#descrição)
+-   [Status](#status)
+-   [Conteúdo](#conteúdo)
+-   [Ferramentas](#ferramentas)
+-   [Planejamento e Execução](#planejamento-e-execução)
+-   [Imagens](#imagens)
 
-Você pode adicionar funcionalidades ou utilizar outros componentes como desejar, mas não fuja da simplicidade.
+## Ferramentas
 
-## Entregáveis
-Ao final do desafio, você deverá realizar um PULL REQUEST neste repositório, o qual deverá conter o seguinte conteúdo:
-* Todo e qualquer arquivo necessário para que possamos reproduzir a aplicação criada em um servidor web simples;
+-   Typescript: Utilização de tipagem estática durante o desenvolvimento da aplicação para facilitar o controle do fluxo dos dados necessários, além de utilidades como as sugestões de autocomplete.
+-   React JS: Bibioteca Javascript que facilita a criação de interfaces de usuário por meio de sua base (componentes, propriedades e estado) + function componentes (estruturação dos componentes em forma de funções)
+-   API Context: Criação de contextos para o compartilhamento de estados e funções com o intuito de evitar a sobrecarga de propriedades sendo passada entre os componentes (problema com prop drilling)
+-   Styled Components: Possibilidade de componentizar as mais diversas estruturas HTML com o intuito de facilitar a estilização de componentes e possibilitar uma aplicação com maior facilidade de escalabilidade.
 
-Arquivo README.md, contendo:
-* Breve descrição das funcionalidades da aplicação entregue;
-* Ferramentas utilizadas, e o por que estas foram escolhidas para a realização do desafio;
-* Decisões adotadas durante o planejamento e execução do desafio, justificando-as;
+## Planejamento e Execução
 
-**IMPORTANTE:** Mesmo que você não consiga concluir o desafio por completo, envie o que você conseguiu fazer! Iremos avaliar todo e qualquer desenvolvimento que você nos apresentar! O mais importante deste desafio é, que ao final dele, você adquira novos conhecimentos ou aprimore os que você já possui. ;)
+1. Inicialmente se estabeleceu uma base (boilerplate) para se iniciar o projeto, utilizando ESLint/prettier/EditorConfig (padronização de código) + Commitlint/Commitzen (padronização de commits) + caminho absoluto (melhorar a leitura dos imports);
 
-Após, envie e-mail para *marcio.tavares@jamestip.com*, com cópia para *torres@jamestip.com*, com o assunto "Desafio Front-End", sinalizando a entrega do desafio para avaliação.
+2. Em seguida, se priorizou estabelecer a estrutura básica de navegação para o usuário, dividindo em duas interfaces: Página de formulário + Página de produtos.
 
-## O que será avaliado?
-Usabilidade
+3. Com isso, foi possível estabelecer a lógica geral necesssária para a realização das atividades propostas (criação, listage, edição e exclusão de produtos).
 
-Criatividade
+4. A partir desse ponto, tornou-se interessante trabalhar na estilização geral, trazendo pontos que melhoram a experiência do usuário (imagens, paleta de cores, desabilitação de botões...)
 
-Boa apresentação (Layout Clean e Profissional)
+5. Por fim, atentou-se a detalhes voltados para a finalização da documentação e outras questões voltadas a experiência, como a responsividade.
 
-Boas práticas da arquitetura da informação
+Apesar de estabelecer o projeto como finalizado (diante do prazo), seria possível continuar com melhorias, como:
 
-Código limpo e organização
+-   Melhorias na responsividade
+-   Possibilidade de adicionar imagens para cada produto
+-   Melhorias na escolha das cores e das imagens
+    (...)
 
-Documentação de código (*Tip:* Podem ser “comentários” no código)
+## Imagens
 
-Capacidade de tomada de decisões técnicas
- 
-# *Desafio Bônus*
-*Implementar o mesmo portal em arquitetura micro-frontend utilizando single-spa*
-
+<img src="./src/assets/images/pc01.png">
+<img src="./src/assets/images/pc02.png">
