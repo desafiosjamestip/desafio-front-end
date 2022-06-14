@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "start": "lerna run start --stream",
+    "bootstrap": "lerna bootstrap"
+  },
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^5.1.1"
+  },
+  "dependencies": {
+    "react-toastify": "^9.0.4"
+  }
+}
