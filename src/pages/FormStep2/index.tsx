@@ -3,7 +3,6 @@ import * as C from "./styles";
 import { Theme } from '../../components/Theme';
 import { useForm, FormActions } from '../../contexts/FormContext';
 import { ChangeEvent, useEffect } from 'react';
-import CurrencyInput from 'react-currency-input-field';
 
 export const FormStep2 = () => {
     const navigate = useNavigate();
