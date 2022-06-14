@@ -1,0 +1,12 @@
+{
+  "products": [
+    {
+      "category": "Vestuario",
+      "price": 145,
+      "provideName": "Nike",
+      "name": "tenis Nike",
+      "code": 333060,
+      "id": 1
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, number } from '@storybook/addon-knobs';
+import { colors } from '../../tokens';
+import { ProgressIndicator } from './ProgressIndicator';
+
+<Meta title="Design System/ProgressIndicator" />
+
+# Progress Indicator
+
+<Preview>
+  <Story name="ProgressIndicator" decorators={[withKnobs]}>
+    <ProgressIndicator
+      color={select('color', colors, colors.primary)}
+      size={number('size', 44)}
+      strokeWidth={number('strokeWidth', 3)}
+    />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={ProgressIndicator} />
