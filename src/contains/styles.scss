@@ -1,0 +1,28 @@
+.divApp {
+  height: 100vh;
+  overflow: auto;
+}
+
+.divMenu {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+
+  label {
+    color: white;
+  }
+}
+
+.divContent {
+  padding: 12px;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: var(--green) !important;
+}
+
+.iconBox {
+  margin-right: 10px;
+}
