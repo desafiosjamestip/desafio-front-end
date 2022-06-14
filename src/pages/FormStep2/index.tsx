@@ -64,11 +64,8 @@ export const FormStep2 = () => {
                 </label>
                 <label>
                     Valor do Produto
-                    <CurrencyInput 
+                    <input
                         type="number"
-                        id="input-example"
-                        name="input-name"
-                        decimalsLimit={2}
                         value={state.productValue}
                         onChange={handleValueChange}
                     />
