@@ -2,12 +2,11 @@ import { useNavigate } from 'react-router-dom';
 import * as C from "./styles";
 import { Theme } from '../../components/Theme';
 import { useForm, FormActions } from '../../contexts/FormContext';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useEffect } from 'react';
 
 export const FormStep1 = () => {
     const navigate = useNavigate();
     const { state, dispatch } = useForm();
-    const [name, setName] = useState()
 
     useEffect(() => {
         dispatch({
