@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 import ProductsListComponents from "../../Components/ProductsList";
 
-import { Container } from "./style";
+import { ContainerHeader, ContainerVitrini, H3 } from "./style";
 import Button from "../../Components/Button";
 
 const ProductsList = () => {
@@ -12,19 +12,19 @@ const ProductsList = () => {
   };
 
   return (
-    <div>
-      <Container>
-        <h3>Lista de Produtos</h3>
+    <ContainerVitrini>
+      <ContainerHeader>
+        <H3>Lista de Produtos</H3>
         <Button
           className="buttonHome"
           onClick={toRegister}
           children={"Cadastrar Produto"}
+          bgcolor={"#00d0b3"}
+          height={"40px"}
         />
-      </Container>
-      <main>
-        <ProductsListComponents />
-      </main>
-    </div>
+      </ContainerHeader>
+      <ProductsListComponents />
+    </ContainerVitrini>
   );
 };
 
