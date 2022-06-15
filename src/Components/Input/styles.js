@@ -3,7 +3,7 @@ import { css } from "styled-components";
 
 export const Container = styled.div`
   text-align: left;
-  color: #fff;
+  color: #ffffff;
   div {
     span {
       color: var(--red);
@@ -27,14 +27,13 @@ export const InputContainer = styled.div`
     `}
 
   input {
-    background: #6ec1e4;
-    height: 30px;
+    height: 40px;
     align-items: center;
     margin: 10px 0px 30px 0px;
     flex: 1;
     border: 0;
     padding-left: 10px;
-    color: var(--black);
+    color: #000000;
     border-radius: 8px;
     &::placeholder {
       color: var(--gray);
