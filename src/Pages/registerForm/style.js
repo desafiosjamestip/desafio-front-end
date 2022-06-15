@@ -5,23 +5,14 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: stretch;
-  justify-content: center;
-  background-color: #101010;
+  background-color: #54595f;
+  flex-direction: column;
 `;
 
 export const Content = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-around;
   width: 100%;
-
-  img {
-    width: 50vw;
-
-    @media (max-width: 900px) {
-      display: none;
-    }
-  }
+  overflow-y: auto;
 `;
 
 const animationAppearFromRight = keyframes`
@@ -42,10 +33,12 @@ export const AnimationContainer = styled.div`
   justify-content: center;
   animation: ${animationAppearFromRight} 1s;
   width: 100%;
+`;
 
-  form {
-    width: 100%;
-    max-width: 450px;
-    text-align: center;
-  }
+export const Form = styled.form`
+  padding: 20px 0px 20px 0px;
+  width: 90%;
+  height: 90%;
+  max-width: 350px;
+  text-align: center;
 `;
