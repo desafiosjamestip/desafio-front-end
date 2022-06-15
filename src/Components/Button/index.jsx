@@ -2,7 +2,6 @@ import { Container } from "./style";
 
 const Button = ({
   type,
-  item,
   bgcolor,
   children,
   color,
@@ -10,19 +9,20 @@ const Button = ({
   width,
   height,
   onClick,
+  hover,
   ...rest
 }) => {
   return (
     <>
       <Container
         type={type}
-        item={item}
         bgcolor={bgcolor}
         color={color}
         bdradius={bdradius}
         width={width}
         height={height}
         onClick={onClick}
+        hover={hover}
         {...rest}
       >
         {children}
