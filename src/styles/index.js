@@ -57,13 +57,14 @@ export const Reset = createGlobalStyle`
 export const RootVariables = createGlobalStyle`
     :root{
         //THEME COLORS
-        --color-primary: #6EC1E4;
+        --color-primary: #00D0B3;
         --color-secondary-1: #54595F;
         --color-secondary-2: #101010;
 
         //GENERAL COLORS
         --color-white: #FFFFFF;
         --color-black: #000000;
+        --color-red: #FF0000;
 
     }
 `;
