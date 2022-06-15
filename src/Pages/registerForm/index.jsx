@@ -71,9 +71,8 @@ const RegisterForm = () => {
           onClick={toHome}
           bgcolor={"#00d0b3"}
           height={"40px"}
-        >
-          Visualizar Produtos
-        </Button>
+          children={"Visualizar Produtos"}
+        />
       </ContainerHeader>
       <Content>
         <AnimationContainer>
