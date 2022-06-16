@@ -16,6 +16,8 @@ Depois, inicie o projeto no localhost paraa poder utilizar as funcionalidades do
 
     yarn start
 
+<img src="[vscode.png](https://postimg.cc/yJ9fpD87)"/>
+
 # Front-End
 
 O projeto foi implementado com react.js, e o css utiliza a biblioteca styled-components.
