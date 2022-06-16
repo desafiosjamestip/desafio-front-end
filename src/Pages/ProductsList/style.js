@@ -15,8 +15,9 @@ export const ContainerHeader = styled.div`
 `;
 
 export const H3 = styled.h3`
-  color: #00d0b3;
+  color: #e0ffff;
   font-size: 30px;
+  font-family: poppins;
 
   @media screen and (min-width: 500px) {
     font-size: 60px;

@@ -1,5 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
+const poppins = require("../assets/fonts/Poppins-Regular.ttf");
+const inter = require("../assets/fonts/Inter-VariableFont_slnt,wght.ttf");
+const supermecado = require("../assets/fonts/SupermercadoOne-Regular.ttf");
+
 export const Reset = createGlobalStyle`
     /* http://meyerweb.com/eric/tools/css/reset/ 
     v2.0 | 20110126
@@ -55,6 +59,20 @@ export const Reset = createGlobalStyle`
 `;
 
 export const RootVariables = createGlobalStyle`
+        @font-face {
+        font-family: "Inter";
+        src: url(${inter});
+    }
+
+    @font-face {
+        font-family: "Poppins";
+        src: url(${poppins});
+    }
+
+    @font-face {
+        font-family: 'Supermercado One';
+        src: url(${supermecado});
+    }
     :root{
         //THEME COLORS
         --color-primary: #00D0B3;

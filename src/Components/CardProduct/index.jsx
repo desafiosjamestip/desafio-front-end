@@ -5,8 +5,8 @@ import Button from "../Button";
 import {
   Container,
   ContainerButton,
+  ContainerDescription,
   ContainerImg,
-  DivValor,
   Img,
 } from "./styled";
 
@@ -20,33 +20,38 @@ export const CardProduct = ({ item }) => {
   };
 
   return (
-    <Container>
+    <Container position={"relative"}>
       <ContainerImg>
+        <ContainerButton>
+          <Button
+            item={item}
+            children={"X"}
+            bdradius={"90px"}
+            bgcolor={"#FF0000"}
+            onClick={() => removeProduct(item)}
+            deleteProduct
+            class="excluir"
+            width={"20px"}
+            height={"20px"}
+            color={"#fff"}
+          />
+        </ContainerButton>
         <Img src={item.img} alt={item.nome}></Img>
       </ContainerImg>
-      <p>{item.codigo}</p>
-      <p>{item.categoria}</p>
-      <p>{item.nome}</p>
-      <p>{item.fornecedor}</p>
-      <DivValor>
-        <p> R$: </p>
-        <p>{item.valor}</p>
-      </DivValor>
-      <ContainerButton>
+      <ContainerDescription>
+        <h4>{item.nome}</h4>
+        <p class="categoria">{item.categoria}</p>
+        <p class="fornecedor">{item.fornecedor}</p>
+        <span>R$: {item.valor}</span>
+
         <Button
           item={item}
           children={"Editar"}
           bgcolor={"#00D0B3"}
           onClick={() => toEdit(item)}
+          width={"100px"}
         />
-        <Button
-          item={item}
-          children={"Excluir"}
-          bgcolor={"#00D0B3"}
-          onClick={() => removeProduct(item)}
-          deleteProduct
-        />
-      </ContainerButton>
+      </ContainerDescription>
     </Container>
   );
 };

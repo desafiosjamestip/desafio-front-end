@@ -7,6 +7,7 @@ export const Container = styled.button`
   color: ${(props) => (props.color ? props.color : "#000000")};
   padding: 3px 8px;
   border: none;
+  position: ${(props) => props.position};
 
   border-radius: ${(props) => (props.bdradius ? props.bdradius : "8px")};
   cursor: pointer;
@@ -17,6 +18,7 @@ export const Container = styled.button`
   gap: 10px;
 
   :hover {
+    border: 1px solid black;
     background-color: ${(props) =>
       props.deleteProduct ? "#FF0000" : "#00FA9A"};
   }

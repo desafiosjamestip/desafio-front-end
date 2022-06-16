@@ -36,7 +36,7 @@ export const AnimationContainer = styled.div`
 `;
 
 export const Form = styled.form`
-  padding: 20px 0px 20px 0px;
+  padding: 20px 0px 30px 0px;
   width: 90%;
   height: 90%;
   max-width: 350px;

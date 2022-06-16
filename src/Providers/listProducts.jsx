@@ -8,8 +8,6 @@ export const ListProductsProviders = ({ children }) => {
     JSON.parse(localStorage.getItem("listProducts")) || []
   );
 
-  const [productInfo, setProductInfo] = useState({});
-
   const addProduct = (item) => {
     item = {
       img: item.img,
@@ -30,11 +28,7 @@ export const ListProductsProviders = ({ children }) => {
     localStorage.setItem("listProducts", JSON.stringify(newList));
   };
 
-  console.log(listProducts);
-
   const removeProduct = (item) => {
-    console.log(listProducts);
-
     const newListProducts = listProducts.filter(
       (product) => product.id !== item.id
     );
@@ -59,6 +53,8 @@ export const ListProductsProviders = ({ children }) => {
     });
 
     setListProducts(newList);
+
+    localStorage.setItem("listProducts", JSON.stringify(newList));
   };
 
   return (

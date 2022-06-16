@@ -7,18 +7,23 @@ import {
 
 import Button from "../../Components/Button";
 import { VitrineContext } from "../../Providers/listProducts";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import Input from "../../Components/Input";
 import { ContainerHeader, H3 } from "../ProductsList/style";
 
 const EditForm = () => {
   const listProducts = JSON.parse(localStorage.getItem("listProducts")) || [];
 
+  const [productActual, setProductActual] = useState(null);
+
+  const { id } = useParams();
+
   const { updateProduct } = useContext(VitrineContext);
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const history = useHistory();
@@ -28,36 +33,25 @@ const EditForm = () => {
   };
 
   const onSubmitFunction = (data) => {
-    const productSelect = listProducts.filter((product) => product.id === id);
-    const productActual = productSelect[0];
-
-    for (let item in data) {
-      if (data[item] === "" || data[item] === undefined) {
-        delete data[item];
-      }
-    }
-
-    updateProduct(productActual.id, data);
+    updateProduct(id, data);
 
     toHome();
   };
 
-  const { id } = useParams();
-
   useEffect(() => {
     const productSelect = listProducts.filter((product) => product.id === id);
 
-    console.log(productSelect[0]);
+    reset(productSelect[0]);
   }, [id]);
 
   return (
     <Container>
       <ContainerHeader>
-        <H3>Cadastro de produtos</H3>
+        <H3>Edição de produtos</H3>
         <Button
           className="buttonHome"
           onClick={toHome}
-          bgcolor={"#00d0b3"}
+          bgcolor={"#E0FFFF"}
           height={"40px"}
           children={"Visualizar Produtos"}
         />

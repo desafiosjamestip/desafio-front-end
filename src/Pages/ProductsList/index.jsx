@@ -19,7 +19,7 @@ const ProductsList = () => {
           className="buttonHome"
           onClick={toRegister}
           children={"Cadastrar Produto"}
-          bgcolor={"#00d0b3"}
+          bgcolor={"#E0FFFF"}
           height={"40px"}
         />
       </ContainerHeader>

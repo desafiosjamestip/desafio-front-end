@@ -58,8 +58,8 @@ const RegisterForm = () => {
   }) => {
     const product = { img, codigo, categoria, nome, fornecedor, valor };
 
-    console.log(product);
     addProduct(product);
+    toHome();
   };
 
   return (
@@ -69,7 +69,7 @@ const RegisterForm = () => {
         <Button
           className="buttonHome"
           onClick={toHome}
-          bgcolor={"#00d0b3"}
+          bgcolor={"#E0FFFF"}
           height={"40px"}
           children={"Visualizar Produtos"}
         />
@@ -122,7 +122,7 @@ const RegisterForm = () => {
               width={"100%"}
               height={"40px"}
               children={"Cadastrar"}
-              bgcolor={"#00d0b3"}
+              bgcolor={"#E0FFFF"}
             />
           </Form>
         </AnimationContainer>
