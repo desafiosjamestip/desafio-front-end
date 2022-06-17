@@ -6,11 +6,11 @@ import perfilIMG from '../../assets/perfil.png'
 const MainHeader: React.FC = () => (
     <Container>
         <LeftSide>
-            <img src={perfilIMG} alt="perfil logo" />
-            <h3>Olá, cliente</h3>
+            <img src={perfilIMG} title="Foto de perfil" alt="perfil logo" />
+            <p>Olá, cliente</p>
         </LeftSide>
         <RightSide>
-            <CircularIcon>
+            <CircularIcon title="Logout...">
                 <FiLogOut />
             </CircularIcon>
         </RightSide>

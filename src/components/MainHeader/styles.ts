@@ -16,10 +16,10 @@ export const LeftSide = styled.div`
     align-items: center;
     
     > img {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
         
-        margin: 0 10px;
+        margin: 0 20px;
         cursor: pointer;
     }
 `;
@@ -43,7 +43,7 @@ export const CircularIcon = styled.div`
     cursor: pointer;
 
     > svg {
-        color: black;
+        color: #0007;
         width: 50%;
         height: 50%;
     }
