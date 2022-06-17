@@ -1,12 +1,15 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Layout from '../layout'
 import Consult from '../pages/product/consult'
+import Register from '../pages/product/register'
 
 const AppRouter: React.FC = () => (
     <Layout>
         <Routes>
-            <Route path="/" element={<Consult />} />
+            <Route path="/prods/consult" element={<Consult />} />
+            <Route path="/prods/create" element={<Register />} />
+            <Route path="/*" element={<Navigate to='/prods/consult'/>} />
         </Routes>
     </Layout>
 )
