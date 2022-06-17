@@ -6,7 +6,6 @@ type IContentProps = {
 }
 const Content: React.FC<IContentProps> = ({ children }) => (
     <Container>
-        <h1>Content</h1>
         {children}
     </Container>
 )
