@@ -8,17 +8,23 @@ declare module 'styled-components' {
             primary: string
             secondary: string
             tertiary: string
+            quartiary: string
 
             background: string
+            input: string
+            label: string
 
             letter: string
             title: string
+            type: string
             black: string
             details: string
             
             accept: string
             decline: string
             info: string
+
+            money: string
         }
     }
 }

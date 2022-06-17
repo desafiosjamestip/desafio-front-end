@@ -1,6 +1,6 @@
 import React from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
-import { IoIosAddCircleOutline } from 'react-icons/Io'
+import { GrAdd } from 'react-icons/gr'
 import { Container, Header, Content, LinkItem } from './styles'
 import logoIMG from '../../assets/logo-larger.png'
 
@@ -11,11 +11,11 @@ const Aside: React.FC = () => (
         </Header>
         <Content>
             <ul>
-                <LinkItem to='/'>
+                <LinkItem to='/prods/consult' title="Acessar página de consulta">
                     <AiOutlineSearch /><li>Consultar</li>
                 </LinkItem>
-                <LinkItem to='/'>
-                    <IoIosAddCircleOutline /><li>Adicionar</li>
+                <LinkItem to='/prods/create' title="Acessar página de registro">
+                    <GrAdd /><li>Adicionar</li>
                 </LinkItem>
             </ul>
             <button>HAHAHA</button>

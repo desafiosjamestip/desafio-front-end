@@ -14,7 +14,7 @@ export default createGlobalStyle`
     *, button, input {
         border: none;
         outline: none;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Cabin', sans-serif;
     }
 
     button {
