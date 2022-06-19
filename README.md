@@ -31,7 +31,7 @@ Desenvolvido com o Clean Code que esperamos:
  - React Router Dom para criação de rotas e navegação;
  ------
  
-Para conferir o projeto, acesso o link:
+Para conferir o projeto, acesso o link: https://desafio-front-end-nu.vercel.app/
 
 
 Siga-me para mais projetos como este.  
