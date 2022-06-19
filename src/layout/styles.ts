@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 /*
-* Layout 
+* Layout: 
 * MH = Main Header
 * AS = Aside
 * CT = Content
