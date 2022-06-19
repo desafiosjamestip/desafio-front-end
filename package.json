@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "d": "vite --host --port 3001",
+    "start": "vite",
+    "dev": "vite --host --port 3001",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
