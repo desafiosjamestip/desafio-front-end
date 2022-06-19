@@ -8,7 +8,7 @@ const AppRouter: React.FC = () => (
     <Layout>
         <Routes>
             <Route path="/prods/consult" element={<Consult />} />
-            <Route path="/prods/create" element={<Register />} />
+            <Route path="/prods/:currentURL" element={<Register />} />
             <Route path="/*" element={<Navigate to='/prods/consult'/>} />
         </Routes>
     </Layout>
