@@ -1,53 +1,96 @@
-import React from 'react'
-import useProducts from '../../../hooks/useProducts'
+import React, { useEffect } from 'react'
+import formatCurrency from '../../../utils/formatCurrency'
+import { useNavigate } from 'react-router-dom'
 import { ProductProps } from '../../../contexts/ProductContext'
-import restaure from '../../../repo'
-
-import { Container } from './styles'
+import useProducts from '../../../hooks/useProducts'
+import { TbEdit } from 'react-icons/tb'
+import { MdDeleteForever } from 'react-icons/md'
+import MessageBox from '../../../components/MessageBox'
+import EmptyBoxSVG from '../../../assets/empty-animate.svg'
+import {
+    Container,
+    Table,
+    Thead,
+    Tr,
+    Th,
+    Tbody,
+    Td,
+    Button,
+    ButtonContainer,
+    TdButton,
+    Footer,
+    Img
+} from './styles'
 
 const Consult: React.FC = () => {
-    const { productsList, removeProduct } = useProducts()
+    const { productsList, removeProduct, selectProductToUpate, message, updateMessage } = useProducts()
+    const navigate = useNavigate()
 
-    const handleRemoveProduct = (props: ProductProps) => {
-        const newProductList = productsList.filter((prod) => prod.id !== props.id)
-        removeProduct(newProductList)
+    const handleUpdateProduct = (product: ProductProps) => {
+        selectProductToUpate(product)
+        navigate('/prods/update')
     }
 
-    const restaures = () => {
-        console.log('dhbasjkhkjdsa')
-        localStorage.setItem('@jamestips:products-list', JSON.stringify(restaure))
-    }
+    const handleRemoveProduct = (product: ProductProps) => removeProduct(product)
+
+    useEffect(() => {
+        if (productsList.length === 0) updateMessage('')
+    }, [productsList.length])
 
     return (
         <Container>
-            <button onClick={restaures}>RESTORE</button>
-            <table style={{border: '1px solid'}}>
-                <thead>
-                    <tr >
-                        <th style={{border: '1px solid'}}>ID</th>
-                        <th style={{border: '1px solid'}}>Nome</th>
-                        <th style={{border: '1px solid'}}>Categoria</th>
-                        <th style={{border: '1px solid'}}>Fornecedor</th>
-                        <th style={{border: '1px solid'}}>Valor</th>
-                        <th style={{border: '1px solid'}}>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {productsList.map((prod) => (
-                        <tr key={prod.id}>
-                            <td style={{border: '1px solid'}}>{prod.id}</td>
-                            <td style={{border: '1px solid'}}>{prod.name}</td>
-                            <td style={{border: '1px solid'}}>{prod.category}</td>
-                            <td style={{border: '1px solid'}}>{prod.provider}</td>
-                            <td style={{border: '1px solid'}}>{prod.price}</td>
-                            <td><button>EDITAR</button> <button type="button"
-                                onClick={() => handleRemoveProduct(prod)}>EXCLUIR</button></td>
-                        </tr>
-                    ))}
-                </tbody>
-
-
-            </table>
+            {productsList.length > 0 ? (
+                <Table>
+                    <Thead>
+                        <Tr >
+                            <Th>ID</Th>
+                            <Th>Nome</Th>
+                            <Th>Categoria</Th>
+                            <Th>Fornecedor</Th>
+                            <Th>Valor</Th>
+                            <Th>Ações</Th>
+                        </Tr>
+                    </Thead>
+                    <Tbody>
+                        {productsList.map((prod) => (
+                            <Tr key={prod.id}>
+                                <Td title={prod.id}>{prod.id}</Td>
+                                <Td title={prod.name}>{prod.name}</Td>
+                                <Td title={prod.category}>{prod.category}</Td>
+                                <Td title={prod.provider}>{prod.provider}</Td>
+                                <Td title={prod.price}>{formatCurrency(prod.price)}</Td>
+                                <TdButton>
+                                    <ButtonContainer>
+                                        <Button
+                                            name="edit"
+                                            type="button"
+                                            title="Editar este produto"
+                                            onClick={() => {
+                                                handleUpdateProduct(prod)
+                                                updateMessage('')
+                                            }}>
+                                            <TbEdit />
+                                        </Button>
+                                        <Button
+                                            name="remove"
+                                            type="button"
+                                            title="Excluir este produto"
+                                            onClick={() => handleRemoveProduct(prod)}>
+                                            <MdDeleteForever />
+                                        </Button>
+                                    </ButtonContainer>
+                                </TdButton>
+                            </Tr>
+                        ))}
+                    </Tbody>
+                </Table>
+            ) : (
+                <Footer>
+                    <MessageBox message="Ainda não foi adicionado nenhum produto." size='25px' />
+                    <Img src={EmptyBoxSVG} alt='empty box image' />
+                </Footer>
+            )}
+            <MessageBox message={message} />
         </Container>
     )
 }
