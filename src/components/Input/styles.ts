@@ -8,8 +8,8 @@ export const Container = styled.div<InputProps>`
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 35px;
-    margin-bottom: 75px;
+    margin-top: 40px;
+    margin-bottom: 30px;
 
     > label {
         position:relative;

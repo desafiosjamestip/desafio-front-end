@@ -14,6 +14,9 @@ export const Container = styled.div`
 export const LeftSide = styled.div`
     display: flex;
     align-items: center;
+    @media (max-width: 767px) {
+        margin-left: 35px;
+    }
     
     > img {
         width: 40px;

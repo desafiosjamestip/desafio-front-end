@@ -13,6 +13,7 @@ export const Container = styled.div<ButtonProps>`
         display: flex;
         align-items: center;
         justify-content: center;
+        height: 50px;
         
         width: 100%;
         min-width: 70px;

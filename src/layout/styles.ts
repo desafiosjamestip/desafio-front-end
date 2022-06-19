@@ -18,4 +18,15 @@ export const Container = styled.div`
 
     height: 100vh;
     min-width: 310px;
+
+    overflow: hidden;
+    
+    @media (max-width: 767px) {
+        grid-template-columns: 100%;
+        grid-template-rows: 70px auto;
+
+        grid-template-areas:
+        'MH'
+        'CT';
+    }
 `;

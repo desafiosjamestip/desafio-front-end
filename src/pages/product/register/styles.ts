@@ -5,50 +5,56 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
 
-    width: 40%;
-    height: 95%;
+    width: 50%;
+    height: 650px;
     min-width: 300px;
+
+    overflow-x: auto;
 
     border: 1px solid #cecece;
     border-radius: 5px;
     margin: 10px;
 
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, 
-    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     background-color: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.black}; 
+
+    @media (max-width: 1366px) {
+        width: 80%;
+    }
+    @media (max-width: 768px) {
+        width: 95%
+    }
 `;
+
 export const Header = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+
     color: ${props => props.theme.colors.title};
-    margin: 50px 0 10px 0;
-    padding: 10px;
+    padding: 30px 40px 20px 40px;
     width: 100%;
-    height: 15%;
     box-shadow: rgba(33, 35, 38, .1) 0px 10px 10px -10px;
     p {
-        margin-top: 20px;
-        color: ${props => props.theme.colors.details};
+        margin-top: 15px;
+        color: ${props => props.theme.colors.label};
+        font-size: 14px;
     }
 `;
 
-export const Content = styled.div`
-    color: ${props => props.theme.colors.black};
-    margin: 10px;
+export const Form = styled.form`
+    display: flex;
+    flex-direction: column;
     width: 80%;
-    height: 75%;
-
-    border-radius: 10px;
+    margin-top: 70px;
 `;
 export const Footer = styled.div`
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: ${props => props.theme.colors.black};
-    margin: 0 10px 40px 0;
-    height: 10%;
+    flex-direction: row;
+    position: relative;
+    bottom: -20px;
 `;
 
 // export const Moustache = styled.div`
