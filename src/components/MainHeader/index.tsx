@@ -7,7 +7,7 @@ const MainHeader: React.FC = () => (
     <Container>
         <LeftSide>
             <img src={perfilIMG} title="Foto de perfil" alt="perfil logo" />
-            <p>Olá, cliente</p>
+            <p>Olá, cliente!</p>
         </LeftSide>
         <RightSide>
             <CircularIcon title="Logout...">
