@@ -2,11 +2,7 @@
   "name": "desafio-front-end",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "17.8.x",
-    "npm": "8.1.x",
-    "yarn": "1.22.x"
-  },
+  
   "dependencies": {
     "@chakra-ui/react": "^2.2.1",
     "@emotion/react": "^11",

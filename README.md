@@ -73,6 +73,8 @@ Amplamente empregadas para construção e validação de dados de formulários d
 
 Essa aplicação usa o docker para evitar problemas com a versão entre as maquinas. Certifique-se de usar o node na versão 17.8.0 para assegurar que tudo funcionara corretamente. Também certifique-se de ter o docker e o docker compose instalados na sua maquina.
 
+> Observação: Não sera necessário rodar o `yarn` ou o `npm install` para testar a aplicação
+
 Após ter baixado a branch corretamente, rode o seguinte comando no terminal aberto na pasta raiz do projeto.
 
 ```
@@ -94,4 +96,8 @@ Para mais detalhes consulte a [documentação do docker](https://docs.docker.com
 
 # Extras :boom:
 
-- [figma da aplicação](https://www.figma.com/file/1S6TAjHGxcyML6HgoqPcaV/jamestip-test?node-id=5%3A310)
+- [Figma da aplicação](https://www.figma.com/file/1S6TAjHGxcyML6HgoqPcaV/jamestip-test?node-id=5%3A310)
+
+- [Deploy do projeto](https://desafio-front-end-brunotetzner.vercel.app)
+
+> Experimente apagar o banco do indexedDB se a aplicação não funcionar
