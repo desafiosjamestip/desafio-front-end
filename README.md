@@ -92,6 +92,8 @@ docker compose up --build
 
 ```
 
+> Experimente apagar o banco do indexedDB se a aplicação não funcionar
+
 Para mais detalhes consulte a [documentação do docker](https://docs.docker.com/)
 
 # Extras :boom:
@@ -100,4 +102,4 @@ Para mais detalhes consulte a [documentação do docker](https://docs.docker.com
 
 - [Deploy do projeto](https://desafio-front-end-brunotetzner.vercel.app)
 
-> Experimente apagar o banco do indexedDB se a aplicação não funcionar
+---
