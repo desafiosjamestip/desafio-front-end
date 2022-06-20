@@ -1,76 +1,105 @@
-# Desafio Front-End
+# JamesTip test - Bruno Tetzner :boom:
 
-## O que é?
-Este desafio faz parte do processo seletivo para o cargo de Desenvolvedor Front-End no James Tip. Este tem por objetivo medir seu nível de conhecimento com tecnologias de desenvolvimento front-end, e suas capacidades de propor novas ideias e arquiteturas para nossos serviços, sempre com o foco de manter o ambiente simples, seguro, funcional e objetivo.
+## :hammer: Tecnologias utilizadas :wrench:
 
-## Introdução
-Um de nossos projetos internos necessita de uma “cara nova” para que os clientes possam acessar e gerenciar informações necessárias para as operações do dia-a-dia das suas empresas. Para isto, você, no papel de Desenvolvedor Front-End, foi acionado para elaborar um novo Portal para os Clientes do James Tip. Seu objetivo é criar um simples app que deve conter (no mínimo) duas páginas, uma que exibe um formulário para cadastro com os campos abaixo, e outra que liste os dados cadastrados:
-* Código do Produto
-* Categoria do Produto (ex.: Eletrônico)
-* Nome do Produto
-* Nome do Fornecedor
-* Valor do Produto
+- HTML
+- Css
+- TypeScript
+- React
+- Styled components
+- Chakra-ui
+- React-icons
+- React router dom
+- Yup
+- React hook form
 
-Para isto, foram estipuladas algumas necessidades, as quais devem ser atendidas:
-* Projetar interfaces de usuário para alcançar objetivos de diversos usuários finais;
-* Determinar o layout e a apresentação do aplicativo/página;
-* Proporcionar uma experiência de usuário agradável, combinada com alto desempenho, segurança e capacidade de resposta;
-* Garantir a viabilidade técnica de projetos de UI/UX;
-* Otimizar aplicativos para máxima velocidade e escalabilidade;
-* Realizar a engenharia da experiência de design de interação de elementos na interface do usuário;
-* Garantir uma navegação intuitiva e com acessibilidade;
+## Funcionamento da aplicação :steam_locomotive:
 
-A principal ideia aqui é que você faça por você mesmo (DIY);
+Essa plataforma tem como objetivo armazenar os produtos de
+seu usuário, e permitir ao mesmo editar, excluir e fazer pesquisas por nome ou pelo código do produto.
 
+### Fluxo da aplicação :arrows_counterclockwise:
 
-## Requisitos técnicos
-Para realização deste desafio, deverão ser observados os seguintes requisitos:
-* A aplicação deverá ser Single Page Application (SPA);
-* O Layout deverá ser TableLess;
-* Implementação de compatibilidade entre navegadores de aplicativos da web;
-* Deve ser possível editar, listar e excluir os dados cadastrados pelo formulário;
-* Utilizar React.js para o desenvolvimento da aplicação;
-* Utilizar TypeScript;
-* Utilizar Context API para o compartilhamento das informações entre as páginas;
-* Fazer a persistência dos dados no localStorage ou IndexedDB;
-* Utilizar styled-components para estilização dos componentes;
-* Utilizar react-router-dom para a navegação entre as páginas;
-* (Opcional) Implementar testes utilizando jest/testing-library ou outra biblioteca para testes unitários;
+#### Tela inicial :large_blue_circle:
 
-Você é livre para estruturar o projeto da maneira que achar mais organizada.
+Após abrir o website em seu navegador, o usuário ira se deparar com a tela inicial da aplicação, que lhe fornece duas opções,
+ir para a pagína de cadastro para registrar novos produtos. ou ir para pagína de produtos onde estão todos os seus produtos cadastrados
+até o momento.
 
-Você é livre para implementar o código em qualquer padrão que achar mais adequado.
+#### Cadastro de produtos :pencil2:
 
-Você pode adicionar funcionalidades ou utilizar outros componentes como desejar, mas não fuja da simplicidade.
+A pagína de cadastro de produtos é onde o usuário pode cadastrar seus produtos, para isso ele deve preencher todos os campos e clicar no botão "Cadastrar".
 
-## Entregáveis
-Ao final do desafio, você deverá realizar um PULL REQUEST neste repositório, o qual deverá conter o seguinte conteúdo:
-* Todo e qualquer arquivo necessário para que possamos reproduzir a aplicação criada em um servidor web simples;
+Atenção: É necessário preencher todos os campos. Caso contrário será retornada uma mensagem de erro.
 
-Arquivo README.md, contendo:
-* Breve descrição das funcionalidades da aplicação entregue;
-* Ferramentas utilizadas, e o por que estas foram escolhidas para a realização do desafio;
-* Decisões adotadas durante o planejamento e execução do desafio, justificando-as;
+Campos requeridos:
 
-**IMPORTANTE:** Mesmo que você não consiga concluir o desafio por completo, envie o que você conseguiu fazer! Iremos avaliar todo e qualquer desenvolvimento que você nos apresentar! O mais importante deste desafio é, que ao final dele, você adquira novos conhecimentos ou aprimore os que você já possui. ;)
+- Nome do produto
+- Preço do produto
+- Fornecedor do produto
+- Categoria do produto
+- Código do produto
 
-Após, envie e-mail para *marcio.tavares@jamestip.com*, com cópia para *torres@jamestip.com*, com o assunto "Desafio Front-End", sinalizando a entrega do desafio para avaliação.
+Se tudo correr bem, será retornada uma mensagem dizendo que o produto foi cadastrado.
+Para visualizar seus produtos ou voltar ao menu inicial, basta usar o menu de navegação no topo da página
 
-## O que será avaliado?
-Usabilidade
+#### Paǵina de produtos :white_square_button:
 
-Criatividade
+Nessa pagína são renderizados todos os produtos do usuário, todos eles dispostos em cards. É possivel pesquisar por produtos especificos usando a barra de pesquisa. A Barra permite que você procure por nome ou pelo código do produto.
 
-Boa apresentação (Layout Clean e Profissional)
+Cada card tem um icone no formato de um lapis e outro no formato de lixeira no canto inferior direito. O lapis serve para editar o produto daquela card. Após clicado, a pagína ira abrir um modal com um formulário semelhante ao da pagína de cadastro onde o usuário podera atualizar as informações. No entanto, dessa vez todas as informações são opcionais, com excessão do preço.
 
-Boas práticas da arquitetura da informação
+Já a lixeira exclui produtos, como já dito. Após clicar nela, sera aberto um modal perguntando se o usuário realmente deseja excluir o produto.
 
-Código limpo e organização
+## Mais sobre as tecnologias escolhidas :triangular_flag_on_post:
 
-Documentação de código (*Tip:* Podem ser “comentários” no código)
+#### :o: React
 
-Capacidade de tomada de decisões técnicas
- 
-# *Desafio Bônus*
-*Implementar o mesmo portal em arquitetura micro-frontend utilizando single-spa*
+O React é um dos frameworks javascript mais utilizados da atualidade, muito util por sua capacidade de organizar e reutilizar blocos de código varias e varias vezes, isso fez toda a diferença na elaboração e organização do código desse projeto.
 
+#### :o: Styled components
+
+Uma das bibliotecas de estilização mais comuns no React. Permite criar componentes estilizados de maneira simples e prática, criando um código com HTML e CSS isolados, mantendo-o mais organizado, essa foi uma das principais razões para sua escolha. Quase toda estilização desse projeto foi feita usando styled-components.
+
+#### :o: Chakra.ui
+
+Também uma biblioteca muito utilizada com react, com soluções muito interessantes e práticas para estilização de websites. Apesar da maior parte da aplicação ser construida com styled componentes, o Chakra foi utilizado na criação dos modais de edição e exclusão de produtos. Essa escolha se deu devido a praticidade que essa biblioteca tem quando se trata da construção de modais,uma vez que construir modais com HTML e CSS puro pode não ser uma experiência muito agradavel. Essa escolha poupou muito tempo de desenvolvimento e linhas de código. Outro ponto que o chakra contribuiu muito foi na parte de feedbacks para o usuário. Com ele foi possivel gerar toasts(cards flutuantes que surgem temporariamente na tela para passar alguma informação para o usuário), que foram muito uteis para passar feedbacks de sucesso ou de falha na aplicação para o usuário.
+
+#### :o: Yup e react-hook-form
+
+Amplamente empregadas para construção e validação de dados de formulários de maneira simples. mas completa e eficiênte. E nessa aplicação não foi diferente. Essas bibliotecas foram utilizadas no formulário de criação e edição de produtos. É muito mais simples validar os campos de um formulário e retornar feedbacks para o usuário caso ele preencha alguma informação de maneira incorreta, quando se usa essas bibiotecas.
+
+# Rodando o projeto
+
+Essa aplicação usa o docker para evitar problemas com a versão entre as maquinas. Certifique-se de usar o node na versão 17.8.0 para assegurar que tudo funcionara corretamente. Também certifique-se de ter o docker e o docker compose instalados na sua maquina.
+
+> Observação: Não sera necessário rodar o `yarn` ou o `npm install` para testar a aplicação
+
+Após ter baixado a branch corretamente, rode o seguinte comando no terminal aberto na pasta raiz do projeto.
+
+```
+sudo docker compose up --build
+```
+
+> Observação: É possível que forma de rodar o docker seja diferente de acordo com a versão e a forma de instalação/configuração. Segue algumas alternativas para tentar rodar o docker.
+
+```
+sudo docker-compose up --build
+
+docker-compose up --build
+
+docker compose up --build
+
+```
+
+> Experimente apagar o banco do indexedDB se a aplicação não funcionar
+
+Para mais detalhes consulte a [documentação do docker](https://docs.docker.com/)
+
+# Extras :boom:
+
+- [Figma da aplicação](https://www.figma.com/file/1S6TAjHGxcyML6HgoqPcaV/jamestip-test?node-id=5%3A310)
+
+- [Deploy do projeto](https://desafio-front-end-brunotetzner.vercel.app)
+
+---
