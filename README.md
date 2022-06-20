@@ -69,6 +69,29 @@ Também uma biblioteca muito utilizada com react, com soluções muito interessa
 
 Amplamente empregadas para construção e validação de dados de formulários de maneira simples. mas completa e eficiênte. E nessa aplicação não foi diferente. Essas bibliotecas foram utilizadas no formulário de criação e edição de produtos. É muito mais simples validar os campos de um formulário e retornar feedbacks para o usuário caso ele preencha alguma informação de maneira incorreta, quando se usa essas bibiotecas.
 
+# Rodando o projeto
+
+Essa aplicação usa o docker para evitar problemas com a versão entre as maquinas. Certifique-se de usar o node na versão 17.8.0 para assegurar que tudo funcionara corretamente. Também certifique-se de ter o docker e o docker compose instalados na sua maquina.
+
+Após ter baixado a branch corretamente, rode o seguinte comando no terminal aberto na pasta raiz do projeto.
+
+```
+sudo docker compose up --build
+```
+
+> Observação: É possível que forma de rodar o docker seja diferente de acordo com a versão e a forma de instalação/configuração. Segue algumas alternativas para tentar rodar o docker.
+
+```
+sudo docker-compose up --build
+
+docker-compose up --build
+
+docker compose up --build
+
+```
+
+Para mais detalhes consulte a [documentação do docker](https://docs.docker.com/)
+
 # Extras :boom:
 
 - [figma da aplicação](https://www.figma.com/file/1S6TAjHGxcyML6HgoqPcaV/jamestip-test?node-id=5%3A310)

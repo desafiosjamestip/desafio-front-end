@@ -73,7 +73,7 @@ export function ProductsProvider({ children }: ProductsProps) {
 
   useEffect(() => {
     getAllProducts();
-  }, []);
+  });
 
   const postProduct = (product: IProduct) => {
     const productAlreadyExists = products.find(
