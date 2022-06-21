@@ -7,13 +7,14 @@ import Button from "../../components/Button";
 import Product from "../../components/Product";
 
 import { useProduct } from "../../providers/Product";
+import Modal from "../../components/Modal";
 
 const DashBoard = () => {
 
-    const { productList, createNewProduct } = useProduct()
+    const { productList, changeModalVisibility } = useProduct()
 
     const create = () => {
-        const exemplo = {
+/*         const exemplo = {
             name: "a",
             provider: "b",
             category: "c",
@@ -21,7 +22,9 @@ const DashBoard = () => {
             price: 2
         }
 
-        createNewProduct(exemplo)
+        createNewProduct(exemplo) */
+        changeModalVisibility(true)
+        
     }
 
     return (
@@ -33,7 +36,7 @@ const DashBoard = () => {
                 </figure>
                 <Button onClick={() => create()} newItem >Adicionar novo produto</Button>
             </Header>
-
+            <Modal/>
             <Main>
                 {productList?.length > 0 ? (
                     <>
