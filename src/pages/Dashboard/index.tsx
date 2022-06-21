@@ -14,15 +14,7 @@ const DashBoard = () => {
     const { productList, changeModalVisibility } = useProduct()
 
     const create = () => {
-/*         const exemplo = {
-            name: "a",
-            provider: "b",
-            category: "c",
-            id: 12,
-            price: 2
-        }
 
-        createNewProduct(exemplo) */
         changeModalVisibility(true)
         
     }

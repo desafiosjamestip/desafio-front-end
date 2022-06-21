@@ -6,7 +6,7 @@ interface ReactProps {
     children: ReactNode;
     confirm?: boolean;
     newItem? : boolean;
-    onClick: () => void;
+    onClick?: () => void;
 }
 
 const Button = ({ children, confirm, newItem, onClick }: ReactProps) => {
