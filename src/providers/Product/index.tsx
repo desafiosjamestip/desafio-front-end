@@ -1,15 +1,9 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 
+import Product from "../../types/product";
+
 interface ProviderProps {
     children: ReactNode;
-}
-
-interface Product {
-    name: string,
-    provider: string,
-    category: string,
-    price: number,
-    id: number
 }
 
 interface ProductData {
