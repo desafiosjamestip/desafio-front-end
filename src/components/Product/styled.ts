@@ -6,4 +6,7 @@ export const ProductContainer = styled.div`
     justify-content: space-between;
     margin-bottom: 10px;
 
+    button {
+        transition: all 0.5s;
+    }
 `
