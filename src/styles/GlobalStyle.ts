@@ -49,8 +49,7 @@ export const GlobalStyle = createGlobalStyle`
 		border: 1px solid var(--whiteish-color);
         display: flex;
 		align-items: center;
-        padding: 12px 0;
-        padding-left: 8px;
+        padding: 12px 8px;
         width: 100%;
     }
 
