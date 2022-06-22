@@ -30,6 +30,13 @@ export const Form = styled.form`
         input {
             border-radius: 4px;
             height: 39px;
+            padding-left: 10px;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
         }
     }
 
