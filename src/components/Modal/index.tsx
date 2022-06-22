@@ -7,29 +7,37 @@ import { useProduct } from '../../providers/Product';
 
 import Button from '../Button';
 import { useState } from 'react';
+import Product from '../../types/product';
 
 
 const Modal = () => {
 
   const { visible, changeModalVisibility, createNewProduct } = useProduct()
 
-  const [productName, setProductName] = useState<string>("")
-  const [productProvider, setProductProvider] = useState<string>("")
-  const [productCategory, setProductCategory] = useState<string>("")
-  const [productPrice, setProductPrice] = useState<number>(0)
+  const initialState = {
+    name: "",
+    provider: "",
+    category: "",
+    price: 0,
+    id: "12",
+  };
+
+  const [newProduct, setNewProduct] = useState<Product>(initialState);
+
+    function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+      const name = event.target.name;
+      const value = event.target.value;
+      setNewProduct({ ...newProduct, [name]: value });
+    }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const product = {
-      name: productName,
-      provider: productProvider,
-      category: productCategory,
-      price: productPrice,
-      id: 12,
-    }
+    createNewProduct(newProduct)
 
-    createNewProduct(product)
+    setNewProduct(initialState)
+
+    changeModalVisibility(false)
   }
 
   return (
@@ -48,9 +56,10 @@ const Modal = () => {
           </label>
           <input
             type="text"
-            value={productName}
-            onChange={(e) => setProductName(e.target.value)}
-          />
+            name="name"
+            value={newProduct.name}
+            onChange={handleChange}
+            />
         </div>
         <div>
           <label htmlFor="">
@@ -58,9 +67,10 @@ const Modal = () => {
           </label>
           <input
             type="text"
-            value={productProvider}
-            onChange={(e) => setProductProvider(e.target.value)}
-          />
+            name="provider"
+            value={newProduct.provider}
+            onChange={handleChange}
+            />
         </div>
         <div>
           <label htmlFor="">
@@ -68,9 +78,10 @@ const Modal = () => {
           </label>
           <input
             type="text"
-            value={productCategory}
-            onChange={(e) => setProductCategory(e.target.value)}
-          />
+            name="category"
+            value={newProduct.category}
+            onChange={handleChange}
+            />
         </div>
         <div>
           <label htmlFor="">
@@ -78,9 +89,10 @@ const Modal = () => {
           </label>
           <input
             type="number"
-            value={productPrice}
-            onChange={(e) => setProductPrice(e.target.valueAsNumber)}
-          />
+            name="price"
+            value={newProduct.price}
+            onChange={handleChange}
+            />
         </div>
         <Button confirm>Confirmar</Button>
 
