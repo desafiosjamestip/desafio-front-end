@@ -15,7 +15,7 @@ const DashBoard = () => {
 
     const create = () => {
 
-        changeModalVisibility(true)
+        changeModalVisibility(true, "add")
     }
 
     return (
@@ -47,11 +47,11 @@ const DashBoard = () => {
                 {productList?.length > 0 ? (
                     <>
                         {productList.map((product) => (
-                            <ProductItem product={product} />
+                            <ProductItem product={product} key={product.id}/>
                         ))}
                     </>
                 ) : (
-                    <span>Por favor, adicione itens!</span>
+                    <span>Não existe nenhum item no banco de dados, por favor adicione!</span>
                 )}
             </Main>
         </>
