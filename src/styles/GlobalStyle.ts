@@ -27,6 +27,62 @@ export const GlobalStyle = createGlobalStyle`
 	background-color: var(--blueish-color-2);
 }
 
+	.tableMain {
+        display: flex;
+        width: 100%;
+    }
+    
+    .tableBody {
+        display: flex;
+        width: 100%;
+    }
+
+    .tableRow {
+        display: flex;
+		word-break: break-word;
+        width: 100%;
+        color: var(--whiteish-color);
+    }
+    
+    .tableCell,
+    .tableHead {
+		border: 1px solid var(--whiteish-color);
+        display: flex;
+		align-items: center;
+        padding: 12px 0;
+        padding-left: 8px;
+        width: 100%;
+    }
+
+	.imgCell {
+		display: flex;
+		width: fit-content;
+		padding-left: 18px;
+		padding-right: calc(51px - 38.4px); // tamanho da celula - padding e tamanho da imagem
+		border-radius: 8px 0px 0px 8px;
+	}
+
+    .iconCell {
+        display: flex;
+        justify-content: space-around;
+        padding-left: 0;
+        width: 25%;
+        border-radius: 8px 0px 0px 8px;
+
+        button {
+            background-color: transparent;
+            border: none;
+            color: var(--whiteish-color);
+            cursor: pointer;
+            &:hover {
+                color: var(--blueish-color);
+            }
+        }
+    }
+    
+    .idCell {
+        border-radius: 0px 8px 8px 0px;
+    }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,

@@ -25,11 +25,11 @@ export const CategoryList = styled.div`
     justify-content: space-around;
     margin-bottom: 50px;
 
-    span {
+/*     span {
         width: 100%;
         margin: auto;
         border-left: 1px solid gray;
         border-right: 1px solid gray;
-    }
+    } */
 
 `

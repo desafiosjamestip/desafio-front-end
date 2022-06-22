@@ -31,12 +31,18 @@ const DashBoard = () => {
             <Main>
 
                 <CategoryList>
-                    <img src={Arrow} alt="Seta de categoria" />
-                    <span>Nome do Produto</span>
-                    <span>Nome do Fornecedor</span>
-                    <span>Categoria do Produto</span>
-                    <span>Valor do Produto</span>
-                    <span>Código do Produto</span>
+                    <div className="tableMain">
+                        <div className="tableBody">
+                            <div className="tableRow">
+                                <img src={Arrow} alt="Seta de categoria" className="tableCell imgCell" />
+                                <span className="tableCell">Nome do Produto</span>
+                                <span className="tableCell">Nome do Fornecedor</span>
+                                <span className="tableCell">Categoria do Produto</span>
+                                <span className="tableCell">Valor do Produto</span>
+                                <span className="tableCell idCell">Código do Produto</span>
+                            </div>
+                        </div>
+                    </div>
                 </CategoryList>
                 {productList?.length > 0 ? (
                     <>

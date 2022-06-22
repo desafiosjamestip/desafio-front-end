@@ -11,16 +11,21 @@ const ProductItem = ({ product }: Products) => {
 
     return (
         <ProductContainer>
-            <div>
-                {<FaTrash />}
-                {<FaEdit />}
+            <div className="tableMain">
+                <div className="tableBody">
+                    <div className="tableRow">
+                        <div className="tableCell iconCell">
+                            <button>{<FaTrash />}</button>
+                            <button>{<FaEdit />}</button>
+                        </div>
+                        <span className="tableCell">{product.name}</span>
+                        <span className="tableCell">{product.provider}</span>
+                        <span className="tableCell">{product.category}</span>
+                        <span className="tableCell">{product.price}</span>
+                        <span className="tableCell idCell">{product.id}</span>
+                    </div>
+                </div>
             </div>
-
-            <span>{product.name}</span>
-            <span>{product.provider}</span>
-            <span>{product.category}</span>
-            <span>{product.price}</span>
-            <span>{product.id}</span>
         </ProductContainer>
     )
 }
