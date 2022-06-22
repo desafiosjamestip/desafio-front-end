@@ -28,11 +28,11 @@ const Modal = () => {
 
   const [newProduct, setNewProduct] = useState<Product>(initialState);
 
-    function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-      const name = event.target.name;
-      const value = event.target.value;
-      setNewProduct({ ...newProduct, [name]: value });
-    }
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setNewProduct({ ...newProduct, [name]: value });
+  }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -63,7 +63,7 @@ const Modal = () => {
             name="name"
             value={newProduct.name}
             onChange={handleChange}
-            />
+          />
         </div>
         <div>
           <label htmlFor="">
@@ -74,7 +74,7 @@ const Modal = () => {
             name="provider"
             value={newProduct.provider}
             onChange={handleChange}
-            />
+          />
         </div>
         <div>
           <label htmlFor="">
@@ -85,7 +85,7 @@ const Modal = () => {
             name="category"
             value={newProduct.category}
             onChange={handleChange}
-            />
+          />
         </div>
         <div>
           <label htmlFor="">
@@ -96,7 +96,7 @@ const Modal = () => {
             name="price"
             value={newProduct.price}
             onChange={handleChange}
-            />
+          />
         </div>
         <Button confirm>Confirmar</Button>
 
