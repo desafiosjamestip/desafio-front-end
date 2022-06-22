@@ -61,9 +61,10 @@ const Modal = () => {
           <input
             type="text"
             name="name"
+            required
             value={newProduct.name}
             onChange={handleChange}
-          />
+            />
         </div>
         <div>
           <label htmlFor="">
@@ -74,7 +75,7 @@ const Modal = () => {
             name="provider"
             value={newProduct.provider}
             onChange={handleChange}
-          />
+            />
         </div>
         <div>
           <label htmlFor="">
@@ -83,9 +84,10 @@ const Modal = () => {
           <input
             type="text"
             name="category"
+            required
             value={newProduct.category}
             onChange={handleChange}
-          />
+            />
         </div>
         <div>
           <label htmlFor="">
@@ -94,6 +96,7 @@ const Modal = () => {
           <input
             type="number"
             name="price"
+            required
             value={newProduct.price}
             onChange={handleChange}
           />
