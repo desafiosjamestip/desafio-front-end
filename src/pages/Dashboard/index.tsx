@@ -1,13 +1,13 @@
 import Logo from "../../assets/jamesTipLogo.png"
 import Arrow from "../../assets/arrow.png"
 
-import { Header, Main } from "./styled";
+import { CategoryList, Header, Main } from "./styled";
 
 import Button from "../../components/Button";
-import Product from "../../components/Product";
 
 import { useProduct } from "../../providers/Product";
 import Modal from "../../components/Modal";
+import ProductItem from "../../components/Product";
 
 const DashBoard = () => {
 
@@ -16,7 +16,6 @@ const DashBoard = () => {
     const create = () => {
 
         changeModalVisibility(true)
-        
     }
 
     return (
@@ -28,12 +27,21 @@ const DashBoard = () => {
                 </figure>
                 <Button onClick={() => create()} newItem >Adicionar novo produto</Button>
             </Header>
-            <Modal/>
+            <Modal />
             <Main>
+
+                <CategoryList>
+                    <img src={Arrow} alt="Seta de categoria" />
+                    <span>Nome do Produto</span>
+                    <span>Nome do Fornecedor</span>
+                    <span>Categoria do Produto</span>
+                    <span>Valor do Produto</span>
+                    <span>Código do Produto</span>
+                </CategoryList>
                 {productList?.length > 0 ? (
                     <>
                         {productList.map((product) => (
-                            <Product />
+                            <ProductItem product={product} />
                         ))}
                     </>
                 ) : (
