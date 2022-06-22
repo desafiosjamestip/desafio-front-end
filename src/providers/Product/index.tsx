@@ -25,10 +25,6 @@ export const ProductProvider = ({ children }: ProviderProps) => {
       return setVisible(boolean)
     }
 
-    const randomID = () => {
-        return Math.floor(Date.now() * Math.random()).toString(36);
-    }
-
     const createNewProduct = (newProduct: Product) => {
         setProductList([...productList, newProduct])
     }

@@ -14,12 +14,16 @@ const Modal = () => {
 
   const { visible, changeModalVisibility, createNewProduct } = useProduct()
 
+  const randomID = () => {
+    return "JT" + Math.floor(Date.now() * Math.random()).toString(36);
+  }
+
   const initialState = {
     name: "",
     provider: "",
     category: "",
     price: 0,
-    id: "12",
+    id: randomID(),
   };
 
   const [newProduct, setNewProduct] = useState<Product>(initialState);
