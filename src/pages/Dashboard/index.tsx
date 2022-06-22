@@ -8,10 +8,12 @@ import Button from "../../components/Button";
 import { useProduct } from "../../providers/Product";
 import Modal from "../../components/Modal";
 import ProductItem from "../../components/Product";
+import { useHistory } from "react-router-dom";
 
 const DashBoard = () => {
 
     const { productList, changeModalVisibility } = useProduct()
+    const history = useHistory();
 
     const create = () => {
 
@@ -22,7 +24,7 @@ const DashBoard = () => {
         <>
             <Header>
                 <figure>
-                    <img src={Logo} alt="Logo James Tip" />
+                    <img src={Logo} alt="Logo James Tip" onClick={() => history.push("/")} />
                     <figcaption>James Tip</figcaption>
                 </figure>
                 <Button onClick={() => create()} newItem >Adicionar novo produto</Button>

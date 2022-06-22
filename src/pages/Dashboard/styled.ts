@@ -11,6 +11,7 @@ export const Header = styled.header`
         img {
             width: 20rem;
             margin: 0 auto;
+            cursor: pointer;
         }
     }
 `
