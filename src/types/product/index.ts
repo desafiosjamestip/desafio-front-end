@@ -3,7 +3,7 @@ interface Product {
     provider: string,
     category: string,
     price: number,
-    id: number
+    id: string
 }
 
 export default Product;
