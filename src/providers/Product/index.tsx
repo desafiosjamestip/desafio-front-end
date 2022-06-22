@@ -1,4 +1,6 @@
-import { createContext, ReactEventHandler, ReactNode, useContext, useEffect, useState } from "react";
+import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+
+import { v4 as uuid } from 'uuid';
 
 import Product from "../../types/product";
 
@@ -33,17 +35,17 @@ export const ProductProvider = ({ children }: ProviderProps) => {
             setProductList(productsJSON)
         }
     }, [])
-    
+
     const [productList, setProductList] = useState<Product[]>([]);
     const [visible, setVisible] = useState<boolean>(false)
     const [modalType, setModalType] = useState<string>("add")
-    
+
     useEffect(() => {
         if (productList.length !== 0) {
             localStorage.setItem("products", JSON.stringify(productList));
         }
     }, [productList]);
-    
+
     const changeModalVisibility = (boolean: boolean, type?: string) => {
         if (type) {
             setModalType(type)
@@ -66,7 +68,9 @@ export const ProductProvider = ({ children }: ProviderProps) => {
     }
 
     const randomID = () => {
-        return "JT" + Math.floor(Date.now() * Math.random()).toString(36);
+        const unique_id = uuid();
+        const small_id = unique_id.slice(0, 8)
+        return small_id
     }
 
     const initialState = {
