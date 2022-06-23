@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { useProduct } from "../../providers/Product";
 
 import AddModal from "./AddModal";
@@ -7,7 +6,7 @@ import RemoveModal from "./RemoveModal";
 
 const Modal = () => {
 
-  const { modalType } = useProduct()
+  const { modalType } = useProduct();
 
   return (
     <>

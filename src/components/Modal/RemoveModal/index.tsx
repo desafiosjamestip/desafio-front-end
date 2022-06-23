@@ -9,12 +9,12 @@ import Button from '../../Button';
 
 const RemoveModal = () => {
 
-  const { visible, changeModalVisibility, productState, deleteProduct, windowWidth } = useProduct()
+  const { visible, changeModalVisibility, productState, deleteProduct, windowWidth } = useProduct();
 
   const removeProduct = () => {
-    deleteProduct(productState)
+    deleteProduct(productState);
 
-    changeModalVisibility(false)
+    changeModalVisibility(false);
 
   }
 

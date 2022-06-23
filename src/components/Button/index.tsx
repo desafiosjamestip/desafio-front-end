@@ -5,7 +5,7 @@ import { ButtonStyled } from "./styled";
 interface ReactProps {
     children: ReactNode;
     confirm?: boolean;
-    newItem? : boolean;
+    newItem?: boolean;
     onClick?: () => void;
 }
 

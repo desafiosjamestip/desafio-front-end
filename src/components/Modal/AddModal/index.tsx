@@ -9,10 +9,9 @@ import Button from '../../Button';
 import { useState } from 'react';
 import Product from '../../../types/product';
 
-
 const AddModal = () => {
 
-  const { visible, changeModalVisibility, createNewProduct, initialState, windowWidth } = useProduct()
+  const { visible, changeModalVisibility, createNewProduct, initialState, windowWidth } = useProduct();
 
   const [newProduct, setNewProduct] = useState<Product>(initialState);
 
@@ -20,16 +19,16 @@ const AddModal = () => {
     const name = event.target.name;
     const value = event.target.value;
     setNewProduct({ ...newProduct, [name]: value });
-  }
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    createNewProduct(newProduct)
+    createNewProduct(newProduct);
 
-    setNewProduct(initialState)
+    setNewProduct(initialState);
 
-    changeModalVisibility(false)
+    changeModalVisibility(false);
   }
 
   return (
@@ -52,7 +51,7 @@ const AddModal = () => {
             required
             value={newProduct.name}
             onChange={handleChange}
-            />
+          />
         </div>
         <div>
           <label htmlFor="">
@@ -63,7 +62,7 @@ const AddModal = () => {
             name="provider"
             value={newProduct.provider}
             onChange={handleChange}
-            />
+          />
         </div>
         <div>
           <label htmlFor="">
@@ -75,7 +74,7 @@ const AddModal = () => {
             required
             value={newProduct.category}
             onChange={handleChange}
-            />
+          />
         </div>
         <div>
           <label htmlFor="">

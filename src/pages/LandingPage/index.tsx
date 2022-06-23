@@ -1,10 +1,11 @@
+import { Article, Header, JamesFigure, Main } from "./styled";
+
 import Logo from "../../assets/jamesTipLogo.png"
 import BigLogo from "../../assets/bigJamesTip.png"
 import Arrow from "../../assets/arrow.png"
 
-import { Article, Header, JamesFigure, Main } from "./styled";
-
 import Button from "../../components/Button";
+
 import { useHistory } from "react-router-dom";
 
 const LandingPage = () => {

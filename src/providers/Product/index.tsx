@@ -31,6 +31,7 @@ export const ProductProvider = ({ children }: ProviderProps) => {
 
     useEffect(() => {
         const localStorageProducts = localStorage.getItem("products");
+
         if (localStorageProducts) {
             const productsJSON = JSON.parse(localStorageProducts)
             setProductList(productsJSON)
@@ -49,28 +50,30 @@ export const ProductProvider = ({ children }: ProviderProps) => {
 
     const changeModalVisibility = (boolean: boolean, type?: string) => {
         if (type) {
-            setModalType(type)
+            setModalType(type);
         }
-        return setVisible(boolean)
+
+        return setVisible(boolean);
     }
 
     const createNewProduct = (newProduct: Product) => {
-        setProductList([...productList, newProduct])
+        setProductList([...productList, newProduct]);
     }
 
     const editProduct = (editedProduct: Product) => {
-        const OtherProducts = productList.filter((product) => product.id !== editedProduct.id)
-        setProductList([...OtherProducts, editedProduct])
+        const OtherProducts = productList.filter((product) => product.id !== editedProduct.id);
+        setProductList([...OtherProducts, editedProduct]);
     }
 
     const deleteProduct = (deletedProduct: Product) => {
-        const AllProducts = productList.filter((product) => product.id !== deletedProduct.id)
-        setProductList(AllProducts)
+        const AllProducts = productList.filter((product) => product.id !== deletedProduct.id);
+        setProductList(AllProducts);
     }
 
     const randomID = () => {
         const unique_id = uuid();
-        const small_id = unique_id.slice(0, 8)
+        const small_id = unique_id.slice(0, 8);
+
         return small_id
     }
 
@@ -86,8 +89,8 @@ export const ProductProvider = ({ children }: ProviderProps) => {
     const [productState, setProductState] = useState<Product>(initialState);
 
     const windowWidth = () => { // Retorna o tamanho da tela ideal para o modal.
-        let windowWidth = window.innerWidth
-    
+        let windowWidth = window.innerWidth;
+
         if (windowWidth > 768) {
             return windowWidth - 400;
         } else {

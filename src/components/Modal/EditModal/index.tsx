@@ -21,7 +21,7 @@ const EditModal = () => {
     e.preventDefault();
 
     editProduct(productState)
-    
+
     changeModalVisibility(false)
   }
 
@@ -45,7 +45,7 @@ const EditModal = () => {
             required
             value={productState.name}
             onChange={handleChange}
-            />
+          />
         </div>
         <div>
           <label htmlFor="">
@@ -56,7 +56,7 @@ const EditModal = () => {
             name="provider"
             value={productState.provider}
             onChange={handleChange}
-            />
+          />
         </div>
         <div>
           <label htmlFor="">
@@ -68,7 +68,7 @@ const EditModal = () => {
             required
             value={productState.category}
             onChange={handleChange}
-            />
+          />
         </div>
         <div>
           <label htmlFor="">

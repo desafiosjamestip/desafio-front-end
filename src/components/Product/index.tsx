@@ -11,16 +11,16 @@ type Products = {
 
 const ProductItem = ({ product }: Products) => {
 
-    const { changeModalVisibility, setProductState } = useProduct()
+    const { changeModalVisibility, setProductState } = useProduct();
 
     const editProduct = (product: Product) => {
-        setProductState(product)
-        changeModalVisibility(true, "edit")
+        setProductState(product);
+        changeModalVisibility(true, "edit");
     }
-    
+
     const deleteProduct = (product: Product) => {
-        setProductState(product)
-        changeModalVisibility(true, "delete")
+        setProductState(product);
+        changeModalVisibility(true, "delete");
     }
 
     return (

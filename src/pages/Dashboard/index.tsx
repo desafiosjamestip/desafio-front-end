@@ -1,24 +1,19 @@
+import { CategoryList, Header, Main } from "./styled";
 import Logo from "../../assets/jamesTipLogo.png"
 import Arrow from "../../assets/arrow.png"
 
-import { CategoryList, Header, Main } from "./styled";
-
 import Button from "../../components/Button";
-
-import { useProduct } from "../../providers/Product";
 import Modal from "../../components/Modal";
 import ProductItem from "../../components/Product";
+
+import { useProduct } from "../../providers/Product";
+
 import { useHistory } from "react-router-dom";
 
 const DashBoard = () => {
 
-    const { productList, changeModalVisibility } = useProduct()
+    const { productList, changeModalVisibility } = useProduct();
     const history = useHistory();
-
-    const create = () => {
-
-        changeModalVisibility(true, "add")
-    }
 
     return (
         <>
@@ -27,9 +22,11 @@ const DashBoard = () => {
                     <img src={Logo} alt="Logo James Tip" onClick={() => history.push("/")} />
                     <figcaption>James Tip</figcaption>
                 </figure>
-                <Button onClick={() => create()} newItem >Adicionar novo produto</Button>
+                <Button onClick={() => changeModalVisibility(true, "add")} newItem >Adicionar novo produto</Button>
             </Header>
+
             <Modal />
+            
             <Main>
 
                 <CategoryList>
@@ -49,7 +46,7 @@ const DashBoard = () => {
                 {productList?.length > 0 ? (
                     <>
                         {productList.map((product) => (
-                            <ProductItem product={product} key={product.id}/>
+                            <ProductItem product={product} key={product.id} />
                         ))}
                     </>
                 ) : (
