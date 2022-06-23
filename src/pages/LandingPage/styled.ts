@@ -22,6 +22,8 @@ export const Main = styled.main`
     width: 100%;
     
     @media screen and (min-width: 768px) {
+        width: inherit;
+        padding: 0 10rem;
         flex-direction: row;
         justify-content: space-between;
         
@@ -101,8 +103,6 @@ export const JamesFigure = styled.figure`
     }
     
     @media screen and (min-width: 768px) {
-        justify-content: center;
-        align-self: center;
         width: 50%;
     }
 `
