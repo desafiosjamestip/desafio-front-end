@@ -35,7 +35,7 @@ const ProductItem = ({ product }: Products) => {
                         <span className="tableCell">{product.name}</span>
                         <span className="tableCell">{product.provider}</span>
                         <span className="tableCell">{product.category}</span>
-                        <span className="tableCell">{product.price}</span>
+                        <span className="tableCell">R$ {product.price}</span>
                         <span className="tableCell idCell">{product.id}</span>
                     </div>
                 </div>
