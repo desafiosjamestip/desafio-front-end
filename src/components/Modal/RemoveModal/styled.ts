@@ -5,7 +5,7 @@ export const Title = styled.h3`
     text-align: center;
     font-weight: 700;
     font-size: 20px;
-    /* margin-bottom: 40px; */
+    margin-top: 20px;
 `
 
 export const ButtonContainer = styled.div`
@@ -13,7 +13,7 @@ export const ButtonContainer = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: calc(100% - 15px); // -15 do padding do modal
+    height: calc(100% - 25px - 20px); // -25px do padding do modal, -20px do margin do titulo
     
     button {
         width: 100%;

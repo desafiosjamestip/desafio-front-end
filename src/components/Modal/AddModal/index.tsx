@@ -12,7 +12,7 @@ import Product from '../../../types/product';
 
 const AddModal = () => {
 
-  const { visible, changeModalVisibility, createNewProduct, initialState } = useProduct()
+  const { visible, changeModalVisibility, createNewProduct, initialState, windowWidth } = useProduct()
 
   const [newProduct, setNewProduct] = useState<Product>(initialState);
 
@@ -36,7 +36,7 @@ const AddModal = () => {
     <Rodal
       visible={visible}
       onClose={() => changeModalVisibility(false)}
-      width={600}
+      width={windowWidth()}
       height={470}
     >
       <Title>Configuração do produto</Title>

@@ -22,6 +22,7 @@ interface ProductData {
     deleteProduct: (deletedProduct: Product) => void;
     randomID: Function;
     setProductState: React.Dispatch<React.SetStateAction<Product>>;
+    windowWidth: Function;
 }
 
 const ProductContext = createContext<ProductData>({} as ProductData);
@@ -82,7 +83,17 @@ export const ProductProvider = ({ children }: ProviderProps) => {
     };
 
 
-    const [productState, setProductState] = useState<Product>(initialState)
+    const [productState, setProductState] = useState<Product>(initialState);
+
+    const windowWidth = () => { // Retorna o tamanho da tela ideal para o modal.
+        let windowWidth = window.innerWidth
+    
+        if (windowWidth > 768) {
+            return windowWidth - 400;
+        } else {
+            return windowWidth - 100;
+        }
+    }
 
     return (
         <ProductContext.Provider
@@ -98,7 +109,8 @@ export const ProductProvider = ({ children }: ProviderProps) => {
                 randomID,
                 initialState,
                 productState,
-                setProductState
+                setProductState,
+                windowWidth
             }}
         >
             {children}

@@ -9,7 +9,7 @@ import Button from '../../Button';
 
 const RemoveModal = () => {
 
-  const { visible, changeModalVisibility, productState, deleteProduct } = useProduct()
+  const { visible, changeModalVisibility, productState, deleteProduct, windowWidth } = useProduct()
 
   const removeProduct = () => {
     deleteProduct(productState)
@@ -22,7 +22,7 @@ const RemoveModal = () => {
     <Rodal
       visible={visible}
       onClose={() => changeModalVisibility(false)}
-      width={400}
+      width={windowWidth()}
       height={270}
     >
       <Title>Remover produto da lista?</Title>

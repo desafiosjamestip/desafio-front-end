@@ -9,7 +9,7 @@ import Button from '../../Button';
 
 const EditModal = () => {
 
-  const { visible, changeModalVisibility, editProduct, productState, setProductState } = useProduct()
+  const { visible, changeModalVisibility, editProduct, productState, setProductState, windowWidth } = useProduct()
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const name = event.target.name;
@@ -29,7 +29,7 @@ const EditModal = () => {
     <Rodal
       visible={visible}
       onClose={() => changeModalVisibility(false)}
-      width={600}
+      width={windowWidth()}
       height={470}
     >
       <Title>Edição do produto</Title>
