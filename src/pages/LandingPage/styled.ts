@@ -21,7 +21,7 @@ export const Main = styled.main`
     align-items: center;
     width: 100%;
     
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
         width: inherit;
         padding: 0 10rem;
         flex-direction: row;
@@ -68,7 +68,7 @@ export const Article = styled.article`
 
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
         button {
             margin-bottom: 0;
     
@@ -99,10 +99,11 @@ export const JamesFigure = styled.figure`
         display: flex;
         justify-content: center;
         width: 100%;
-        
+        margin-bottom: 100px;
     }
     
-    @media screen and (min-width: 768px) {
-        width: 50%;
+    @media screen and (min-width: 1024px) {
+        margin-bottom: 0;
+
     }
 `
