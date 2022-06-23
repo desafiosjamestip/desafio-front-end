@@ -22,7 +22,7 @@ export const ButtonStyled = styled.button<{
         border: ${(props) => props.confirm && "1px solid var(--darkish-color)"};
     }
 
-    @media screen and (min-width: 320px) {
+    @media screen and (max-width: 425px) {
         font-size: 16px;
     }
 `
