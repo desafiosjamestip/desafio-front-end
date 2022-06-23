@@ -14,13 +14,6 @@ export const GlobalStyle = createGlobalStyle`
 	--blueish-color-2: #AFE2E2;
 	--whiteish-color: #FFFFFF;
 
-	--toastify-color-success: #71bb00;
-	--toastify-color-error: #D65923;
-	--toastify-toast-background: black;
-	--toastify-font-family: "Poppins", sans-serif;
-}
-
-.Toastify__toast {
 }
 
 .rodal-dialog {
