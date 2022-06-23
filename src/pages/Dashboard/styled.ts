@@ -31,7 +31,6 @@ export const Main = styled.main`
     
     @media screen and (min-width: 768px) {
         padding: 0 40px;
-        width: 100%;
         overflow-x: visible;
         overflow-y: visible;
         white-space: normal;
