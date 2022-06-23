@@ -36,7 +36,7 @@ export const GlobalStyle = createGlobalStyle`
         display: flex;
         width: 100%;
     }
-
+    
     .tableRow {
         display: flex;
 		word-break: break-word;
@@ -44,28 +44,33 @@ export const GlobalStyle = createGlobalStyle`
         color: var(--whiteish-color);
     }
     
-    .tableCell,
-    .tableHead {
-		border: 1px solid var(--whiteish-color);
+    .tableCell {
+        border: 1px solid var(--whiteish-color);
         display: flex;
 		align-items: center;
         padding: 12px 8px;
         width: 100%;
+        min-width: 180px;
+        @media screen and (min-width: 768px) {
+            min-width: inherit;
+        }
     }
-
+    
 	.imgCell {
-		display: flex;
+        display: flex;
+        min-width: inherit;
 		width: fit-content;
 		padding-left: 18px;
-		padding-right: calc(51px - 38.4px); // tamanho da celula - padding e tamanho da imagem
+		padding-right: calc(51px - 22.33px); // tamanho da celula - padding e tamanho da imagem
 		border-radius: 8px 0px 0px 8px;
 	}
-
+    
     .iconCell {
         display: flex;
         justify-content: space-around;
-        padding-left: 0;
-        width: 25%;
+        /* padding-left: 0; */
+        width: 70px;
+        min-width: inherit;
         border-radius: 8px 0px 0px 8px;
 
         button {
