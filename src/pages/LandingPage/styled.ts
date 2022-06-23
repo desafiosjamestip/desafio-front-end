@@ -15,12 +15,21 @@ export const Header = styled.header`
 
 export const Main = styled.main`
     display: flex;
-    justify-content: space-between;
-    padding: 0 10rem;
+    justify-content: center;
+    padding: 0 10px;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+    
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
 `
 
 export const Article = styled.article`
-    width: 420px;
+    width: 295px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -36,7 +45,6 @@ export const Article = styled.article`
     }
     
     h1 {
-        /* text-align: left; */
         color: var(--blueish-color);
         font-size: 48px;
         font-weight: 800;
@@ -50,41 +58,51 @@ export const Article = styled.article`
     button {
         align-self: flex-start;
         margin-top: 25px;
+        margin-bottom: 30px;
+    }
+    
+    @media screen and (min-width: 425px) {
+        width: 420px;
+
+    }
+
+    @media screen and (min-width: 768px) {
+        button {
+            margin-bottom: 0;
+    
+        }
     }
 `
 
 export const JamesFigure = styled.figure`
-    @-webkit-keyframes slide-left {
-        0% {
-            -webkit-transform: translateX(0);
-                    transform: translateX(0);
-                    opacity: 0;
-        }
-        100% {
-            -webkit-transform: translateX(-100px);
-                    transform: translateX(-100px);
-                    opacity: 1;
-        }
-    }
     @keyframes slide-left {
         0% {
-            -webkit-transform: translateX(0);
-                    transform: translateX(0);
-                    opacity: 0;
+            -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+            opacity: 0;
         }
         100% {
-            -webkit-transform: translateX(-100px);
-                    transform: translateX(-100px);
-                    opacity: 1;
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+            opacity: 1;
         }
     }
 
-    display: flex;
-    align-items: center;
-    width: 50%;
-    justify-content: center;
+    display: none;
+
     -webkit-animation: slide-left 1.2s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
     animation: slide-left 1.2s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
 
-
+    @media screen and (min-width: 424px) {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        
+    }
+    
+    @media screen and (min-width: 768px) {
+        justify-content: center;
+        align-self: center;
+        width: 50%;
+    }
 `

@@ -20,4 +20,8 @@ export const ButtonStyled = styled.button<{
         color: ${(props) => props.confirm ? "var(--darkish-color)" : "var(--blueish-color)"};
         border: ${(props) => props.confirm && "1px solid var(--darkish-color)"};
     }
+
+    @media screen and (min-width: 320px) {
+        font-size: 16px;
+    }
 `
