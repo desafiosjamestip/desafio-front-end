@@ -4,7 +4,7 @@ export interface IProduct {
   snu: string;
   category: string;
   name: string;
-  provider: string;
+  manufacturer: string;
   price: number;
   id: string;
 }
@@ -18,6 +18,8 @@ export interface IProductsContextData {
   getProducts: () => IProduct[];
   deleteProduct: (id: string) => void;
   updateProduct: (product: IProduct) => void;
+  updater: boolean;
+  setUpdater: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface IButtonProps {

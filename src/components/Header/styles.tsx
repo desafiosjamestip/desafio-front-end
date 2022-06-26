@@ -9,7 +9,7 @@ export const Title = styled(Typography)(({ theme }) => ({
 
 export const HeaderContainer = styled(Box)`
   width: 100vw;
-  height: 15vh;
+  height: 11vh;
   padding: 2vh;
   max-height: 100px;
   display: flex;
@@ -19,6 +19,7 @@ export const HeaderContainer = styled(Box)`
   position: fixed;
   top: 0;
   left: 0;
+  margin-bottom: 100px;
 `;
 
 export const HeaderNavigator = styled(Box)`
