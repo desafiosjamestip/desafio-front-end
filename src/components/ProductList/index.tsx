@@ -5,7 +5,7 @@ import { IProduct } from "../../interfaces";
 import { ProductCard } from "../ProductCard";
 
 export const ProductList = () => {
-  const { getProducts, updater, setUpdater } = useContext(ProductsContext);
+  const { getProducts, updater } = useContext(ProductsContext);
   const [products, setProducts] = useState<IProduct[]>([]);
 
   useEffect(() => {
