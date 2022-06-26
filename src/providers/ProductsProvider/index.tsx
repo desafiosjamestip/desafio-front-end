@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import {
   IChildrenProps,
   IProduct,
@@ -20,33 +20,47 @@ function useProducts() {
 }
 
 function ProductsProvider({ children }: IChildrenProps) {
+  const [updater, setUpdater] = useState(true);
   function getProducts(): IProduct[] {
-    const products = localStorage.getItem("products");
-    if (products) {
-      return JSON.parse(products);
+    try {
+      const products = localStorage.getItem("products");
+      if (products) {
+        setUpdater(!updater);
+        return JSON.parse(products);
+      }
+      return [];
+    } catch (error) {
+      throw new Error();
     }
-    return [];
   }
 
   function registerProduct(product: IProduct) {
-    localStorage.setItem(
-      "products",
-      JSON.stringify([...getProducts(), product])
-    );
+    try {
+      localStorage.setItem(
+        "products",
+        JSON.stringify([...getProducts(), product])
+      );
+      setUpdater(!updater);
+    } catch (error) {
+      throw new Error();
+    }
   }
 
   function deleteProduct(id: string) {
     const products = getProducts();
     const newProducts = products.filter((product) => product.id !== id);
     localStorage.setItem("products", JSON.stringify(newProducts));
+    setUpdater(!updater);
   }
 
   function updateProduct(product: IProduct) {
     const products = getProducts();
+    console.log("products", products, "updatedProduct:", product);
     const newProducts = products.map((p) =>
       p.id === product.id ? { ...p, ...product } : p
     );
     localStorage.setItem("products", JSON.stringify(newProducts));
+    setUpdater(!updater);
   }
 
   return (
@@ -56,6 +70,8 @@ function ProductsProvider({ children }: IChildrenProps) {
         registerProduct,
         updateProduct,
         deleteProduct,
+        updater,
+        setUpdater,
       }}
     >
       {children}
