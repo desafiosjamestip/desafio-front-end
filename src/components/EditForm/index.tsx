@@ -13,13 +13,13 @@ import {
   SelectChangeEvent,
   TextField,
 } from "@mui/material";
-import { CardContent, FormContainer, CardActions } from "./styles";
-import { v4 } from "uuid";
+import { CardContent, FormContainer, CardActions } from "../Form/styles";
 import { useState } from "react";
 import { ProductSchema } from "../../utils/Product Schema";
+import SaveIcon from "@mui/icons-material/Save";
 
-export const Form = () => {
-  const { registerProduct } = useProducts();
+export const EditForm = (oldProduct: IProduct) => {
+  const { updateProduct } = useProducts();
   const [category, setCategory] = useState("");
   const categories = ["Category 1", "Category 2", "Category 3", "Category 4"];
 
@@ -27,28 +27,36 @@ export const Form = () => {
     setCategory(event.target.value as string);
   };
 
-  const registerSchema = ProductSchema;
+  const updateSchema = ProductSchema;
 
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
-  } = useForm<IProduct>({ resolver: yupResolver(registerSchema) });
+  } = useForm<IProduct>({ resolver: yupResolver(updateSchema) });
 
-  function onRegister(product: IProduct) {
-    product.id = v4();
-    registerProduct(product);
-    reset();
+  function onUpdate(updatedProduct: IProduct) {
+    updatedProduct.id = oldProduct.id;
+    updateProduct(updatedProduct);
   }
   return (
     <FormContainer>
-      <Box component="form" onSubmit={handleSubmit(onRegister)}>
+      <Box component="form" onSubmit={handleSubmit(onUpdate)}>
         <CardContent sx={{ display: "flex", gap: "20px" }}>
           <TextField
             fullWidth
+            {...register("name")}
+            error={!!errors.name}
+            defaultValue={oldProduct.name}
+            label="Name"
+            helperText={errors.name?.message}
+            size="small"
+          />
+          <TextField
+            fullWidth
+            defaultValue={oldProduct.snu}
             {...register("snu")}
-            error={Boolean(errors.snu)}
+            error={!!errors.snu}
             label="Product Code"
             helperText={errors.snu?.message}
             size="small"
@@ -59,8 +67,8 @@ export const Form = () => {
               {...register("category")}
               onChange={handleCategoryChange}
               value={category}
-              defaultValue=""
-              label="Age"
+              defaultValue={oldProduct.category}
+              label="Category"
             >
               {categories.map((category, index) => {
                 return (
@@ -74,16 +82,9 @@ export const Form = () => {
           </FormControl>
           <TextField
             fullWidth
-            {...register("name")}
-            error={Boolean(errors.name)}
-            label="Name"
-            helperText={errors.name?.message}
-            size="small"
-          />
-          <TextField
-            fullWidth
             {...register("manufacturer")}
-            error={Boolean(errors.manufacturer)}
+            error={!!errors.manufacturer}
+            defaultValue={oldProduct.manufacturer}
             label="Manufacturer"
             helperText={errors.manufacturer?.message}
             size="small"
@@ -92,6 +93,7 @@ export const Form = () => {
           <TextField
             {...register("price")}
             fullWidth
+            defaultValue={oldProduct.price}
             type="number"
             error={!!errors.price}
             label="Price"
@@ -100,9 +102,9 @@ export const Form = () => {
           />
         </CardContent>
         <CardActions>
-          <Button type="submit" variant="contained" color="primary">
+          <Button startIcon={<SaveIcon />} type="submit">
             {" "}
-            Submit
+            SAVE{" "}
           </Button>
         </CardActions>
       </Box>
