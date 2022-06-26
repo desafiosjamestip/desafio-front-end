@@ -3,7 +3,6 @@ import {
   Card,
   CardActions,
   CardContent,
-  CardHeader,
   Dialog,
   DialogContent,
   DialogContentText,
@@ -19,7 +18,7 @@ import { ProductsContext } from "../../providers/ProductsProvider";
 
 export const ProductCard = (product: IProduct) => {
   const [open, setOpen] = useState(false);
-  const { setUpdater, deleteProduct } = useContext(ProductsContext);
+  const { deleteProduct } = useContext(ProductsContext);
   const productProps = {
     snu: product.snu,
     category: product.category,
@@ -53,7 +52,7 @@ export const ProductCard = (product: IProduct) => {
           </Typography>
           <Typography variant="body1">
             <strong>Price: </strong>
-            {product.price}
+            {product.price.toFixed(2)}
           </Typography>
           <Typography variant="body1">
             <strong>SNU: </strong>
