@@ -22,9 +22,6 @@ export function EditOrDeleteProduct(props: EditOrDeleteProps){
     const navigate = useNavigate();
    
     const {deleteProduct} = useProducts()
-    const editProduct = () => {
-
-    }
 
     const removeProduct = () => {
         deleteProduct(props.product);

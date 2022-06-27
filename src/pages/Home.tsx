@@ -1,7 +1,6 @@
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { ProductProvider, useProducts } from "../hooks/useProducts"
-import { ProductItem } from "../components/ProductItem";
+import { ProductProvider } from "../hooks/useProducts"
 import { ProductsList } from "../components/ProductsList";
 import styled from "styled-components";
 

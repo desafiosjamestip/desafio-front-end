@@ -3,7 +3,7 @@ import { EditOrDeleteProduct } from "../components/EditOrDeleteProduct";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { ProductView } from "../components/ProductView";
-import { Product, useProducts } from "../hooks/useProducts";
+import { useProducts } from "../hooks/useProducts";
 import styled from "styled-components";
 
 const StyledProductPage = styled.main`
@@ -17,10 +17,6 @@ const StyledProductPage = styled.main`
         display: flex;
     }
 `
-
-interface ProductProps {
-    id: String
-}
 
 export function ProductPage() {
     const { products } = useProducts();

@@ -40,7 +40,7 @@ const StyledRegistrationForm = styled.main`
 `
 
 export function ResgistrationForm() {
-    const { products, addProduct } = useProducts();
+    const { addProduct } = useProducts();
     const [id, setId] = useState("");
     const [category, setCategory] = useState("");
     const [name, setName] = useState("");
