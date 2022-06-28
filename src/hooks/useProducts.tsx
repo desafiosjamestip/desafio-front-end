@@ -14,30 +14,44 @@ interface ProductsContextData {
     deleteProduct: (product: Product) => void
 }
 
-// const initialProducts: Product[] = [
+const initialProducts: Product[] = [
 
-//     {
-//         id: "1",
-//         category: "eletrônicos",
-//         name: "Relógio digital",
-//         provider: "Oficina do relógio",
-//         price: "50,99"
-//     },
-//     {
-//         id: "2",
-//         category: "eletrônicos",
-//         name: "Cabo USB",
-//         provider: "amazon",
-//         price: "20,00"
-//     }
-// ]
+    {
+        id: "1",
+        category: "eletrônicos",
+        name: "Relógio digital",
+        provider: "Oficina do relógio",
+        price: "50,99"
+    },
+    {
+        id: "2",
+        category: "eletrônicos",
+        name: "Cabo USB",
+        provider: "amazon",
+        price: "20,00"
+    },
+    {
+        id: "3",
+        category: "eletrônicos",
+        name: "Carregador de celular",
+        provider: "apple",
+        price: "100,00"
+    },
+    {
+        id: "4",
+        category: "eletrônicos",
+        name: "Carregador de celular",
+        provider: "amazon",
+        price: "40,00"
+    }
+]
 
 const ProductsContext = createContext<ProductsContextData>({} as ProductsContextData);
 
 export function ProductProvider({ children }: PropsWithChildren) {
     const [products, setProducts] = useState<Product[]>(
         () => {
-            const saved = localStorage.getItem("product") || "";
+            const saved = localStorage.getItem("product") || JSON.stringify(initialProducts);
             const initialValue = JSON.parse(saved);
             return initialValue || "";
         }
@@ -56,7 +70,7 @@ export function ProductProvider({ children }: PropsWithChildren) {
     const deleteProduct = (product: Product) => {
         const newProducts = products.filter((element) => element.id !== product.id);
         setProducts(newProducts);
-        localStorage.setItem("product",JSON.stringify(products));
+        localStorage.setItem("product", JSON.stringify(products));
     }
 
     useEffect(() => console.log(products), [products])
